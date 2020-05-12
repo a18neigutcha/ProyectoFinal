@@ -1,7 +1,8 @@
-version: "2"
+version: "2.4"
 services:
   api:
     image: node
+    platform: linux
     container_name: api
     working_dir: /usr/app
     depends_on:
@@ -14,6 +15,7 @@ services:
 
   db:
     image: mysql:5.7.30
+    platform: linux
     container_name: mysql
     # El contenedor ejecutara los ficheros .sql que esten dentro de este directorio.
     working_dir: /docker-entrypoint-initdb.d
@@ -28,6 +30,7 @@ services:
     # command: mysql -e "source database.sql"
   app:
     image: node:13.14.0
+    platform: linux
     container_name: app
     working_dir: /app
     depends_on:

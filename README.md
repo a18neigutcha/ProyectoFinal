@@ -5,9 +5,9 @@
 
 ### Directorios:
 
-app/ -> Aplicacion web.
-UbicacionesApi/ -> Api REST.
-Documentation/ -> Documentacion del proyecto.
+- app/ -> Aplicacion web.
+- UbicacionesApi/ -> Api REST.
+- Documentation/ -> Documentacion del proyecto.
 
 ### Ficheros:
 
