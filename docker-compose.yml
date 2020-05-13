@@ -10,7 +10,10 @@ services:
     ports:
       - 3000:3000
     volumes: 
-      - ${PWD}/UbicacionesApi:/usr/app
+      # Montaje de volumen en Linux
+      # - ${PWD}/UbicacionesApi:/usr/app
+      # Montaje de volumen en Windows
+      - ./UbicacionesApi:/usr/app
     command: npm run dev
 
   db:
@@ -26,8 +29,11 @@ services:
         # Opens port 3306 on the container
         - '3306'
     volumes: 
-      - ${PWD}/UbicacionesApi/database:/docker-entrypoint-initdb.d
-    # command: mysql -e "source database.sql"
+      # Montaje de volumen en Linux
+      # - ${PWD}/UbicacionesApi/database:/docker-entrypoint-initdb.d
+      # Montaje de volumen en Windows
+      - ./UbicacionesApi/database:/docker-entrypoint-initdb.d
+
   app:
     image: node:13.14.0
     platform: linux
@@ -38,7 +44,10 @@ services:
     ports:
         - 80:80
     volumes: 
-        - ${PWD}/app:/app
+        # Montaje de volumen en Linux
+        # - ${PWD}/app:/app
+        # Montaje de volumen en Windows
+        - ./app:/app
     command: npm run serve -- --port 80
     
 
