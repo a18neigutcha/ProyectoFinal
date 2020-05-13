@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-import Recomendados from "../views/Recomendados.vue";
+import Recomendaciones from "../views/Recomendaciones.vue";
 
 Vue.use(VueRouter);
 
@@ -21,9 +21,9 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/About.vue")
   },
   {
-    path: "/Recomendados",
-    name: "Recomendados",
-    component: Recomendados
+    path: "/Recomendaciones",
+    name: "Recomendaciones",
+    component: Recomendaciones
   },
 ];
 

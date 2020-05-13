@@ -1,8 +1,8 @@
-version: "2.4"
+version: "3"
 services:
   api:
     image: node
-    platform: linux
+    # platform: linux
     container_name: api
     working_dir: /usr/app
     depends_on:
@@ -15,10 +15,11 @@ services:
       # Montaje de volumen en Windows
       - ./UbicacionesApi:/usr/app
     command: npm run dev
+    restart: always
 
   db:
     image: mysql:5.7.30
-    platform: linux
+    # platform: linux
     container_name: mysql
     # El contenedor ejecutara los ficheros .sql que esten dentro de este directorio.
     working_dir: /docker-entrypoint-initdb.d
@@ -33,10 +34,11 @@ services:
       # - ${PWD}/UbicacionesApi/database:/docker-entrypoint-initdb.d
       # Montaje de volumen en Windows
       - ./UbicacionesApi/database:/docker-entrypoint-initdb.d
+    restart: always
 
   app:
-    image: node:13.14.0
-    platform: linux
+    image: ngch43/vue_node
+    # platform: linux
     container_name: app
     working_dir: /app
     depends_on:
