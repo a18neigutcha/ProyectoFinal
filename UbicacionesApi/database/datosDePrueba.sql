@@ -6,7 +6,7 @@ INSERT INTO USUARIO VALUES
     (3,'Jhon','Carter','Jhon@gmail.com','Jhon','password');
 
 
-INSERT INTO LUGAR VALUES
+INSERT INTO LUGAR (id,nombre,direccion,descripcion,latitud,longitud,valoracion) VALUES
 	(1,'Bar Bacardi','Calle ricart 26',' ',' ','Bar con unos buenos cocteles',5),
     (2,'Plaza españa','Plaza españa',' ',' ','Lugar turistico muy turistico',7),
     (3,'Restaurante harryBer','Calle augusto 3ro',' ',' ','Restaurante habientado en Harry Potter',9);

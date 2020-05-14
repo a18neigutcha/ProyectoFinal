@@ -7,6 +7,8 @@ services:
     working_dir: /usr/app
     depends_on:
         - db
+    environment:
+      - ENABLE_CORS=true
     ports:
       - 3000:3000
     volumes: 
@@ -15,7 +17,6 @@ services:
       # Montaje de volumen en Windows
       - ./UbicacionesApi:/usr/app
     command: npm run dev
-    restart: always
 
   db:
     image: mysql:5.7.30

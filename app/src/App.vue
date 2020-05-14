@@ -1,10 +1,9 @@
 <template>
   <div id="app">
-    <div class="row align-items-start">
-      <div class="col">
-        <BarraDeMenu nombreApp="Localizalo"/>
-      </div>
-    </div>
+    <header>
+      <BarraDeMenu nombreApp="Barcelona desconocida"/>
+    </header>
+    
     <router-view />
     <div class="row align-items-end">
       <div class="col">
@@ -29,16 +28,5 @@ export default {
 
 <style lang="scss">
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+    
 </style>

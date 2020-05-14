@@ -1,5 +1,5 @@
 DROP DATABASE IF EXISTS RE_FIND;
-CREATE DATABASE IF NOT EXISTS RE_FIND;
+CREATE DATABASE IF NOT EXISTS RE_FIND charset=utf8;
 
 USE RE_FIND;
 
@@ -20,7 +20,8 @@ CREATE TABLE IF NOT EXISTS LUGAR(
     descripcion VARCHAR(225),
     latitud VARCHAR (255),
     longitud VARCHAR (255),
-    valoracion INT(11) DEFAULT 0
+    valoracion INT(11) DEFAULT 0,
+    dirUrl VARCHAR(255) DEFAULT "'https://picsum.photos/200/300'"
 	-- estado VARCHAR(45) DEFAULT NULL /* Este podria convertirse en entidad*/  
 );
 

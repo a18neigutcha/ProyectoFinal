@@ -1,27 +1,28 @@
 <template>
-    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <CartaLugar/>
-            </div>
-            <div class="carousel-item">
-                <CartaLugar/>
+
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="card-deck">
+                        <CartaLugar
+                            v-for="(lugar,id) in datos" :key="id"
+                            :titulo="lugar.nombre"
+                            :subtitulo="lugar.direccion"
+                            :descripcion="lugar.descripcion"
+                            :dirUrl="lugar.dirUrl"
+                        ></CartaLugar>   
+                    </div>
+                </div>
+                
+                    
             </div>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
 
 </template>
 
 <script>
 import CartaLugar from './CartaLugar';
+import axios from 'axios';
 
 export default {
   name: 'CarruselLugares',
@@ -29,6 +30,32 @@ export default {
       CartaLugar
   },
   props: {
+
+  },
+  data:function() {
+      return {
+          datos:{
+              titulo:"",
+              subtitulo:"",
+              descripcion:"",
+              url:""
+
+          },
+          axx:0
+      }
+      
+
+  },
+  mounted () {
+    axios.get('http://localhost:3000/api/',{
+        headers: {
+          'Access-Control-Allow-Origin': 'http://localhost:3000',
+        }
+    })
+    .then(response =>{
+        this.datos=response.data;
+        console.log(response.data);
+    })
   }
 }
 </script>

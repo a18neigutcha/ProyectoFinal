@@ -6,10 +6,14 @@ class GamesController {
         Lista de todos los lugares
     */
     async listaLugares(req,res){
+
+
         await mysqlConnection.query('SELECT * FROM LUGAR',(err,result,fields)=>{
             if(!err){
+                console.log(res);
                 res.json(result);
             }else{
+                console.log(err);
                 console.log(err);
             }
         });
