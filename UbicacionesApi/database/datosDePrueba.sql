@@ -1,9 +1,9 @@
 USE RE_FIND;
  
 INSERT INTO USUARIO VALUES 
-	(1,'Ryan','Ray','Ryan@gmail.com','Ryan','password'),
-    (2,'Joe','McMilan','Joe@gmail.com','Joe','password'),
-    (3,'Jhon','Carter','Jhon@gmail.com','Jhon','password');
+	(1,'Ryan','Ryan@gmail.com','password'),
+    (2,'Joe','Joe@gmail.com','password'),
+    (3,'Jhon','Jhon@gmail.com','password');
 
 
 INSERT INTO LUGAR (id,nombre,direccion,latitud,longitud,descripcion,valoracion) VALUES

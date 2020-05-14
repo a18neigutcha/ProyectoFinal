@@ -6,10 +6,8 @@ USE RE_FIND;
 
 CREATE TABLE IF NOT EXISTS USUARIO (
     id INT(11) PRIMARY KEY AUTO_INCREMENT,
-    nombre VARCHAR(45),
-    apellido VARCHAR(45),
-	correo VARCHAR(45),
-    nickname VARCHAR (45),
+    userName VARCHAR(45),
+	  email VARCHAR(45),
     password VARCHAR(255)
 );
 

@@ -2,7 +2,8 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const morgan = require('morgan');
-const cors = require('cors')
+const cors = require('cors');
+const serveStatic = require('serve-static');
 
 
 
@@ -18,14 +19,16 @@ app.use(cors());
 //Routes
 
 app.get('/',(req,res)=>{
-    res.sendFile(path.join(__dirname + '/public/index.html'));
+    res.sendFile(serveStatic(__dirname + '/public/dist'));
 });
 
 
 app.use('/api',require('./routes/lugaresRoutes'));
+app.use('/api',require('./routes/userRoutes'));
 
 //Starting the server
 app.listen(app.get('port'),()=>{
     console.log('CORS-enabled web server listening on port',app.get('port'));
     console.log('Server on port',app.get('port'));
+    console.log('Directorio publico '+__dirname+'/public/dist');
 });
