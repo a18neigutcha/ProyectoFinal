@@ -6,10 +6,10 @@ INSERT INTO USUARIO VALUES
     (3,'Jhon','Carter','Jhon@gmail.com','Jhon','password');
 
 
-INSERT INTO LUGAR (id,nombre,direccion,descripcion,latitud,longitud,valoracion) VALUES
-	(1,'Bar Bacardi','Calle ricart 26',' ',' ','Bar con unos buenos cocteles',5),
-    (2,'Plaza españa','Plaza españa',' ',' ','Lugar turistico muy turistico',7),
-    (3,'Restaurante harryBer','Calle augusto 3ro',' ',' ','Restaurante habientado en Harry Potter',9);
+INSERT INTO LUGAR (id,nombre,direccion,latitud,longitud,descripcion,valoracion) VALUES
+	(1,'Bar Bacardi','Calle ricart, 26','41.3731458','2.1555771','Bar con unos buenos cocteles',5),
+    (2,'Plaza españa','Plaza españa','41.3750218','2.1469292','Lugar turistico muy turistico',7),
+    (3,'Rabipelao Raval','Carrer de la Riera Alta, 50','41.3816906','2.1642656','Restaurante habientado en Harry Potter',9);
     
 
 INSERT INTO NOTICIA VALUES

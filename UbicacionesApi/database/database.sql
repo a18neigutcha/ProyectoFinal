@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS LUGAR(
     latitud VARCHAR (255),
     longitud VARCHAR (255),
     valoracion INT(11) DEFAULT 0,
-    dirUrl VARCHAR(255) DEFAULT "'https://picsum.photos/200/300'"
+    dirUrl VARCHAR(255) DEFAULT "https://picsum.photos/200/300"
 	-- estado VARCHAR(45) DEFAULT NULL /* Este podria convertirse en entidad*/  
 );
 

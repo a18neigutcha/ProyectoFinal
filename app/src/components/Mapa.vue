@@ -1,93 +1,60 @@
 <template>
-
-  <div style="height: 500px; width: 100%">
-
-    <l-map
-      v-if="showMap"
-      :zoom="zoom"
-      :center="center"
-      :options="mapOptions"
-      style="height: 80%"
-      @update:center="centerUpdate"
-      @update:zoom="zoomUpdate"
+  <l-map style="height: 350px" :zoom="zoom" :center="center">
+    <l-tile-layer :url="url"></l-tile-layer>
+    <l-marker
+      v-for="(lugar,id) in datos" :key="id"
+      :lat-lng="[lugar.latitud,lugar.longitud]" 
     >
-      <l-tile-layer
-        :url="url"
-        :attribution="attribution"
-      />
-      <l-marker :lat-lng="withPopup">
-        <l-popup>
-          <div @click="innerClick">
-            I am a popup
-            <p v-show="showParagraph">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-              sed pretium nisl, ut sagittis sapien. Sed vel sollicitudin nisi.
-              Donec finibus semper metus id malesuada.
-            </p>
-          </div>
-        </l-popup>
-      </l-marker>
-      <l-marker :lat-lng="withTooltip">
-        <l-tooltip :options="{ permanent: true, interactive: true }">
-          <div @click="innerClick">
-            I am a tooltip
-            <p v-show="showParagraph">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-              sed pretium nisl, ut sagittis sapien. Sed vel sollicitudin nisi.
-              Donec finibus semper metus id malesuada.
-            </p>
-          </div>
-        </l-tooltip>
-      </l-marker>
-    </l-map>
-  </div>
+      <l-tooltip :options="{ permanent: true, interactive: true }">
+        <div @click="innerClick">
+          {{lugar.nombre}}
+        </div>
+      </l-tooltip>
+    </l-marker>
+  </l-map>
 </template>
 
 <script>
-import { latLng } from "leaflet";
-import { LMap, LTileLayer, LMarker, LPopup, LTooltip } from "vue2-leaflet";
+
+import {LMap, LTileLayer, LMarker,LTooltip} from 'vue2-leaflet';
+import axios from 'axios';
 
 export default {
-  name: "Example",
+  name: "Mapa",
   components: {
     LMap,
     LTileLayer,
     LMarker,
-    LPopup,
     LTooltip
   },
-  data() {
+  data () {
     return {
-      zoom: 13,
-      center: latLng(47.41322, -1.219482),
       url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-      attribution:
-        '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-      withPopup: latLng(47.41322, -1.219482),
-      withTooltip: latLng(47.41422, -1.250482),
-      currentZoom: 11.5,
-      currentCenter: latLng(47.41322, -1.219482),
-      showParagraph: false,
-      mapOptions: {
-        zoomSnap: 0.5
-      },
-      showMap: true
+      zoom: 14,
+      center: [41.3887901, 2.1589899],
+      markerLatLng: [41.3893700, 2.1752900],
+      datos: null
+
     };
   },
+  mounted () {
+    axios.get('http://localhost:3000/api/',{
+        headers: {
+          'Access-Control-Allow-Origin': 'http://localhost:3000',
+        }
+    })
+    .then(response =>{
+        this.datos=response.data;
+        console.log(response.data);
+    })
+  },
   methods: {
-    zoomUpdate(zoom) {
-      this.currentZoom = zoom;
-    },
-    centerUpdate(center) {
-      this.currentCenter = center;
-    },
-    showLongText() {
-      this.showParagraph = !this.showParagraph;
-    },
     innerClick() {
       alert("Click!");
     }
   }
-};
+
+}
+
 </script>
 

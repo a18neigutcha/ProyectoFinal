@@ -29,9 +29,6 @@ export default {
   components:{
       CartaLugar
   },
-  props: {
-
-  },
   data:function() {
       return {
           datos:{
