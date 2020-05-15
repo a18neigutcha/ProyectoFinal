@@ -1,31 +1,31 @@
 # dependencies
-UbicacionesApi/node_modules
+Api/node_modules
 
 KeyAmazonWeb
 
 
 #Ficheros de app Vue
 
-app/.DS_Store
-app/node_modules
-app/dist
+App/.DS_Store
+App/node_modules
+App/dist
 
 # local env files
-app/.env.local
-app/.env.*.local
+App/.env.local
+App/.env.*.local
 
 # Log files
-app/npm-debug.log*
-app/yarn-debug.log*
-app/yarn-error.log*
+App/npm-debug.log*
+App/yarn-debug.log*
+App/yarn-error.log*
 
 # Editor directories and files
-app/.idea
-app/.vscode
-app/*.suo
-app/*.ntvs*
-app/*.njsproj
-app/*.sln
-app/*.sw?
+App/.idea
+App/.vscode
+App/*.suo
+App/*.ntvs*
+App/*.njsproj
+App/*.sln
+App/*.sw?
 
 

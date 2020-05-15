@@ -13,9 +13,9 @@ services:
       - 3000:3000
     volumes: 
       # Montaje de volumen en Linux
-      # - ${PWD}/UbicacionesApi:/usr/app
+      # - ${PWD}/Api:/usr/app
       # Montaje de volumen en Windows
-      - ./UbicacionesApi:/usr/app
+      - ./Api:/usr/app
     command: npm run dev
 
   db:
@@ -34,7 +34,7 @@ services:
       # Montaje de volumen en Linux
       # - ${PWD}/UbicacionesApi/database:/docker-entrypoint-initdb.d
       # Montaje de volumen en Windows
-      - ./UbicacionesApi/database:/docker-entrypoint-initdb.d
+      - ./Database:/docker-entrypoint-initdb.d
     restart: always
 
   app:
