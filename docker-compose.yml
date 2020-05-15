@@ -38,7 +38,7 @@ services:
     restart: always
 
   app:
-    image: ngch43/vue_app
+    image: ngch43/vue_app:latest
     # platform: linux
     container_name: app
     depends_on:
