@@ -1,7 +1,5 @@
 # DATABASE
 
-## Descripción
-
 Base de datos desarrollada en mysql.
 
 ```
