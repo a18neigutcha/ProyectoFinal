@@ -1,13 +1,12 @@
 const mysql = require('mysql');
+const accesoMysql = require('./config').databaseAcces;
 
+/**
+ * Crea la connexion con la base de datos.
+ * Se establecen parametros de acceso.
+ */
 
-const mysqlConnection = mysql.createConnection({
-    host: 'mysql',
-    user: 'root',
-    password: 'password',
-    database: 'RE_FIND',
-    insecureAuth : true
-});
+const mysqlConnection = mysql.createConnection(accesoMysql);
 
 mysqlConnection.connect(function(err){
     if(err){
