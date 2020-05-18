@@ -1,3 +1,10 @@
+<style>
+     .navbar {
+         border: none;
+         box-shadow: 0 1px 20px 0 rgba(0,0,0,.1);
+    }
+</style>
+
 <template>
     <div class="navbar navbar-light">
         <router-link class="navbar-brand mb-0 h1" to="/">
