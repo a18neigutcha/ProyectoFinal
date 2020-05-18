@@ -3,15 +3,19 @@ const express=require('express');
 const router=express.Router();
 
 
-const lugaresController = require('../controllers/lugaresController');
+const LugaresController = require('../controllers/lugaresController');
 
+/**
+ * @namespace RutasLugares
+ * @description Rutas de la api para peticiones de los lugares.
+ * 
+ */
 
+router.get('/',LugaresController.listaLugares);
+router.get('/:id',LugaresController.unLugar);
+router.post('/',LugaresController.crearLugar);
+router.put('/:id',LugaresController.actualizarLugar);
+router.delete('/:id',LugaresController.eliminarLugar);
 
-
-    router.get('/',lugaresController.listaLugares);
-    router.get('/:id',lugaresController.unLugar);
-    router.post('/',lugaresController.crearLugar);
-    router.put('/:id',lugaresController.actualizarLugar);
-    router.delete('/:id',lugaresController.eliminarLugar);
 
 module.exports = router;

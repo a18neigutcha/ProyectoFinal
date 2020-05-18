@@ -4,11 +4,9 @@ const path = require('path');
 const morgan = require('morgan');
 const cors = require('cors');
 
-
-
-//Settings(Configuraciones)
-
 /**
+ * Settings(Configuraciones)
+ * 
  * Configura variables global para el puerto donde escuchara el servidor.
  */
 app.set('port',process.env.PORT || 3000);
@@ -33,13 +31,9 @@ app.use(morgan());
  */
 app.use(cors());
 
-
-
 //Routes
 
-app.get('/',(req,res)=>{
-    res.sendFile(__dirname + '/public/dist/index.html');
-});
+app.use('/',express.static(__dirname+'/out'));
 app.use('/api',require('./routes/lugaresRoutes'));
 app.use('/api',require('./routes/userRoutes'));
 
@@ -49,5 +43,4 @@ app.use('/api',require('./routes/userRoutes'));
 app.listen(app.get('port'),()=>{
     console.log('CORS-enabled web server listening on port',app.get('port'));
     console.log('Server on port',app.get('port'));
-    console.log('Directorio publico '+__dirname + '/public/dist/index.html');
 });
