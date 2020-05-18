@@ -4,7 +4,7 @@
             <div class="col ">
                 <LogoInicio :titulo="nombreApp"/>
             </div>
-            <div class="col-4 d-flex justify-content-end align-items-center">
+            <div class="col-6 d-flex justify-content-end align-items-center">
                 <MenuLogIn/>
             </div>  
         </div>

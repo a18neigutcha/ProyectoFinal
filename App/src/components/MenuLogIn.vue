@@ -1,28 +1,15 @@
-import SignIn from "../views/SignIn.vue";
-import SignUp from "../views/SignUp.vue";
-import UserPage from "../views/UserPage.vue";
-<style>
-     .navbar {
-         border: none;
-         box-shadow: 0 1px 20px 0 rgba(0,0,0,.1);
-         width: 200%;
-       }
-</style>
-
-
 <template>
   <div class="navbar navbar-expand-lg navbar-light">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
             <ul class="navbar-nav ">
-                <li class="nav-item mx-3">
-                  <form class="form-inline" action="/action_page.php">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Encuentra lugares  ">
-                        <button class="btn btn-success" type="submit">Búsqueda</button>
-                    </form>
-                </li>   
+                  
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                         ENTRA
@@ -52,10 +39,17 @@ import UserPage from "../views/UserPage.vue";
 </template>
 
 <script>
-export default {
-  name: "MenuLogIn"
-};
+/*     import SignIn from "../views/SignIn.vue";
+    import SignUp from "../views/SignUp.vue";
+    import UserPage from "../views/UserPage.vue"; */
+    export default {
+    name: "MenuLogIn"
+    };
 </script>
 <style>
-
+    .navbar {
+         border: none;
+         box-shadow: 0 1px 20px 0 rgba(0,0,0,.1);
+         width: 200%;
+       }
 </style>

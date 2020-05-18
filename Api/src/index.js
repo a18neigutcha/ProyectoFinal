@@ -39,6 +39,7 @@ app.use('/api',require('./routes/userRoutes'));
 
 
 
+
 //Starting the server
 app.listen(app.get('port'),()=>{
     console.log('CORS-enabled web server listening on port',app.get('port'));

@@ -1,6 +1,6 @@
 # dependencies
 Api/node_modules
-Api/config.js
+Api/src/config.js
 
 KeyAmazonWeb
 
