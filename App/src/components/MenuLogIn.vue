@@ -27,8 +27,11 @@ import UserPage from "../views/UserPage.vue";
             </form>
             <ul class="navbar-nav ">
 <<<<<<< HEAD
+<<<<<<< HEAD
                   
 =======
+=======
+>>>>>>> 0364cc77e562b55c7488b5a318a9722151242ac8
                 <li class="nav-item ml-3">
                   <form class="form-inline" action="/action_page.php">
                         <input class="form-control mr-sm-2" type="text" placeholder="Encuentra lugares  ">
