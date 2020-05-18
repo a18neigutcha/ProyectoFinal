@@ -1,29 +1,44 @@
 const bcrypt = require('bcryptjs');
+const mysqlConnection = require('../database');
 
-class User{
+module.exports = class User{
+
+    /**
+     * 
+     * @param {int} id 
+     * @param {string} userName 
+     * @param {string} email 
+     * @param {string} password
+     *  
+     */
+
     constructor(id,userName,email,password) {
         this.id = id;
         this.userName = userName;
         this.email = email;
         this.password = password;
-      }
+    }
 
-    async encryptPassword(password){
+    /**
+     * @method encryptPassword
+     * @param {string} password 
+     * @returns {Promise} Retorna el password encryptado.
+     */
+
+    static async encryptPassword(password){
         const salt = await bcrypt.genSalt(10);
         return bcrypt.hash(password, salt);
     }
 
-    async comparePassword(password){
+    /**
+     * @method comparePassword
+     * @param {string} password 
+     * @returns {boolean} Nos retorna true si los password coinciden y false caso contrario.
+     */
 
+    static async comparePassword(password){
+        return await bcrypt.compare(password, this.password);
     }
 
+
 }
-
-user = new User();
-
-
-/* userSchema.methods.comparePassword = async function (password) {
-    return bcrypt.compare(password, this.password);
-}; */
-
-module.exports = user;
