@@ -34,6 +34,8 @@ El proyecto cuenta con un documento "docker-compose.yml" que nos levanta 3 conte
 #### mysql
 Nos despliega la base de datos y al momento de levantarlo ejecuta los scripts de creación de la base de datos.
 
+Es necesario tener instalado mysql en local.
+
 #### api
 Levanta un servidor node creado con express que depende del contenedor "mysql".Es el encargado de comunicar la base de datos con la pagina web.
 
@@ -42,8 +44,11 @@ Levanta una pagina web estativa generada con vue que es servida por un servidor 
 
 Para levantar los contenedores correr el comando en del directorio del proyecto.
 
-- docker-compse up -d
+- docker-compose up -d
 
+Desde app. Se ejecuta con el comando npm run serve  y se pueden visualizar la página desplegada en dos direcciones:
+ - Local:   http://localhost:8080/ 
+  - Network: http://192.168.0.15:8080/
 
 > Para una mejor integracion con docker se utiliza DockerHub con GitHub de esta forma cada vez que se realiza un commit en el proyecto git se auto genera las imagenes correspondientes listas para su uso en el DockerHub.
 

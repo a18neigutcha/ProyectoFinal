@@ -2,7 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Recomendaciones from "../views/Recomendaciones.vue";
-import ViewMapa from "../views/ViewMapa.vue"
+import ViewMapa from "../views/ViewMapa.vue";
 
 Vue.use(VueRouter);
 
