@@ -50,7 +50,16 @@ class UserController{
             }
             if(result.length>0){
 
-                const validPassword = await User.comparePassword(req.body.password, result.password);
+                const user = new User(
+                    result[0].id,
+                    result[0].userName,
+                    result[0].email,
+                    result[0].password
+                );
+
+                console.log(user.password);
+
+                const validPassword = await user.comparePassword(req.body.password);
                 console.log("Valido",validPassword);
                 if (!validPassword) {
                     res.status(401).send({
@@ -64,6 +73,7 @@ class UserController{
                 });
 
                 res.status(200).json({auth: true,token});
+                
 
             }else{
                 res.status(404).json({
@@ -73,19 +83,6 @@ class UserController{
             }
         });
     }
-
-    /*     async me(req,res){
-
-        res.status(200).send(decoded);
-        //Search the Info base on the ID
-        const user = await User.findById(decoded.id, { password: 0});
-        const user = await User.findById(req.userId, { password: 0});
-        if (!user) {
-            return res.status(404).send("No se ha encontrado el usuario.");
-        }
-        res.status(200).json(user);
-    }
- */
 
     async logOut(req,res){
         res.status(200).send({ auth: false, token: null });

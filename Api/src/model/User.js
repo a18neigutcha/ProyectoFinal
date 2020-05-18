@@ -36,7 +36,7 @@ module.exports = class User{
      * @returns {boolean} Nos retorna true si los password coinciden y false caso contrario.
      */
 
-    static async comparePassword(password){
+    async comparePassword(password){
         return await bcrypt.compare(password, this.password);
     }
 
