@@ -17,6 +17,10 @@ export default {
 };
 </script>
 <style>
+    .navbar {
+         border: none;
+         box-shadow: 0 1px 20px 0 rgba(0,0,0,.1);
+    }
     img{
         width: 3em;
         height: 3em;
