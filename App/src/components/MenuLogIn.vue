@@ -5,8 +5,10 @@ import UserPage from "../views/UserPage.vue";
      .navbar {
          border: none;
          box-shadow: 0 1px 20px 0 rgba(0,0,0,.1);
-         width: 200%;
-       }
+         width: 400%;
+         height: 100%;
+    }
+
 </style>
 
 
@@ -17,7 +19,7 @@ import UserPage from "../views/UserPage.vue";
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav ">
-                <li class="nav-item mx-3">
+                <li class="nav-item ml-3">
                   <form class="form-inline" action="/action_page.php">
                         <input class="form-control mr-sm-2" type="text" placeholder="Encuentra lugares  ">
                         <button class="btn btn-success" type="submit">Búsqueda</button>
