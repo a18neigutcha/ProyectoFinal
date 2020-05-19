@@ -27,9 +27,6 @@
 
         </div>
 
-        <div class="row mt-3">
-
-        </div>
 
       </div>
 
@@ -47,9 +44,6 @@ export default {
     CarruselLugares
   },
   methods: {
-    verificarLogIn:function(){
-      console.log(this.$cookies.get("token"));
-    }
   }
 };
 </script>
