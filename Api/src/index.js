@@ -5,6 +5,14 @@ const morgan = require('morgan');
 const cors = require('cors');
 
 /**
+ * @file index.js
+ * @description En este fichero establecemos la configuracion basica con express
+ * para lanzar el seridor Settings, Middlewares, Routes, Start Server.
+ * 
+ */
+
+
+/**
  * Settings(Configuraciones)
  * 
  * Configura variables global para el puerto donde escuchara el servidor.
@@ -33,7 +41,7 @@ app.use(cors());
 
 //Routes
 
-app.use('/',express.static(__dirname+'/out'));
+app.use('/',express.static(__dirname+'/docs'));
 app.use('/api',require('./routes/lugaresRoutes'));
 app.use('/api',require('./routes/userRoutes'));
 

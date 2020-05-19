@@ -6,8 +6,9 @@ const router=express.Router();
 const LugaresController = require('../controllers/lugaresController');
 
 /**
- * @namespace RutasLugares
- * @description Rutas de la api para peticiones de los lugares.
+ * @module LugaresRoutes
+ * @description En este modulo definimos las rutas con express relacionados con los lugares.
+ * Las funciones a ejecutar en cada ruta se definen en LugaresController.
  * 
  */
 

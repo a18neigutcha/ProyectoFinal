@@ -4,8 +4,10 @@ const router=express.Router();
 const UserController = require('../controllers/userController');
 
 /**
- * @namespace RutasUsuarios
- * @description Rutas de la api para gestionar a los usuarios.
+ * @module UserRoutes
+ * @description En este modulo definimos las rutas con express relacionados con la gention de usuarios.
+ * Las funciones a ejecutar en cada ruta se definen en UserController.
+ * 
  */
 router.post('/signUp',UserController.signUp);
 router.post('/signIn',UserController.signIn);

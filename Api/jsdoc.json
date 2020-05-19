@@ -1,0 +1,17 @@
+{
+    "source":{
+        "include":["src"],
+        "includePattern":".js$",
+        "excludePattern":"(node_modules/|docs)"
+    },
+    "templates": {
+        "cleverLinks":true,
+        "monospaceLinks":true
+    },
+    "opts":{
+        "recurse":true,
+        "destination":"./src/docs/",
+        "readme":"./JsDoc.md",
+        "template":"./BarcelonaEscondida-template"
+    }
+}

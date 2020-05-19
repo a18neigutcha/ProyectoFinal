@@ -1,8 +1,7 @@
 /**
- * Fichero de confiracion del servidor.
+ * @file config.js
  * 
- * @var {String} secret Palabra secreta para codificar JsonToken
- * @var {Json} databaseAcces Parametros de acceso a la base de datos segun requisitos del mysql.
+ * @description Fichero de confiracion del servidor.
  * 
  */
 module.exports = {
