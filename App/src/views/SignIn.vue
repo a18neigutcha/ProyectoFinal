@@ -4,7 +4,7 @@
         <input type="text" name="username" v-model="input.email" placeholder="Email Usuario" />
         <input type="password" name="password" v-model="input.password" placeholder="Contraseña" />
         <button type="button" v-on:click="submit()">Inicia Sesión</button>
-        {{input.email}}
+
     </div>
 </template>
 
@@ -34,9 +34,15 @@ export default {
                     password: this.input.password
                 })
                 .then((response) => {
-                    console.log(response.data);
+                    //Crea el token de la sesion de usuario.
+                    this.$cookies.set("token",response.data.token);
+
+                    //Redirige al inicio.
+                    this.$router.push("/");
+
                 },(error) => {
                     console.log(error.response.data);
+                    alert("Credenciales erroneas");
                 });
             }
         }
