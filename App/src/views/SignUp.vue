@@ -9,12 +9,11 @@
                 <input type="password" name="confirmaPassword" v-model="input.confirmaPassword" placeholder="Confirma Contraseña" />
                 <button type="button" v-on:click="CreateUser()">Regístrate</button>
             </form> 
-            <p v-if="$validator.email.required">Provide an email</p>
+            <p v-if="this.$validator.email.required">Provide an email</p>
         </validator>
     </div>
 </template>
 
-W
 <script>
 
     import axios from 'axios';
@@ -28,8 +27,7 @@ W
                     email: "",
                     password: "",
                     confirmaPassword: ""
-                },
-                user: null
+                }
             }
     
     },
@@ -50,11 +48,6 @@ W
                     alert("Usuario no registrado!")
                 });
                 
-        },
-        validators: {
-            checkSamePasswords: function(val) {
-                return val == this.input.confirmaPassword;
-            }
         }
         
         
@@ -63,12 +56,6 @@ W
 }
 
 </script>
-/* <input type="submit" value="Create user" v-if="$validator.valid"/>
-
-<p v-if="$validator.email.required">Provide an email</p>
-<p v-if="$validator.email.email">Please provide a valid email adress</p>
-<p v-if="$validator.email.checkUserExists">This email is already in use</p> */
-
 <style>
     .formulario {
          border: none;

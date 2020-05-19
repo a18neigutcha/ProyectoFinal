@@ -9,11 +9,16 @@ Vue.use(VueCookies);
 Vue.$cookies.config('1d');
 Vue.$cookies.set('token','default');
 
+import VueValidator from 'vue-validator';
+Vue.use(VueValidator);
+
 
 import { LMap, LTileLayer, LMarker } from 'vue2-leaflet';
 import 'leaflet/dist/leaflet.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 import '@fortawesome/fontawesome-free/js/all.js';
+
+
 
 
 import L from 'leaflet';
