@@ -14,8 +14,8 @@
                         ENTRA
                     </a>
                     <div class="dropdown-menu">
-                        <router-link class="dropdown-item" to="/Login">Inicia sesión</router-link>
-                        <router-link class="dropdown-item" to="/Registro">Registrate</router-link>
+                        <router-link class="dropdown-item" to="/SignIn">Inicia sesión</router-link>
+                        <router-link class="dropdown-item" to="/SignUp">Registrate</router-link>
                         <router-link class="dropdown-item" to="/UserPage">Panel Usuario</router-link>
                     </div>
                 </li>
@@ -38,11 +38,8 @@
 </template>
 
 <script>
-/*     import SignIn from "../views/SignIn.vue";
-    import SignUp from "../views/SignUp.vue";
-    import UserPage from "../views/UserPage.vue"; */
     export default {
-    name: "MenuLogIn"
+        name: "MenuLogIn"
     };
 </script>
 <style>

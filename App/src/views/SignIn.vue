@@ -1,59 +1,63 @@
 <template>
-    <div class="SignIn">
-        <div class="row">
-            <div class="col">
-                <div class="card-deck">
-                    <CartaLugar
-                        v-for="(lugar,id) in datos" :key="id"
-                        :titulo="lugar.nombre"
-                        :subtitulo="lugar.direccion"
-                        :descripcion="lugar.descripcion"
-                        :dirUrl="lugar.dirUrl"
-                    ></CartaLugar>   
-                </div>
-            </div>
-                        
-        </div>
+    <div id="SignIn">
+        <h1>Login</h1>
+        <input type="text" name="username" v-model="input.email" placeholder="Email Usuario" />
+        <input type="password" name="password" v-model="input.password" placeholder="Contraseña" />
+        <button type="button" v-on:click="submit()">Inicia Sesión</button>
     </div>
 </template>
+
 <script>
 
 import axios from 'axios';
 
 export default {
     name: "SignIn",
-  components:{
-      CartaLugar
-  },
-  data:function() {
-      return {
-          datos:{
-              titulo:"",
-              subtitulo:"",
-              descripcion:"",
-              url:""
-
-          },
-          axx:0
-      }
-      
-
-  },
-  mounted () {
-    axios.get('http://localhost:3000/api/',{
-        headers: {
-          'Access-Control-Allow-Origin': 'http://localhost:3000',
+    data() {
+        return {
+            input: {
+                email: "",
+                password: ""
+            },
+            user: null
         }
-    })
-    .then(response =>{
-        this.datos=response.data;
-        console.log(response.data);
-    })
+ 
+  },
+  methods: {
+      submit:function(){
+          if(this.email==""){
+              alert("El usuario no está registrado");
+          }else{
+              axios.post('http://localhost:3000/api/signIn',{
+                    headers: {
+                    'Access-Control-Allow-Origin': 'http://localhost:3000',
+                    },
+                    data: {
+                        email: this.email,
+                        password: this.password
+                    }
+                })
+                .then((response) => {
+                    console.log(response.data);
+                },(response,error) => {
+                    console.log(error);
+                    console.log(response.data);
+                });
+            }
+        }
+          
   }
 }
+
 </script>
 
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+    #secure {
+        background-color: #FFFFFF;
+        border: 1px solid #CCCCCC;
+        padding: 20px;
+        margin-top: 10px;
+    }
 </style>

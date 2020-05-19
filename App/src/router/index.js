@@ -3,6 +3,9 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Recomendaciones from "../views/Recomendaciones.vue";
 import ViewMapa from "../views/ViewMapa.vue";
+import SignIn from "../views/SignIn.vue";
+import SignUp from "../views/SignUp.vue";
+import UserPage from "../views/UserPage.vue";
 
 Vue.use(VueRouter);
 
@@ -30,6 +33,21 @@ const routes = [
     path: "/ViewMapa",
     name: "ViewMapa",
     component: ViewMapa
+  },
+  {
+    path: '/SignIn',
+    name: 'SignIn',
+    component: SignIn
+  },
+  {
+    path: '/SignUp',
+    name: 'SignUp',
+    component: SignUp
+  },
+  {
+    path: '/UserPage',
+    name: 'UserPage',
+    component: UserPage
   }
 ];
 
