@@ -4,9 +4,9 @@
         <input type="text" name="username" v-model="input.email" placeholder="Email Usuario" />
         <input type="password" name="password" v-model="input.password" placeholder="Contraseña" />
         <button type="button" v-on:click="submit()">Inicia Sesión</button>
-
-    </div>
+    </div> 
 </template>
+
 
 <script>
 

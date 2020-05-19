@@ -10,7 +10,6 @@ Vue.$cookies.config('1d');
 Vue.$cookies.set('token','default');
 
 
-
 import { LMap, LTileLayer, LMarker } from 'vue2-leaflet';
 import 'leaflet/dist/leaflet.css';
 import '@fortawesome/fontawesome-free/css/all.css';
