@@ -95,7 +95,7 @@ class UserController{
                     expiresIn: 60 * 60 * 24
                 });
 
-                res.status(200).json({auth: true,token});
+                res.status(200).json({auth: true,token,user});
                 
 
             }else{

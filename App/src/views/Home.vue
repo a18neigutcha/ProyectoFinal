@@ -19,7 +19,6 @@
         </div>
 
 
-
         <div class="row mt-3">
 
           <div class="col align-self-center">
@@ -29,12 +28,9 @@
         </div>
 
         <div class="row mt-3">
+
         </div>
 
-        
-
-
-        
       </div>
 
     </div>
@@ -49,6 +45,11 @@ export default {
   name: "Home",
   components: {
     CarruselLugares
+  },
+  methods: {
+    verificarLogIn:function(){
+      console.log(this.$cookies.get("token"));
+    }
   }
 };
 </script>

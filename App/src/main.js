@@ -3,6 +3,12 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 
+
+import VueCookies from 'vue-cookies';
+Vue.use(VueCookies);
+Vue.$cookies.config('1d');
+Vue.$cookies.set('token','default');
+
 import { LMap, LTileLayer, LMarker } from 'vue2-leaflet';
 import 'leaflet/dist/leaflet.css';
 import '@fortawesome/fontawesome-free/css/all.css';
