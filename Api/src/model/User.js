@@ -1,14 +1,13 @@
 const bcrypt = require('bcryptjs');
-const mysqlConnection = require('../database');
 
-module.exports = class User{
+class User{
 
     /**
-     * 
-     * @param {int} id 
-     * @param {string} userName 
-     * @param {string} email 
-     * @param {string} password
+     * @constructor User
+     * @param {int} id ID del usuario.
+     * @param {string} userName Nomber del usuario. 
+     * @param {string} email Email del usuario
+     * @param {string} password Password encryptado.
      *  
      */
 
@@ -42,3 +41,5 @@ module.exports = class User{
 
 
 }
+
+module.exports = User;

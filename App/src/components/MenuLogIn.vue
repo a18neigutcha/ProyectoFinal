@@ -25,8 +25,8 @@
                         <i class="fas fa-sign-in-alt"></i>
                     </router-link>
                 </li>
-                                <li class="nav-item mx-3">
-                    <router-link class="nav-link" to="/Api/Documentacion">Api</router-link>
+                <li class="nav-item mx-3">
+                    <a class="nav-link" href="http://localhost:3000">Api</a>
                 </li>
                 <li class="nav-item mx-3">
                     <router-link class="nav-link" to="/Ayuda">Help</router-link>
@@ -50,5 +50,5 @@
          border: none;
          box-shadow: 0 1px 20px 0 rgba(0,0,0,.1);
          width: 200%;
-       }
+    }
 </style>

@@ -1,6 +1,15 @@
 const jwt = require('jsonwebtoken');
 const config = require('./config');
 
+/**
+ * @function verifyToken
+ * @description Nos autentifica el token segun los parametros secretos configurados.
+ * 
+ * @param {*} req 
+ * @param {*} res 
+ * @param {*} next 
+ */
+
 async function verifyToken(req, res, next) {
     const token = req.headers['x-access-token'];
     if (!token) {
