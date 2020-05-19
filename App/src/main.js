@@ -9,13 +9,6 @@ Vue.use(VueCookies);
 Vue.$cookies.config('1d');
 Vue.$cookies.set('token','default');
 
-import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue';
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap-vue/dist/bootstrap-vue.css';
-
-Vue.use(BootstrapVue);
-Vue.use(BootstrapVueIcons);
-
 
 
 import { LMap, LTileLayer, LMarker } from 'vue2-leaflet';
