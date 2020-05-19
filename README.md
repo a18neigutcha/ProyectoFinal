@@ -46,9 +46,15 @@ Para levantar los contenedores correr el comando en del directorio del proyecto.
 
 - docker-compose up -d
 
-Desde app. Se ejecuta con el comando npm run serve  y se pueden visualizar la página desplegada en dos direcciones:
+Ejecuciones Básicas (revisar documentación específica en cada readme). Ambas ejecuciones son necesarias mientras que no se despliegue en canales oficiales como AWS:
+
+Desde el directori api. Con terminal, se ejecuta con el comando npm run dev y el servidor se pone en marcha.
+
+Desde el directori app. Con terminal, se ejecuta con el comando npm run serve y se pueden visualizar la página desplegada en dos direcciones:
  - Local:   http://localhost:8080/ 
   - Network: http://192.168.0.15:8080/
+
+
 
 > Para una mejor integracion con docker se utiliza DockerHub con GitHub de esta forma cada vez que se realiza un commit en el proyecto git se auto genera las imagenes correspondientes listas para su uso en el DockerHub.
 
