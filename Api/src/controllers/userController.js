@@ -64,6 +64,8 @@ class UserController{
 
     static async signIn(req, res){
 
+        console.log(req.body);
+
         await mysqlConnection.query('SELECT * FROM USUARIO WHERE email=?',[req.body.email],async (err, result, fields)=>{
             if (err){
                 console.log(err);
@@ -83,7 +85,7 @@ class UserController{
                 const validPassword = await user.comparePassword(req.body.password);
                 console.log("Valido",validPassword);
                 if (!validPassword) {
-                    res.status(401).send({
+                    res.status(401).json({
                         auth: false,
                         text:"password incorrecto"
                         

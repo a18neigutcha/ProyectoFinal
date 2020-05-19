@@ -10,7 +10,7 @@ module.exports = {
     databaseAcces:{
         host: 'mysql',
         user: 'root',
-        password: '1234',
+        password: 'password',
         database: 'RE_FIND',
         insecureAuth : true
     }

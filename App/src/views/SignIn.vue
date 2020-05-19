@@ -4,6 +4,7 @@
         <input type="text" name="username" v-model="input.email" placeholder="Email Usuario" />
         <input type="password" name="password" v-model="input.password" placeholder="Contraseña" />
         <button type="button" v-on:click="submit()">Inicia Sesión</button>
+        {{input.email}}
     </div>
 </template>
 
@@ -29,19 +30,13 @@ export default {
               alert("El usuario no está registrado");
           }else{
               axios.post('http://localhost:3000/api/signIn',{
-                    headers: {
-                    'Access-Control-Allow-Origin': 'http://localhost:3000',
-                    },
-                    data: {
-                        email: this.email,
-                        password: this.password
-                    }
+                    email: this.input.email,
+                    password: this.input.password
                 })
                 .then((response) => {
                     console.log(response.data);
-                },(response,error) => {
-                    console.log(error);
-                    console.log(response.data);
+                },(error) => {
+                    console.log(error.response.data);
                 });
             }
         }
