@@ -40,6 +40,8 @@ export default {
                     //Redirige al inicio.
                     this.$router.push("/");
 
+                     this.$emit("inicioSesion", true);
+
                 },(error) => {
                     console.log(error.response.data);
                     alert("Credenciales erroneas");

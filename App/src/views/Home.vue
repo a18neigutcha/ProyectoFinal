@@ -11,7 +11,10 @@
                 <div>
                     <h5 class="card-title">¿Que sera lo proximo que haras?</h5>
                     <p class="card-text">Encuentra tu proxima gran experiencia lo mas cerca de ti</p>
-                    <a href="#" class="btn btn-primary">Empezar ya</a>
+                    <router-link class="btn btn-primary" to="/">
+                        Empezar
+                        <i class="fas fa-arrow-right"></i>
+                    </router-link> 
                 </div>    
               </div>
             </div>

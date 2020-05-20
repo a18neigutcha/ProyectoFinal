@@ -1,15 +1,20 @@
 <template>
   <div id="app">
+
+    <!-- Header -->
     <header>
-      <BarraDeMenu nombreApp="Barcelona desconocida"/>
+      <BarraDeMenu :sesionInit="$cookies.get('token')" nombreApp="Barcelona desconocida"/>
     </header>
-    
+
+    <!-- Body (En esta parte se renderizara el contenido de las paginas) -->
     <router-view />
-    <div class="row align-items-end">
-      <div class="col">
-        <Footer/>
-      </div>
-    </div>
+
+
+    <!-- Footer -->
+    <footer>
+      <Footer/>
+    </footer>
+    
     
   </div>
 </template>
@@ -22,7 +27,8 @@ export default {
   components: {
     BarraDeMenu,
     Footer
-  }
+  },
+
 }
 </script>
 

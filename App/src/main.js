@@ -7,7 +7,6 @@ import store from "./store";
 import VueCookies from 'vue-cookies';
 Vue.use(VueCookies);
 Vue.$cookies.config('1d');
-Vue.$cookies.set('token','default');
 
 import VueValidator from 'vue-validator';
 Vue.use(VueValidator);
