@@ -24,30 +24,31 @@ class UserController{
 
     static async signUp(req,res){
         try{
+
             // Receiving Data
+            console.log(req.body);
 
-            const user = {userName,email,password} = req.body;
-            
-            console.log(user);
+            req.body.password = await User.encryptPassword(req.body.password);
 
-            password = await User.encryptPassword(password);
-
-            console.log("Password encryptado: "+ password);
+            console.log("Password encryptado: "+ req.body.password);
 
             
             //Save with mysql
-            await mysqlConnection.query('INSERT INTO USUARIO () set ?',[req.body]);
+            await mysqlConnection.query('INSERT INTO USUARIO (userName,email,password) VALUES (?,?,?)',[req.body.userName,req.body.email,req.body.password]);
 
-            const userId = await mysqlConnection.query('SELECT id FROM USUARIO WHERE email = ? ',[req.body.email]);
+            await mysqlConnection.query('SELECT id FROM USUARIO WHERE email = ? ',[req.body.email],(err, result, fields)=>{
 
-            console.log("User id".userId);
+                console.log(result[0]);
 
-            // Create a Token
-            const token = jwt.sign({ id: userId }, config.secret, {
-                expiresIn: 60 * 60 * 24 // expires in 24 hours
+                // Create a Token
+                const token = jwt.sign({ id: result[0] }, config.secret, {
+                    expiresIn: 60 * 60 * 24 // expires in 24 hours
+                });
+
+                res.json({ auth: true, token });
             });
 
-            res.json({ auth: true, token });
+            
         } catch (e) {
 
             console.log(e);
@@ -120,10 +121,9 @@ class UserController{
      */
     static async me(req,res){
 
-        console.log(req.userId);
 
-        await mysqlConnection.query('SELECT * FROM USUARIO WHERE id = ? ',[req.userId],(err,result,fields)=>{
-            
+        await mysqlConnection.query('SELECT * FROM USUARIO WHERE ?',[req.userId],(err,result,fields)=>{
+            console.log(fields);
             if(err){
                 console.log(err);
                 res.status(500);
