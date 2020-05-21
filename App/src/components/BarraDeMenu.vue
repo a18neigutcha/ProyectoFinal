@@ -45,7 +45,7 @@
                                 <div class="dropdown-menu">
                                     <router-link class="dropdown-item" to="/UserPage">Tu perfil</router-link>
                                     <router-link class="dropdown-item" to="/Configuracion">Configuración</router-link>
-                                    <router-link class="dropdown-item" to="/">Cerrar sesión</router-link>
+                                    <button class="dropdown-item" @click="logOut()">Cerrar sesión</button>
                                 </div>
                             </li>
                         </ul>
@@ -77,6 +77,12 @@
         },
         components: {
             SubMenu,
+        },
+        methods: {
+            logOut: function(){
+                this.$cookies.remove("token");
+                this.sesionInit = this.$cookies.get("token");
+            }
         }
     }
 </script>

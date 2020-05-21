@@ -106,14 +106,12 @@ class LugaresController {
     static async listaPorUsuario(req,res){
         
 
-        await mysqlConnection.query('SELECT * FROM LUGAR WHERE userId = ? ',[req.query.userId],(err,result,fields)=>{
+        await mysqlConnection.query('SELECT * FROM LUGAR WHERE userId = ? ',[req.userId],(err,result,fields)=>{
             
             if(err){
                 console.log(err);
             }else{
-                res.status(200).json({
-                    lugares:result
-                });
+                res.status(200).json(result);
             }
             
         }); 

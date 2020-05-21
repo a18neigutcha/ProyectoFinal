@@ -25,23 +25,25 @@ class UserController{
     static async signUp(req,res){
         try{
             // Receiving Data
-            const {id, userName, email, password } = req.body;
 
-            // Creating a new User
-            const user = new User(
-                id,
-                userName,
-                email,
-                password
-            ); 
+            const user = {userName,email,password} = req.body;
+            
+            console.log(user);
 
-            user.password = await User.encryptPassword(password);
+            password = await User.encryptPassword(password);
+
+            console.log("Password encryptado: "+ password);
+
             
             //Save with mysql
-            await mysqlConnection.query('INSERT INTO USUARIO set ?',[user]);
+            await mysqlConnection.query('INSERT INTO USUARIO () set ?',[req.body]);
+
+            const userId = await mysqlConnection.query('SELECT id FROM USUARIO WHERE email = ? ',[req.body.email]);
+
+            console.log("User id".userId);
 
             // Create a Token
-            const token = jwt.sign({ id: user.id }, config.secret, {
+            const token = jwt.sign({ id: userId }, config.secret, {
                 expiresIn: 60 * 60 * 24 // expires in 24 hours
             });
 
@@ -71,17 +73,9 @@ class UserController{
             }
             if(result.length>0){
 
-                const user = new User(
-                    result[0].id,
-                    result[0].userName,
-                    result[0].email,
-                    result[0].password
-                );
 
-                console.log(user.password);
-
-                const validPassword = await user.comparePassword(req.body.password);
-                console.log("Valido",validPassword);
+                const validPassword = await User.comparePassword(result[0].password,req.body.password);
+                console.log("password valido: ",validPassword);
                 if (!validPassword) {
                     res.status(401).json({
                         auth: false,
@@ -93,7 +87,7 @@ class UserController{
                     expiresIn: 60 * 60 * 24
                 });
 
-                res.status(200).json({auth: true,token,user});
+                res.status(200).json({auth: true,token});
                 
 
             }else{
@@ -126,16 +120,16 @@ class UserController{
      */
     static async me(req,res){
 
-        await mysqlConnection.query('SELECT * FROM USUARIO WHERE id = ? ',[req.query.userId],(err,result,fields)=>{
+        console.log(req.userId);
+
+        await mysqlConnection.query('SELECT * FROM USUARIO WHERE id = ? ',[req.userId],(err,result,fields)=>{
             
             if(err){
                 console.log(err);
                 res.status(500);
             }else if(result.length>0){
                 console.log(result);
-                res.status(200).json({
-                    user:result
-                });
+                res.status(200).send(result[0]);
             }
             else{
                 res.status(404).json({

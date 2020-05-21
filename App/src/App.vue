@@ -28,7 +28,8 @@ export default {
     BarraDeMenu,
     Footer
   },
-
+  methods: {
+  }
 }
 </script>
 

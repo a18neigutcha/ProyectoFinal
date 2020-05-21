@@ -1,18 +1,11 @@
 <template>
   <div class="container">
     <!-- Informacion del usuario. -->
-
-    <div class="card mb-3" style="max-width: 540px;">
-        <div class="row no-gutters">
-            <div class="col-md-4">
-            <img src="@/assets/logo.png" class="card-img" alt="Imagen del usuario.">
-            </div>
-            <div class="col-md-8">
-            <div class="card-body">
-                <h5 class="card-title">{{userName}}</h5>
-                <p class="card-text">Email: {{email}}</p>
-            </div>
-            </div>
+    <div class="row">
+            
+        <div class="col d-flex justify-content-start align-items-center">
+            <img src="@/assets/logo.png" class="iconUser" alt="Imagen del usuario.">
+            <h2 class="ml-2">{{userName}} ({{email}})</h2>
         </div>
     </div>
   </div>
@@ -30,5 +23,8 @@ export default {
 </script>
 
 <style>
-
+    .iconUser{
+        width: 4em;
+        height: 4em;
+    }
 </style>

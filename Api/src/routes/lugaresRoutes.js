@@ -24,7 +24,7 @@ router.delete('/:id',LugaresController.eliminarLugar);
  * @description Para ejecutar esta ruta es necesario un token de autenticacion.
  */
 
-router.post('/LugaresUser',verifyToken,LugaresController.listaPorUsuario);
+router.get('/user/lugares',verifyToken,LugaresController.listaPorUsuario);
 
 
 module.exports = router;

@@ -2,21 +2,19 @@ const bcrypt = require('bcryptjs');
 
 class User{
 
-    /**
-     * @constructor User
-     * @param {int} id ID del usuario.
-     * @param {string} userName Nomber del usuario. 
-     * @param {string} email Email del usuario
-     * @param {string} password Password encryptado.
-     *  
-     */
+    // /**
+    //  * @constructor User
+    //  * @param {string} userName Nomber del usuario. 
+    //  * @param {string} email Email del usuario
+    //  * @param {string} password Password encryptado.
+    //  *  
+    //  */
 
-    constructor(id,userName,email,password) {
-        this.id = id;
-        this.userName = userName;
-        this.email = email;
-        this.password = password;
-    }
+    // constructor(userName,email,password) {
+    //     this.userName = userName;
+    //     this.email = email;
+    //     this.password = password;
+    // }
 
     /**
      * @method encryptPassword
@@ -32,11 +30,12 @@ class User{
     /**
      * @method comparePassword
      * @param {string} password 
+     * @param {string} passwordComp
      * @returns {boolean} Nos retorna true si los password coinciden y false caso contrario.
      */
 
-    async comparePassword(password){
-        return await bcrypt.compare(password, this.password);
+    static async comparePassword(password,passwordComp){
+        return await bcrypt.compare(passwordComp,password);
     }
 
 
