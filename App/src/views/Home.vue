@@ -29,7 +29,7 @@
                         <!-- section-title -->
                         <div class="section-title mb-0">
                             <h2>Lugares destacados</h2>
-                            <p>Our approach is very simple: we define your problem and give the best solution. </p>
+                            <p>Los últimos lugares que os recomendamos, las mejores actualizaciones de nuestros usuarios y equipo. </p>
                         </div>
                         <!-- /.section-title -->
                     </div>
