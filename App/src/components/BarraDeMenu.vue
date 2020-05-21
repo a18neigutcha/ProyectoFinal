@@ -25,7 +25,7 @@
                                 <router-link class="nav-link" to="/Ayuda">Help</router-link>
                             </li>
                             <!-- Item Registrarte -->
-                            <li class="nav-item mx-3">
+                            <li v-show="!sesionInit" class="nav-item mx-3">
                                 <router-link class="nav-link" to="/SignUp">Registrate</router-link>
                             </li>
                             <!-- Item LogIn (Se muestrs si el no hay una session iniciada) -->

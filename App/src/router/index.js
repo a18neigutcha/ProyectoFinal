@@ -6,6 +6,8 @@ import ViewMapa from "../views/ViewMapa.vue";
 import SignIn from "../views/SignIn.vue";
 import SignUp from "../views/SignUp.vue";
 import UserPage from "../views/UserPage.vue";
+import Admin from "../views/Admin.vue"
+import Actividades from "../views/Actividades";
 
 Vue.use(VueRouter);
 
@@ -48,6 +50,14 @@ const routes = [
     path: '/UserPage',
     name: 'UserPage',
     component: UserPage
+  },{
+    path: '/Admin',
+    name: 'Admin',
+    component: Admin
+  },{
+    path: '/Actividades',
+    name: 'Actividades',
+    component: Actividades
   }
 ];
 
