@@ -64,8 +64,6 @@ class UserController{
 
     static async signIn(req, res){
 
-        console.log(req.body);
-
         await mysqlConnection.query('SELECT * FROM USUARIO WHERE email=?',[req.body.email],async (err, result, fields)=>{
             if (err){
                 console.log(err);
@@ -118,6 +116,35 @@ class UserController{
 
     static async logOut(req,res){
         res.status(200).send({ auth: false, token: null });
+    }
+
+    /**
+     * @method me
+     * @description Autentifica el login de un usuario y nos retorna sus datos.
+     * @param {*} req
+     * @param {*} res
+     */
+    static async me(req,res){
+
+        await mysqlConnection.query('SELECT * FROM USUARIO WHERE id = ? ',[req.query.userId],(err,result,fields)=>{
+            
+            if(err){
+                console.log(err);
+                res.status(500);
+            }else if(result.length>0){
+                console.log(result);
+                res.status(200).json({
+                    user:result
+                });
+            }
+            else{
+                res.status(404).json({
+                    text:"Usuario no existente."
+                })
+            }
+            
+        });
+
     }
     
 }

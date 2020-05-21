@@ -13,11 +13,15 @@ const config = require('./config');
 async function verifyToken(req, res, next) {
     const token = req.headers['x-access-token'];
     if (!token) {
-        return res.status(401).send({ auth: false, message: 'No token provided' });
+        return res.status(401).send({ auth: false, text: 'token no enviado.' });
     }
-    // Decode the Tokenreq.userId = decoded.id;
-    const decoded = await jwt.verify(token, config.secret);
-    req.userId = decoded.id;
+    try{
+        const decoded = await jwt.verify(token, config.secret);
+        req.query.userId = decoded.id;
+    }catch(e){
+        return res.status(401).send({ auth: false, text: 'token invalido.' });
+    }
+    
     next();
 }
 

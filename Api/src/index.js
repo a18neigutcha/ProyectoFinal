@@ -31,7 +31,7 @@ app.use(express.json());
 /**
  * Nos permite ver las peticiones al servidor.
  */
-app.use(morgan());
+app.use(morgan(":method :url :status"));
 
 /**
  * Configura las respuestas del servidor para que sigan protocoles

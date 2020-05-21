@@ -47,7 +47,7 @@ class LugaresController {
             }else if(result.length>0){
                 res.json(result[0]);
             }else{
-                res.status(404).json({text:"The game doesn't exists"});
+                res.status(404).json({text:"El lugar no existe"});
             }
         });
     }
@@ -62,7 +62,7 @@ class LugaresController {
    static async crearLugar(req,res){
 
     await mysqlConnection.query('INSERT INTO LUGAR set ?',[req.body]);
-    res.json({text:'Game saved'});
+    res.json({text:'Lugar registrado'});
 
    }
 
@@ -78,7 +78,7 @@ class LugaresController {
    static async actualizarLugar(req,res){
     const {id} = req.params;
     await pool.query('UPDATE LUGAR set ? WHERE id = ?',[req.body,id]);
-    res.json({text:'The game was updated'});
+    res.json({text:'Lugar actualizado'});
    }
 
    /* 
@@ -95,7 +95,28 @@ class LugaresController {
     static async eliminarLugar(req,res){
         const {id} = req.params;
         await pool.query('DELETE FROM LUGAR WHERE id=?',[id]);
-        res.json({text:'The game was deleted'});
+        res.json({text:'Lugar elimina.'});
+    }
+
+    /**
+     * @method listaPorUsuario
+     * @param {int} req id del usuario.
+     * @param {Json} res Lista de lugares del usuario. 
+     */
+    static async listaPorUsuario(req,res){
+        
+
+        await mysqlConnection.query('SELECT * FROM LUGAR WHERE userId = ? ',[req.query.userId],(err,result,fields)=>{
+            
+            if(err){
+                console.log(err);
+            }else{
+                res.status(200).json({
+                    lugares:result
+                });
+            }
+            
+        }); 
     }
 }
 
