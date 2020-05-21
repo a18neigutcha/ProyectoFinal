@@ -26,7 +26,7 @@ class UserController{
         try{
 
             // Receiving Data
-            console.log(req.body);
+            console.log(req);
 
             req.body.password = await User.encryptPassword(req.body.password);
 
@@ -123,7 +123,6 @@ class UserController{
 
 
         await mysqlConnection.query('SELECT * FROM USUARIO WHERE ?',[req.userId],(err,result,fields)=>{
-            console.log(fields);
             if(err){
                 console.log(err);
                 res.status(500);

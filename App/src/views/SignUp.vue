@@ -11,12 +11,8 @@
             </form> 
         </validator>
     </div> -->
-    <form
+    <div
         id="SignUp"
-        @submit="checkForm"
-        action="http://localhost:3000/api/signUp"
-        method="post"
-        novalidate="true"
     >
 
         <p v-if="errors.length">
@@ -56,22 +52,19 @@
         </p>
 
         <p>
-            <label for="confirmPassword">Confirma tu password: </label>
+            <label for="confirmaPassword">Confirma tu password: </label>
             <input
-                id="confirmPassword"
-                v-model="confirmPassword"
-                name="confirmPassword"
+                id="confirmaPassword"
+                v-model="confirmaPassword"
+                name="confirmaPassword"
             >
         </p>
 
         <p>
-            <input
-                type="submit"
-                value="Submit"
-            >
+            <button @click="createUser()">Registrarse</button>
         </p>
 
-    </form>
+    </div>
 </template>
 
 <script>
@@ -92,20 +85,33 @@
     },
     methods: {
         createUser:function(){
-            axios.post('http://localhost:3000/api/signUp',{
-                    email: this.input.email,
-                    password: this.input.password
+            
+            if(this.checkForm()){
+                console.log(this.checkForm());
+                axios.post('http://localhost:3000/api/signUp',{
+                    userName:this.userName,
+                    email: this.email,
+                    password: this.password
+                    
+                    
                 })
                 .then((response) => {
                     console.log(response.data);
 
-                    //Redirige al inicio
-                    this.$route.push("@/Home");
+                    //Crea el token de la sesion de usuario.
+                    this.$cookies.set("token",response.data.token);
+
+                    //Redirige al inicio.
+                    this.$router.push("/");
+
+                    this.$emit("inicioSesion", true);
 
                 },(error) => {
                     console.log(error.response.data);
                     alert("Usuario no registrado!")
                 });
+            }
+            
                 
         },
         checkForm: function (e) {
@@ -118,6 +124,12 @@
                 this.errors.push('Email required.');
             } else if (!this.validEmail(this.email)) {
                 this.errors.push('Valid email required.');
+            }else if (!this.password){
+                this.errors.push("Password required.");
+            }else if (!this.confirmaPassword){
+                this.errors.push("Confirm your password");
+            }else if(this.password != this.confirmaPassword){
+                this.errors.push("Passwords aren't same.");
             }
 
             if (!this.errors.length) {
