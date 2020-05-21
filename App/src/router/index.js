@@ -8,6 +8,7 @@ import SignUp from "../views/SignUp.vue";
 import UserPage from "../views/UserPage.vue";
 import Admin from "../views/Admin.vue"
 import Actividades from "../views/Actividades";
+import LugarInfo from "../views/LugarInfo";
 
 Vue.use(VueRouter);
 
@@ -58,6 +59,10 @@ const routes = [
     path: '/Actividades',
     name: 'Actividades',
     component: Actividades
+  },{
+    path: '/LugarInfo/:id',
+    name: 'LugarInfo',
+    component: LugarInfo
   }
 ];
 

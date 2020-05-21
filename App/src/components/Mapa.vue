@@ -32,7 +32,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-            <router-link class="btn btn-primary" data-dismiss="modal" :to="'/'+lugar.id">
+            <router-link class="btn btn-primary" data-dismiss="modal" :to="'/LugarInfo/'+lugar.id">
                 Ver más
             </router-link>
           </div>
