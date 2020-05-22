@@ -16,10 +16,16 @@
         </li> -->
 
         <!-- Item Recomendaciones (sole se mostrara si la sesion se inicio.) -->
-        <li v-show="sesionInit" class="nav-item">
+        <li class="nav-item">
             <router-link class="nav-link" to="/Actividades">
                 <i class="fas fa-hiking"></i>
                 Actividades
+            </router-link> 
+        </li>
+        <li v-show="sesionInit" class="nav-item">
+            <router-link class="nav-link" to="/AgregarActividades">
+                <i class="fas fa-plus"></i>
+                Añadir
             </router-link> 
         </li>
         <!-- Item Búsqueda de lugares registrados en nuestra base de datos -->

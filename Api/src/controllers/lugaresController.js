@@ -60,9 +60,10 @@ class LugaresController {
      */
 
    static async crearLugar(req,res){
-
+    console.log(req.method);
+    console.log(req);
     await mysqlConnection.query('INSERT INTO LUGAR set ?',[req.body]);
-    res.json({text:'Lugar registrado'});
+        res.json({text:'Lugar registrado'});
 
    }
 
