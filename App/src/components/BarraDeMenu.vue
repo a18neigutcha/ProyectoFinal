@@ -32,8 +32,7 @@
                             <li v-show="!sesionInit" class="nav-item mx-3">
                                 <router-link class="nav-link" to="/SignIn">
                                     <i v- class="fas fa-sign-in-alt"></i>
-                                    Inicia sesión
-                                    
+                                    Inicia sesión 
                                 </router-link>
                             </li>
                             <!-- Item User (Solo se muestra si el usuario inicio sesión) -->

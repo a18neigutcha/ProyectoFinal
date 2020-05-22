@@ -44,10 +44,7 @@ export default {
 
   },
   mounted () {
-    axios.get('http://localhost:3000/api/',{
-        headers: {
-          'Access-Control-Allow-Origin': 'http://localhost:3000',
-        }
+    axios.get('http://barcelonadesconocida.tk:3000/api/',{
     })
     .then(response =>{
         this.datos=response.data;

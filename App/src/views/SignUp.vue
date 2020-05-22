@@ -88,7 +88,7 @@
             
             if(this.checkForm()){
                 console.log(this.checkForm());
-                axios.post('http://localhost:3000/api/signUp',{
+                axios.post('http://barcelonadesconocida.tk:3000/api/signUp',{
                     userName:this.userName,
                     email: this.email,
                     password: this.password
