@@ -2,7 +2,7 @@
   <div class="container">
       <!-- Titulo -->
       <div class="row">
-          <h3>{{datosLugar.nombre}}</h3>
+          <h3>{{datosLugar.titulo}}</h3>
       </div>
       <div class="row">
           <Mapa :datos="[datosLugar]"/>

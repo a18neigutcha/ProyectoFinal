@@ -18,6 +18,7 @@ async function verifyToken(req, res, next) {
     }
     try{
         const decoded = await jwt.verify(token, config.secret);
+        console.log(decoded);
         console.log("decoded token: ",decoded.id);
         req.userId = decoded.id;
     }catch(e){
