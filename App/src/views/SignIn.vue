@@ -133,7 +133,7 @@ background-color: rgba(0,0,0,0.5) !important;
 .social_icon span{
 font-size: 50px;
 margin-left: 10px;
-color: #25f9c9;
+color: #ff7e0c;
 }
 
 .social_icon span:hover{

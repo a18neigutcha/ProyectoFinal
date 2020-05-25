@@ -7,14 +7,15 @@
                     <div class="card-header">
                         <h3>Registro de Usuario</h3>
                     </div>
+
                     <div class="card-body">
+                    <p v-if="errors.length">
+                        <b>Corrige estos errores(s):</b>
+                        <ul>
+                        <li v-for="(error,id) in errors" :key="id">{{ error }}</li>
+                        </ul>
+                    </p>
                         <form>       
-                            <p v-if="errors.length">
-                                <b>Please correct the following error(s):</b>
-                                <ul>
-                                <li v-for="(error,id) in errors" :key="id">{{ error }}</li>
-                                </ul>
-                            </p>
                             <div class="input-group form-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -39,8 +40,16 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-key"></i></span>
                                 </div>
-<!--                                 <label for="confirmaPassword" class="form-control"> Confirma tu password: </label> -->
                                 <input type="password" class="form-control" v-model="confirmaPassword" placeholder="Confirma contraseña">
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                                <label class="form-check-label" for="invalidCheck">
+                                    Estás de acuerdo con términos y condiciones
+                                </label>
+                                <div class="invalid-feedback">
+                                    Debes aceptar los términos y condiciones antes de aceptar.
+                                </div>
                             </div>
                             <div class="form-group">
                                 <button type="button" class="btn float-right login_btn" @click="createUser()">Regístrate</button>
@@ -52,6 +61,7 @@
                             ¿Ya tienes cuenta?<router-link to="/SignIn">Inicia Sesión</router-link>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
@@ -164,11 +174,25 @@ align-content: center;
 }
 
 .card{
-height: 420px;
+height: 530px;
 margin-top: auto;
 margin-bottom: auto;
 width: 400px;
 background-color: rgba(0,0,0,0.5) !important;
+}
+
+.card-footer{
+    margin-top: auto;
+margin-bottom: auto;
+}
+
+p{
+    color: white;
+}
+
+.form-check{
+color: white;
+
 }
 
 .card-header h3{
