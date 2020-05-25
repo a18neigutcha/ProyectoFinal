@@ -37,7 +37,7 @@
                 </div>
                 <div class="card-footer">
                     <div class="d-flex justify-content-center links">
-                        No tienes cuenta?<a href="#">Regístrate</a>
+                        No tienes cuenta?<router-link to="/SignUp">Regístrate</router-link>
                     </div>
                     <div class="d-flex justify-content-center">
                         <a href="#">¿Olvidaste la contraseña?</a>
