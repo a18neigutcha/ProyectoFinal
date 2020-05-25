@@ -32,6 +32,7 @@
                     <l-map
                         ref="myMap"
                         @ready="doSomethingOnReady()"
+                        @click="clickCordenadas()"
                         :zoom="zoom"
                         :center="center"
                         style="height: 500px; width: 100%"
@@ -192,7 +193,16 @@ export default {
         },
         uploadImage(event){
             this.imagen = event.target.files[0];
-            console.log(this.imagen);
+            //console.log(this.imagen);
+        },
+        clickCordenadas(){
+            this.map.on('click',(e)=>{
+                console.log(e);
+                this.longitud=e.latlng.lng;
+                this.latitud=e.latlng.lat;
+                this.marker=latLng(this.latitud,this.longitud);
+            });
+
         }
     }
 
