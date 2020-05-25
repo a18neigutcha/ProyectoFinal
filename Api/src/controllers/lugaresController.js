@@ -92,15 +92,21 @@ class LugaresController {
      */
 
    static async actualizarLugar(req,res){
-    const {id} = req.params;
-    await pool.query('UPDATE LUGAR set ? WHERE id = ?',[req.body,id]);
-    res.json({text:'Lugar actualizado'});
+        console.log(req.body);
+       // await pool.query('UPDATE LUGAR set ? WHERE id = ?',[req.body,id]);
+        res.json({text:'Lugar actualizado'});
    }
 
-   /* 
-        Elimina un lugar
-   */
-
+   /**
+    * @method valoraLugar
+    * @param {*} req 
+    * @param {*} res 
+    */
+   static async valoraLugar(req,res){
+        console.log(req.body);
+        // await pool.query('UPDATE LUGAR set ? WHERE id = ?',[req.body,id]);
+        res.json({text:'Lugar actualizado'});
+    }
    /**
     * @method eliminarLugar
     * @description Elimina un lugar.
