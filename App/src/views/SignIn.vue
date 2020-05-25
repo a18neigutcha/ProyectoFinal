@@ -116,7 +116,7 @@ export default {
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
 .fondo{
-background-image: url('http://getwallpapers.com/wallpaper/full/a/2/3/1087941-barcelona-city-wallpapers-1920x1080-high-resolution.jpg');
+background-image: url('http://getwallpapers.com/collection/barcelona-city-wallpapers');
 background-size: cover;
 background-repeat: no-repeat;
 height: 700px;
