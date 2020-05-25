@@ -22,10 +22,8 @@ class LugaresController {
 
         await mysqlConnection.query('SELECT * FROM LUGAR',(err,result,fields)=>{
             if(!err){
-                console.log(res);
                 res.json(result);
             }else{
-                console.log(err);
                 console.log(err);
             }
         });
@@ -75,7 +73,7 @@ class LugaresController {
             latitud,
             longitud,
             pathImg,
-            req.userId.id
+            req.userId
         ]);
 
     res.json({text:'Lugar registrado'});
@@ -103,9 +101,19 @@ class LugaresController {
     * @param {*} res 
     */
    static async valoraLugar(req,res){
-        console.log(req.body);
-        // await pool.query('UPDATE LUGAR set ? WHERE id = ?',[req.body,id]);
-        res.json({text:'Lugar actualizado'});
+        const {valoracion} = req.body;
+        const lugarId=req.params.id;
+        console.log(valoracion);
+        console.log(lugarId);
+        await mysqlConnection.query('UPDATE LUGAR set valoracion=? WHERE id = ?',[valoracion,lugarId],(err,result,fields)=>{
+            if(err){
+                console.log(err);
+                res.status(500).json({text:"Error al hacer la valoración."});
+            }else{
+                console.log(result);
+                res.status(200).json({text:"Lugar actualizado"});
+            }
+        });
     }
    /**
     * @method eliminarLugar
@@ -127,12 +135,13 @@ class LugaresController {
      */
     static async listaPorUsuario(req,res){
         
-
+        console.log(req.userId);
         await mysqlConnection.query('SELECT * FROM LUGAR WHERE userId = ? ',[req.userId],(err,result,fields)=>{
             
             if(err){
                 console.log(err);
             }else{
+                console.log(result);
                 res.status(200).json(result);
             }
             

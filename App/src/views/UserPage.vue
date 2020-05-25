@@ -15,7 +15,7 @@
                 v-else
                 v-for="(lugar,id) in userLugares" :key="id"
                 class="list-group-item list-group-item-action" 
-                :to="'/'+lugar.id"
+                :to="'/MisLugares/'+lugar.id"
             >
                 <div class="d-flex w-100 justify-content-between">
                     <h5 class="mb-1">{{lugar.titulo}}</h5>
