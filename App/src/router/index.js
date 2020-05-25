@@ -10,6 +10,8 @@ import Admin from "../views/Admin.vue"
 import Actividades from "../views/Actividades";
 import LugarInfo from "../views/LugarInfo";
 import AgregarActividades from "../views/AgregarActividades";
+import MisLugares from "../views/MisLugares";
+import LugarUpdate  from "../views/LugarUpdate";
 
 Vue.use(VueRouter);
 
@@ -68,6 +70,14 @@ const routes = [
     path: '/AgregarActividades',
     name: 'AgregarActividades',
     component: AgregarActividades
+  },{
+    path: '/MisLugares',
+    name: 'MisLugares',
+    component: MisLugares
+  },{
+    path: '/MisLugares/:id',
+    name: 'LugarUpdate',
+    component: LugarUpdate
   }
 ];
 

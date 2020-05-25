@@ -90,9 +90,36 @@ class LugaresController {
      */
 
    static async actualizarLugar(req,res){
-        console.log(req.body);
-       // await pool.query('UPDATE LUGAR set ? WHERE id = ?',[req.body,id]);
-        res.json({text:'Lugar actualizado'});
+        let pathImg = "";
+        if(req.file){
+             pathImg= 'http://localhost:3000/img/'+req.file.filename;
+        }else{
+             pathImg = req.body.imagen;
+            
+        }
+        console.log(pathImg);
+        const{titulo,direccion,descripcion,latitud,longitud,userId} = req.body;
+        const lugarId=req.params.id;
+        console.log(lugarId);
+        await mysqlConnection.query('UPDATE LUGAR set titulo=?,direccion=?,descripcion=?,latitud=?,longitud=?,imagen=? WHERE id = ?',
+            [
+                titulo,
+                direccion,
+                descripcion,
+                latitud,
+                longitud,
+                pathImg,
+                lugarId
+            ],
+        (err,result,fields)=>{
+            if(err){
+                console.log(err);
+                res.status(500).json({text:"Error al actualizar el lugar."});
+            }else{
+                console.log(result);
+                res.status(200).json({text:"Lugar actualizado"});
+            }
+        });
    }
 
    /**
@@ -124,7 +151,7 @@ class LugaresController {
 
     static async eliminarLugar(req,res){
         const {id} = req.params;
-        await pool.query('DELETE FROM LUGAR WHERE id=?',[id]);
+        await mysqlConnection.query('DELETE FROM LUGAR WHERE id=?',[id]);
         res.json({text:'Lugar elimina.'});
     }
 

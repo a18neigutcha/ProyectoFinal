@@ -23,6 +23,11 @@
             </router-link> 
         </li>
         <li v-show="sesionInit" class="nav-item">
+            <router-link class="nav-link" to="/MisLugares">
+                Mis Lugares
+            </router-link> 
+        </li>
+        <li v-show="sesionInit" class="nav-item">
             <router-link class="nav-link" to="/AgregarActividades">
                 <i class="fas fa-plus"></i>
                 Añadir

@@ -19,7 +19,7 @@
             >
                 <div class="d-flex w-100 justify-content-between">
                     <h5 class="mb-1">{{lugar.titulo}}</h5>
-                    <small>3 days ago</small>
+                    <small>{{lugar.direccion}}</small>
                 </div>
                 <p class="mb-1">
                     {{lugar.descripcion}}
