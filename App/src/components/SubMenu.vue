@@ -28,6 +28,8 @@
             <button type="button" v-on:click="filteredPacks()">Búsqueda</button>
         </li> -->
     </ul>
+
+    
     
 </template>
 
