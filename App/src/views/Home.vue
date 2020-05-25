@@ -6,7 +6,7 @@
         <div class="row">
           <div class="col">
             <div class="card text-center bg-dark text-white ">
-              <img src="@/assets/img/fondo.jpg" class="card-img imagenPortada" alt="imagen de fondo de portada.">  
+              <img src="http://getwallpapers.com/wallpaper/full/f/d/b/430292.jpg" class="card-img imagenPortada" alt="imagen de fondo de portada.">  
               <div class="card-img-overlay d-flex justify-content-center align-items-center">
                 <div>
                     <h5 class="card-title">¿Que sera lo proximo que haras?</h5>

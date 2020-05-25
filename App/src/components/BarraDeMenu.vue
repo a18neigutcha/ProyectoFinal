@@ -1,9 +1,9 @@
 <template>
 
-<div class="container-fluid ">
+<div class="container-fluid general">
         <!-- Barra de la cabecera -->
         <div class="row">
-            <div class="col">
+            <div class="col grande">
                 <div class="navbar navbar-expand-lg navbar-light ">
                     <!-- Logo de la pagina web -->
                     <router-link class="navbar-brand mb-0 h1" to="/">
@@ -98,7 +98,17 @@
         width: 3em;
         height: 3em;
     }
-    .header-wrapper{
+
+    .grande{
+        background: white;
+        font: white;
+    } 
+
+    .nav-link{
+        color: #ff7e0c;
+    } 
+
+/*     .header-wrapper{
 
     background: #f5f5f5; 
     width: 100%; }
@@ -199,12 +209,12 @@
     .navbar-brand, .navbar-nav > li > a {
         text-shadow: 0 0px 0 rgba(255, 255, 255, 0.25);
     }
-/*     @font-face {
+    @font-face {
         font-family: "ssi-icomoon";
         font-style: normal;
         font-weight: normal;
         src: url("@/font/ssi-icomoon.eot?#iefixssi-texv9a") format("embedded-opentype"), url("../font/ssi-icomoon.woff?ssi-texv9a") format("woff"), url("../font/ssi-icomoon.ttf?ssi-texv9a") format("truetype"), url("../font/ssi-icomoon.svg?ssi-texv9a#ssi-icomoon") format("svg");
- } */
+ } 
     .simple-social-icons {
         overflow: hidden;
     }
@@ -241,6 +251,6 @@
     .simple-social-icons ul.aligncenter li {
         display: inline-block;
         float: none;
-    }
+    } */
 
 </style>

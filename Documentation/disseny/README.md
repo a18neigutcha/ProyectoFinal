@@ -6,6 +6,9 @@ Ejemplo: http://atenciociutadana.gencat.cat/ca/serveis/webs/pautes-destil/
 
 Blanco, negro, tonos cálidos en contraste con los tonos fríos en cambio de ventanas para el fondo. Siendo imagen esta, deberá priorizar composición de dominancia de los susodichos tonos.
 
+Links, enlaces e iconos:
+  ff7e0c orange
+
 ## Fuentes
 
 /* latin */

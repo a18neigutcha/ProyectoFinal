@@ -43,10 +43,12 @@
                             <div class="f_widget social-widget pl_70 wow fadeInLeft" data-wow-delay="0.8s" style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInLeft;">
                                 <h3 class="f-title f_600 t_color f_size_18">Síguenos en nuestras redes sociales</h3>
                                 <div class="f_social_icon">
-                                    <a href="#" class="fab fa-facebook"></a>
+                                    <a href="https://www.facebook.com/" class="fab fa-facebook"  target="_blank"></a>
                                     <a href="#" class="fab fa-twitter"></a>
+                                    <a href="https://www.instagram.com/" class="fab fa-instagram" target="_blank"></a>
                                     <a href="#" class="fab fa-linkedin"></a>
                                     <a href="#" class="fab fa-pinterest"></a>
+                                    <a href="https://www.youtube.com/" class="fab fa-youtube"></a>
                                 </div>
                             </div>
                         </div>
