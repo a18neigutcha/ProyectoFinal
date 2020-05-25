@@ -32,7 +32,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-key"></i></span>
                                 </div>
-                                <input type="password" class="form-control" v-model="input.password" placeholder="Contraseña">
+                                <input type="password" class="form-control" v-model="password" placeholder="Contraseña">
                     
                             </div>
                                 <div class="input-group form-group">
@@ -183,7 +183,7 @@
 }
 
 </script>
-<style>
+<style scoped>
 /*     .formulario {
          border: none;
          box-shadow: 0 5px 20px 0 rgba(0,0,0,.1);

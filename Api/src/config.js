@@ -5,6 +5,7 @@
  * 
  * 
  */
+
 module.exports = {
 
     secret: 'mysecretkey',
