@@ -4,7 +4,7 @@
         <div class="d-flex justify-content-center h-100">
             <div class="card">
                 <div class="card-header">
-                    <h3>Inicia Sesión</h3>
+                    <h3>Inicio de Sesión</h3>
                     <div class="d-flex justify-content-end social_icon">
                         <span><i class="fab fa-facebook-square"></i></span>
                         <span><i class="fab fa-google-plus-square"></i></span>
@@ -133,7 +133,7 @@ background-color: rgba(0,0,0,0.5) !important;
 .social_icon span{
 font-size: 50px;
 margin-left: 10px;
-color: #FFC312;
+color: #25f9c9;
 }
 
 .social_icon span:hover{
@@ -153,7 +153,7 @@ top: -45px;
 
 .input-group-prepend span{
 width: 50px;
-background-color: #FFC312;
+background-color: #25f9c9;
 color: black;
 border:0 !important;
 }
@@ -178,7 +178,7 @@ margin-right: 5px;
 
 .login_btn{
 color: black;
-background-color: #FFC312;
+background-color: #25f9c9;
 width: 100px;
 }
 

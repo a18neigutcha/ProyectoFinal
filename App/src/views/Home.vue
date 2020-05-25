@@ -89,8 +89,8 @@ export default {
 
 
 
-  .page-header { background: url(https://easetemplate.com/free-website-templates/hike/images/pageheader.jpg)no-repeat; position: relative; background-size: cover; }
-  .page-caption { padding-top: 170px; padding-bottom: 174px; }
+/*   .page-header { background: url(https://easetemplate.com/free-website-templates/hike/images/pageheader.jpg)no-repeat; position: relative; background-size: cover; }
+  .page-caption { padding-top: 170px; padding-bottom: 174px; } */
   .page-title { font-size: 46px; line-height: 1; color: #fff; font-weight: 600; text-align: center; }
 
   .card-section { position: relative; bottom: 60px; }

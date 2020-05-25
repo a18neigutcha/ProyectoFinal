@@ -5,7 +5,7 @@
             <div class="d-flex justify-content-center h-100">
                 <div class="card">
                     <div class="card-header">
-                        <h3>Regístrate</h3>
+                        <h3>Registro de Usuario</h3>
                     </div>
                     <div class="card-body">
                         <form>       
@@ -32,15 +32,15 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-key"></i></span>
                                 </div>
-                                <input type="password" class="form-control" v-model="input.password" placeholder="Contraseña">
+                                <input type="password" class="form-control" v-model="password" placeholder="Contraseña">
                     
                             </div>
-                                <div class="input-group form-group">
+                            <div class="input-group form-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-key"></i></span>
                                 </div>
-                                <label for="confirmaPassword" class="form-control"> Confirma tu password: </label>
-                                    <input id="confirmaPassword" v-model="confirmaPassword" name="confirmaPassword">
+<!--                                 <label for="confirmaPassword" class="form-control"> Confirma tu password: </label> -->
+                                <input type="password" class="form-control" v-model="confirmaPassword" placeholder="Confirma contraseña">
                             </div>
                             <div class="form-group">
                                 <button type="button" class="btn float-right login_btn" @click="createUser()">Regístrate</button>
@@ -56,48 +56,6 @@
             </div>
         </div>
     </div>
-    <!--     <div id="SignUp">
-
-        <p v-if="errors.length">
-            <b>Please correct the following error(s):</b>
-            <ul>
-            <li v-for="(error,id) in errors" :key="id">{{ error }}</li>
-            </ul>
-        </p>
-
-        <p>
-            <label for="userName">User name: </label>
-            <input id="userName" v-model="userName" type="text" name="userName">
-        </p>
-
-        <p>
-            <label for="email">Email: </label>
-            <input id="email" v-model="email" type="email" name="email">
-        </p>
-
-        <p>
-            <label for="password">Password: </label>
-            <input
-                id="password"
-                v-model="password"
-                name="password"
-            >
-        </p>
-
-        <p>
-            <label for="confirmaPassword">Confirma tu password: </label>
-            <input
-                id="confirmaPassword"
-                v-model="confirmaPassword"
-                name="confirmaPassword"
-            >
-        </p>
-
-        <p>
-            <button @click="createUser()">Registrarse</button>
-        </p>
-
-        </div> -->
 
 </template>
 
@@ -183,7 +141,7 @@
 }
 
 </script>
-<style>
+<style scoped>
 /*     .formulario {
          border: none;
          box-shadow: 0 5px 20px 0 rgba(0,0,0,.1);
@@ -206,22 +164,11 @@ align-content: center;
 }
 
 .card{
-height: 370px;
+height: 420px;
 margin-top: auto;
 margin-bottom: auto;
 width: 400px;
 background-color: rgba(0,0,0,0.5) !important;
-}
-
-.social_icon span{
-font-size: 50px;
-margin-left: 10px;
-color: #FFC312;
-}
-
-.social_icon span:hover{
-color: white;
-cursor: pointer;
 }
 
 .card-header h3{
@@ -236,7 +183,7 @@ top: -45px;
 
 .input-group-prepend span{
 width: 50px;
-background-color: #FFC312;
+background-color: #25f9c9 ;
 color: black;
 border:0 !important;
 }
@@ -247,22 +194,10 @@ box-shadow: 0 0 0 0 !important;
 
 }
 
-.remember{
-color: white;
-}
-
-.remember input
-{
-width: 20px;
-height: 20px;
-margin-left: 15px;
-margin-right: 5px;
-}
-
 .login_btn{
 color: black;
-background-color: #FFC312;
-width: 100px;
+background-color: #25f9c9;
+width: 120px;
 }
 
 .login_btn:hover{
