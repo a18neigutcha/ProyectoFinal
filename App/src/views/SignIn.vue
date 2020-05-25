@@ -4,7 +4,7 @@
         <div class="d-flex justify-content-center h-100">
             <div class="card">
                 <div class="card-header">
-                    <h3>Inicio Sesión</h3>
+                    <h3>Inicia Sesión</h3>
                     <div class="d-flex justify-content-end social_icon">
                         <span><i class="fab fa-facebook-square"></i></span>
                         <span><i class="fab fa-google-plus-square"></i></span>
@@ -48,12 +48,6 @@
     </div>
 </div>
 
-<!--     <div id="SignIn">
-        <h1>Login</h1>
-        <input type="text" name="username" v-model="input.email" placeholder="Email Usuario" />
-        <input type="password" name="password" v-model="input.password" placeholder="Contraseña" />
-        <button type="button" v-on:click="submit()">Inicia Sesión</button>
-    </div>  -->
 </template>
 
 
@@ -116,7 +110,7 @@ export default {
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
 .fondo{
-background-image: url('http://getwallpapers.com/collection/barcelona-city-wallpapers');
+background-image: url('http://getwallpapers.com/wallpaper/full/e/8/5/694108-download-free-owl-city-wallpaper-1920x1200.jpg');
 background-size: cover;
 background-repeat: no-repeat;
 height: 700px;
@@ -137,7 +131,7 @@ background-color: rgba(0,0,0,0.5) !important;
 }
 
 .social_icon span{
-font-size: 60px;
+font-size: 50px;
 margin-left: 10px;
 color: #FFC312;
 }

@@ -5,7 +5,8 @@ const morgan = require('morgan');
 const cors = require('cors');
 const multer = require ('multer');
 
-require('./databaseMongo');
+/* C */
+//require('./databaseMongo');
 
 /**
  * @file index.js
