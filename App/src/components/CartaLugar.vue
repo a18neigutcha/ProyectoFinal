@@ -1,7 +1,7 @@
 <template>
     <div class="card text-center p-0">
         <div class="card-body pt-0 pl-0 pr-0">
-            <img :src="dirUrl" class="card-img-top" alt="imagen del lugar oculto">
+            <img :src="imagen" class="card-img-top" alt="imagen del lugar oculto">
             <h5 class="card-title mt-4">{{titulo}}</h5>
             <h6 class="card-subtitle mb-2 text-muted">{{subtitulo}}</h6>
             <p class="card-text">{{descripcion}}</p>
@@ -17,7 +17,7 @@ export default {
       titulo: String,
       subtitulo: String,
       descripcion: String,
-      dirUrl: String
+      imagen: String
   }
 }
 </script>

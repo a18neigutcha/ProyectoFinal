@@ -74,7 +74,7 @@ class UserController{
             }
             if(result.length>0){
 
-
+                console.log(result);
                 const validPassword = await User.comparePassword(result[0].password,req.body.password);
                 console.log("password valido: ",validPassword);
                 if (!validPassword) {
@@ -84,7 +84,7 @@ class UserController{
                         
                     });
                 }
-                const token = jwt.sign({id:result.id}, config.secret, {
+                const token = jwt.sign({id:result[0].id}, config.secret, {
                     expiresIn: 60 * 60 * 24
                 });
 
@@ -122,7 +122,7 @@ class UserController{
     static async me(req,res){
 
 
-        await mysqlConnection.query('SELECT * FROM USUARIO WHERE ?',[req.userId],(err,result,fields)=>{
+        await mysqlConnection.query('SELECT * FROM USUARIO WHERE id=?',[req.userId],(err,result,fields)=>{
             if(err){
                 console.log(err);
                 res.status(500);

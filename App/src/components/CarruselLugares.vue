@@ -6,10 +6,10 @@
                     <div class="card-deck">
                         <CartaLugar
                             v-for="(lugar,id) in datos" :key="id"
-                            :titulo="lugar.nombre"
+                            :titulo="lugar.titulo"
                             :subtitulo="lugar.direccion"
                             :descripcion="lugar.descripcion"
-                            :dirUrl="lugar.dirUrl"
+                            :imagen="lugar.imagen"
                         ></CartaLugar>   
                     </div>
                 </div>
@@ -37,18 +37,13 @@ export default {
               descripcion:"",
               url:""
 
-          },
-          axx:0
+          }
       }
       
 
   },
   mounted () {
-    axios.get('http://localhost:3000/api/',{
-        headers: {
-          'Access-Control-Allow-Origin': 'http://localhost:3000',
-        }
-    })
+    axios.get('http://localhost:3000/api/')
     .then(response =>{
         this.datos=response.data;
         console.log(response.data);

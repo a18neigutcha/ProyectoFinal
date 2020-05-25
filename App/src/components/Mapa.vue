@@ -10,7 +10,7 @@
           data-toggle="modal" 
           :data-target="'#staticBackdrop'+lugar.id" 
         >
-          {{lugar.nombre}}
+          {{lugar.titulo}}
         </div>
       </l-tooltip>
 
@@ -22,7 +22,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="staticBackdropLabel">{{lugar.nombre}}</h5>
+            <h5 class="modal-title" id="staticBackdropLabel">{{lugar.titulo}}</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -32,7 +32,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-            <router-link class="btn btn-primary" data-dismiss="modal" :to="'/'+lugar.id">
+            <router-link class="btn btn-primary" data-dismiss="modal" :to="'/LugarInfo/'+lugar.id">
                 Ver más
             </router-link>
           </div>

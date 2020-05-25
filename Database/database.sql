@@ -12,14 +12,14 @@ CREATE TABLE IF NOT EXISTS USUARIO (
 );
 
 CREATE TABLE IF NOT EXISTS LUGAR(
-	id INT(11) PRIMARY KEY AUTO_INCREMENT,
-    nombre VARCHAR(45),
+	  id INT(11) PRIMARY KEY AUTO_INCREMENT,
+    titulo VARCHAR(45),
     direccion VARCHAR(45),
     descripcion VARCHAR(225),
     latitud VARCHAR (255),
     longitud VARCHAR (255),
     valoracion INT(11) DEFAULT 0,
-    dirUrl VARCHAR(255) DEFAULT "https://picsum.photos/200/300",
+    imagen VARCHAR(255) DEFAULT "https://picsum.photos/200/300",
     userId INT (11),
     FOREIGN KEY (userId) REFERENCES USUARIO(id)
 		ON DELETE CASCADE ON UPDATE CASCADE

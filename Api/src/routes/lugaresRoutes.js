@@ -16,7 +16,7 @@ const verifyToken = require('../verifyToken');
 
 router.get('/',LugaresController.listaLugares);
 router.get('/:id',LugaresController.unLugar);
-router.post('/',LugaresController.crearLugar);
+router.post('/',verifyToken,LugaresController.crearLugar);
 router.put('/:id',LugaresController.actualizarLugar);
 router.delete('/:id',LugaresController.eliminarLugar);
 

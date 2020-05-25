@@ -61,7 +61,23 @@ class LugaresController {
 
    static async crearLugar(req,res){
 
-    await mysqlConnection.query('INSERT INTO LUGAR set ?',[req.body]);
+    const pathImg = 'http://localhost:3000/img/'+req.file.filename;
+    console.log(pathImg);
+    const{titulo,direccion,descripcion,latitud,longitud,userId} = req.body;
+    console.log(req.userId);
+    
+    await mysqlConnection.query(
+        `INSERT INTO LUGAR (titulo,direccion,descripcion,latitud,longitud,imagen,userId) VALUES (?,?,?,?,?,?,?)`,
+        [
+            titulo,
+            direccion,
+            descripcion,
+            latitud,
+            longitud,
+            pathImg,
+            req.userId.id
+        ]);
+
     res.json({text:'Lugar registrado'});
 
    }

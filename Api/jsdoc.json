@@ -10,7 +10,7 @@
     },
     "opts":{
         "recurse":true,
-        "destination":"./src/docs/",
+        "destination":"./src/public/docs/",
         "readme":"./JsDoc.md",
         "template":"./BarcelonaEscondida-template"
     }
