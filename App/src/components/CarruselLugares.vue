@@ -1,7 +1,7 @@
 <template>
    
 <div class="carousel slide " data-ride="carousel">
-    <carousel :datos="datos" :controls="false"></carousel>
+    <!-- <carousel :datos="datos" :controls="false"></carousel> -->
     <div class="row">
         <div class="carousel-inner">
             <div class="card-deck">
@@ -34,21 +34,16 @@ export default {
   },
   data:function() {
       return {
-          datos:{
-              titulo:"",
-              subtitulo:"",
-              descripcion:"",
-              url:""
-
-          }
+          datos:[]
       }
       
   },
   mounted () {
     axios.get('http://localhost:3000/api/')
     .then(response =>{
-        this.datos=response.data;
-        console.log(response.data);
+        this.datos.push(response.data[0]);
+        this.datos.push(response.data[1]);
+        this.datos.push(response.data[2]);
     })
 /*   },
   function(){
