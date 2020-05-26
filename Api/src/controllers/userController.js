@@ -41,12 +41,13 @@ class UserController{
                 console.log(result[0]);
 
                 // Create a Token
-                const token = jwt.sign({ id: result[0] }, config.secret, {
+                const token = jwt.sign({ id: result[0].id}, config.secret, {
                     expiresIn: 60 * 60 * 24 // expires in 24 hours
                 });
 
                 res.json({ auth: true, token });
             });
+
 
             
         } catch (e) {
