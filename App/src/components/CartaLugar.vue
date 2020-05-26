@@ -1,5 +1,5 @@
 <template>
-    <div class="card text-center p-0">
+    <div class="card text-center m-0 p-0">
         <div class="card-body pt-0 pl-0 pr-0">
             <img :src="imagen" class="card-img-top" alt="imagen del lugar oculto">
             <h5 class="card-title mt-4">{{titulo}}</h5>
@@ -28,5 +28,8 @@ export default {
     img {
         width: 100%;
         height: 20em;
+    }
+    .card{
+        border-style: none;
     }
 </style>

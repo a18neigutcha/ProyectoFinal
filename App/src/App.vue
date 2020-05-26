@@ -36,8 +36,8 @@ export default {
 
 <style lang="scss">
   main{
-    position: relative;
-    z-index: -1;
+    /* position: relative;
+    z-index: -1; */
   }
     
 </style>
