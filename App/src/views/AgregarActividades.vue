@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div id="AgregarActividades" class="container-fluid px-5 pt-5">
         <!-- Formulario registro lugares -->
         <form
             @submit="checkForm"
@@ -11,23 +11,70 @@
                     <li v-for="(error,id) in errors" :key="id">{{ error }}</li>
                 </ul>
             </p>
-            <h3 class="mb-5 mt-5">Añade una actividad</h3>
+            <h3 class="mb-5">Añade una actividad</h3>
             <!-- Input titulo -->
-            <div class="form-group row">
+            <div class="form-group row mb-5">
+                <div class="col-sm-1"></div>
                 <label for="titulo" class="col-sm-2 col-form-label">Titulo:</label>
-                <div class="col-sm-10">
-                <input type="text" class="form-control" id="titulo" v-model="titulo">
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="titulo" v-model="titulo">
+                </div>
+                <div class="col-sm-1"></div>
+                
+            </div>
+
+            <div class="row">
+                <div class="col-7">
+                    <!-- Input dirección -->
+                    <div class="form-group row mt-5 mb-">
+                        <label for="direccion" class="col-sm-2 col-form-label">Direccion:</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="direccion" v-model="direccion">
+                        </div>
+                    </div>
+                    <div class="form-group row mt-5 mb-5">
+                        <label for="latitud" class="col-sm-2 col-form-label">Latitud:</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="latitud" v-model="latitud">
+                        </div>
+                        
+                    </div>
+                    <div class="form-group row mt-5 mb-5">
+                        <label for="longitud" class="col-sm-2 col-form-label">Longitud:</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="longitud" v-model="longitud">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-5">
+                    <div class="mb-3">
+                        <l-map
+                            ref="myMap"
+                            @ready="doSomethingOnReady()"
+                            @click="clickCordenadas()"
+                            :zoom="zoom"
+                            :center="center"
+                            style="height: 350px; width: 100%"
+                        >
+                            <l-tile-layer
+                                :url="url"
+                                :attribution="attribution"
+                            />
+                            <l-marker :lat-lng="[latitud,longitud]" />
+                        </l-map>
+                    </div>
                 </div>
             </div>
+
             <!-- Input dirección -->
-            <div class="form-group row">
+            <!-- <div class="form-group row">
                 <label for="direccion" class="col-sm-2 col-form-label">Direccion:</label>
                 <div class="col-sm-10">
                 <input type="text" class="form-control" id="direccion" v-model="direccion">
                 </div>
-            </div>
+            </div> -->
             <!-- Input coordenadas -->
-            <div class="mb-3">
+            <!-- <div class="mb-3">
                 <div class="mb-3">
                     <l-map
                         ref="myMap"
@@ -55,7 +102,7 @@
                     </div>
                 </div>
                 
-            </div>
+            </div> -->
             <!-- Input descripción -->
             <div class="mb-3">
                 <label for="descripcion">Descripcion:</label>
@@ -66,8 +113,14 @@
             </div>
             <!-- Input imagen -->
             <div class="form-group row">
-                <label for="imagen">Image: </label>
-                <input type="file"  class="form-control-file" accept="image/*" @change="uploadImage($event)" id="imagen">
+                <div class="col">
+                    <label for="imagen" class="label-imagen">
+                        <p>Subir imagen:</p> 
+                        <img src="@/assets/img/input_image.svg" alt="Sube tu imagen"> 
+                    </label>
+                    <input type="file" accept="image/*" @change="uploadImage($event)" id="imagen">
+                </div>
+                
             </div>
             <!-- Button submit -->
             <div class="form-group row">
@@ -211,7 +264,26 @@ export default {
 
 <style>
 
-@import "~leaflet/dist/leaflet.css";
-@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+    @import "~leaflet/dist/leaflet.css";
+    @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+
+    #imagen{
+        display: none;
+    }
+    .label-imagen img{
+        width: auto;
+        height: 5em;
+    }
+    #AgregarActividades{
+        background-image: url(https://image.flaticon.com/icons/png/512/1467/1467445.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: 0.7;
+
+    }
+    #descripcion{
+        height: 10em;
+        width: 100%;
+    }
 
 </style>
