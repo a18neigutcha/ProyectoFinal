@@ -6,15 +6,23 @@
                 <div class="card">
                     <div class="card-header">
                         <h3>Registro de Usuario</h3>
+                        
+                    </div>
+                                            <div class="d-flex justify-content-center links">
+                            ¿Ya tienes cuenta?<router-link to="/SignIn">Inicia Sesión</router-link>
+                        </div>
+                        <div class="card-footer">
+                            <p v-if="errors.length">
+                            <b>Corrige estos errore(s):</b>
+                                <ul>
+                                <li v-for="(error,id) in errors" :key="id">{{ error }}</li>
+                                </ul>
+                            </p>    
                     </div>
 
+
                     <div class="card-body">
-                    <p v-if="errors.length">
-                        <b>Corrige estos errores(s):</b>
-                        <ul>
-                        <li v-for="(error,id) in errors" :key="id">{{ error }}</li>
-                        </ul>
-                    </p>
+ 
                         <form>       
                             <div class="input-group form-group">
                                 <div class="input-group-prepend">
@@ -50,17 +58,15 @@
                                 <div class="invalid-feedback">
                                     Debes aceptar los términos y condiciones antes de aceptar.
                                 </div>
+                                                            <div class="form-group">
+                                <button type="button" class="btn float-right login_btn" @click="createUser()">Registro</button>
+                            </div>                                        
+
                             </div>
-                            <div class="form-group">
-                                <button type="button" class="btn float-right login_btn" @click="createUser()">Regístrate</button>
-                            </div>
+
                         </form>
                     </div>
-                    <div class="card-footer">
-                        <div class="d-flex justify-content-center links">
-                            ¿Ya tienes cuenta?<router-link to="/SignIn">Inicia Sesión</router-link>
-                        </div>
-                    </div>
+
                     
                 </div>
             </div>
