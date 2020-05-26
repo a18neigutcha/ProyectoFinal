@@ -5,7 +5,7 @@
 
         <div class="row">
           <div class="col">
-            <div class="card text-center bg-dark text-white ">
+            <div class="card text-center bg-dark text-white b-0 rounded-0">
               <img src="http://getwallpapers.com/wallpaper/full/f/d/b/430292.jpg" class="card-img imagenPortada" alt="imagen de fondo de portada.">  
               <div class="card-img-overlay d-flex justify-content-center align-items-center">
                 <div>
@@ -17,6 +17,7 @@
                     </router-link> 
                 </div>    
               </div>
+
             </div>
           </div>
         </div>
@@ -33,25 +34,16 @@
                         </div>
                         <!-- /.section-title -->
                     </div>
-                </div>
+                </div>              
               </div>
             </div>
-          </div>
-
-
-
-        <div class="row mt-3">
-
-          <div class="col align-self-center">
             <CarruselLugares/>
           </div>
-
-        </div>
-
-
+   
       </div>
 
     </div>
+
   </div>
   
 </template>
@@ -83,7 +75,6 @@ export default {
   h6 { font-size: 12px; }
   p { margin: 0 0 20px; line-height: 1.7; }
   p:last-child { margin: 0px; }
-  ul, ol { }
   a { text-decoration: none; color: #8d8f90; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; transition: all 0.3s; }
   a:focus, a:hover { text-decoration: none; color: #f85759; }
 
@@ -94,6 +85,11 @@ export default {
   .page-title { font-size: 46px; line-height: 1; color: #fff; font-weight: 600; text-align: center; }
 
   .card-section { position: relative; bottom: 60px; }
-  .card-block { padding: 80px; }
-  .section-title { margin-bottom: 60px; }
+  .card-block { padding: 80px; padding-bottom: 20px; }
+  .section-title { margin-bottom: 0px; }
+
+/*   .carousel{
+    padding: 0;
+    margin: 0;
+  } */
 </style>

@@ -1,10 +1,8 @@
 <template>
    
-<div class="container">
+<div class="container-fluid margin-0">
     <carousel :data="data" :controls="true"></carousel>
     <div class="row">
-        <div class="col-md-12">
-            <div class="carousel carousel-showmanymoveone slide" id="carouselABC">
                 <div class="carousel-inner">
                     <div class="item active">
                             <a href="#">                    
@@ -22,8 +20,7 @@
                 </div>                  
               <!--   <a class="left carousel-control" href="#carouselABC" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
                 <a class="right carousel-control" href="#carouselABC" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a> -->
-            </div>
-        </div>
+
     </div>  
 </div>
 
@@ -107,6 +104,7 @@ function(){
     font-size: 1.5rem;
     justify-content: center;
     min-height: 10rem;
+    margin: 0;
   }
 /* .carousel-showmanymoveone{
   .carousel-control

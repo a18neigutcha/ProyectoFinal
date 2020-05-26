@@ -1,5 +1,5 @@
 <template>
-    <div class="card text-center p-0 border-0 rounded-0">
+    <div class="card text-center p-0 border-0 rounded-0 m-0">
         <div class="card-body pt-0 pl-0 pr-0">
             <img :src="imagen" class="card-img-top" alt="imagen del lugar oculto">
             <h5 class="card-title mt-4">{{titulo}}</h5>
@@ -25,9 +25,9 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-    img {
-        width: 1000px;
-        height: 800px;
+/*     img {
+        width: 100%;
+        height: 120%    ;
         padding: 0;
-    }
+    } */
 </style>
