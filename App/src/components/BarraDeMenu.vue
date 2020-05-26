@@ -80,7 +80,7 @@
                                 </router-link>
                             </li>
                             <!-- Item User (Solo se muestra si el usuario inicio sesión) -->
-                            <li v-show="sesionInit" class="nav-item mx-3 dropdown">
+                            <li v-show="sesionInit" class="nav-item mx-3 dropdown" id="item-user">
                                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                                     <i v- class="fas fa-user"></i>
                                 </a>
@@ -158,6 +158,13 @@
     a.nav-link{
         color: white;
     }
+    #item-user div.open{
+        position: absolute;
+        z-index: 2;
+    }
+    /* div > div.dropdown.show {
+        position: absolute;
+    } */
 
     /* .nav-link{
         color: #ff7e0c;

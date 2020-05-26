@@ -6,10 +6,11 @@
       <BarraDeMenu :sesionInit="$cookies.get('token')" nombreApp="Barcelona desconocida"/>
     </header>
     <!-- Body (En esta parte se renderizara el contenido de las paginas) -->
-    <router-view />
+    <main>
+      <router-view />
+    </main>
     
-
-
+  
     <!-- Footer -->
     <footer>
       <Footer/>
@@ -34,5 +35,9 @@ export default {
 </script>
 
 <style lang="scss">
+  main{
+    position: relative;
+    z-index: -1;
+  }
     
 </style>
