@@ -25,9 +25,12 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-/*     img {
+    img {
         width: 100%;
-        height: 120%    ;
-        padding: 0;
-    } */
+        height: 80%    ;
+        padding: 0px;
+    }
+    .card-img-top{
+        width: 100%;
+    }
 </style>

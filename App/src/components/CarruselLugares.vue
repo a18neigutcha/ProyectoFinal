@@ -1,29 +1,26 @@
 <template>
    
-<div class="container-fluid margin-0">
-    <carousel :data="data" :controls="true"></carousel>
+<div class="carousel slide " data-ride="carousel">
+    <carousel :datos="datos" :controls="false"></carousel>
     <div class="row">
-                <div class="carousel-inner">
-                    <div class="item active">
-                            <a href="#">                    
-                            <div class="card-deck">
-                                <CartaLugar
-                                    v-for="(lugar,id) in datos" :key="id"
-                                    :titulo="lugar.titulo"
-                                    :subtitulo="lugar.direccion"
-                                    :descripcion="lugar.descripcion"
-                                    :imagen="lugar.imagen"
-                                ></CartaLugar>   
-                            </div>
-                            </a>
-                    </div>
-                </div>                  
-              <!--   <a class="left carousel-control" href="#carouselABC" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-                <a class="right carousel-control" href="#carouselABC" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a> -->
-
+        <div class="carousel-inner">
+            <div class="card-deck">
+                <CartaLugar
+                    v-for="(lugar,id) in datos" :key="id"
+                    :titulo="lugar.titulo"
+                    :subtitulo="lugar.direccion"
+                    :descripcion="lugar.descripcion"
+                    :imagen="lugar.imagen"
+                ></CartaLugar>   
+            </div>
+        </div>                  
+        <!--   
+            <a class="left carousel-control" href="#carouselABC" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+            <a class="right carousel-control" href="#carouselABC" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a> 
+        -->
     </div>  
 </div>
-
+<!-- container-fluid margin-0 -->
 </template>
 
 <script>
@@ -46,7 +43,6 @@ export default {
           }
       }
       
-
   },
   mounted () {
     axios.get('http://localhost:3000/api/')
@@ -94,6 +90,7 @@ function(){
     font-size: 1.5rem;
     justify-content: center;
     min-height: 10rem;
+    min-width: 10rem;
     margin: 0;
   }
 /* .carousel-showmanymoveone{
