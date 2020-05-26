@@ -46,35 +46,21 @@
 
 <script>
 
-/* import axios from 'axios'; */
-
 export default {
-  name: "SubMenu",
-  props: {
-      sesionInit: String
-  },
+    name: "SubMenu",
+    props: {
+        sesionInit: String
+    },
 
-  methods: {
-      filteredPacks:function(){
+    methods: {
+        filteredPacks:function(){
 
-        return this.packs.filter((pack) => {
-        return pack.name.toLowerCase().match(this.search);
-      })
-
-/*             axios.post('http://localhost:3000/api/',{
-                search: this.input.search
+            return this.packs.filter((pack) => {
+                return pack.name.toLowerCase().match(this.search);
             })
-            .then((response) => {
-
-
-            },(error) => {
-                console.log(error.response.data);
-                alert("No hay resultados");
-            }); */
-
         }
-          
-  }
+            
+    }
 };
 </script>
 <style scoped>
