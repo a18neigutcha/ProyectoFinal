@@ -148,7 +148,8 @@
     .panel-user{
         background-color: white;
         padding: 1em;
-        border:1px solid rgb(197, 197, 197) ;
+        border:2px solid rgb(146, 146, 146) ;
         height: 40em;
+        border-style: inset;
     }
 </style>
