@@ -81,19 +81,20 @@
                             </li>
                             <!-- Item User (Solo se muestra si el usuario inicio sesión) -->
                             <li v-show="sesionInit" class="nav-item mx-3 dropdown">
-                                <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                                     <i v- class="fas fa-user"></i>
                                 </a>
                                 <!-- Opciones de usuario. -->
-                                <div class="dropdown-menu dropdown-menu-right">
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <router-link class="dropdown-item" to="/UserPage">
                                         <i class="far fa-id-card"></i>
                                         Tu perfil
                                     </router-link>
-                                    <router-link class="dropdown-item" to="/Configuracion">
+                                    <router-link class="dropdown-item"  to="/Configuracion">
                                         <i class="fas fa-cog"></i>
                                         Configuración
                                     </router-link>
+                                    <div class="dropdown-divider"></div>
                                     <button class="dropdown-item" @click="logOut()">
                                         <i class="fas fa-sign-out-alt"></i>
                                         Cerrar sesión
@@ -153,7 +154,6 @@
         background: -webkit-linear-gradient(to bottom, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
         background: linear-gradient(to bottom, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         opacity: 0.8;
-        height: 3em;
     }
     a.nav-link{
         color: white;
