@@ -159,6 +159,10 @@
         color: white;
     }
 
+    div > div.dropdown.open {
+        position: absolute;
+    }
+
     /* .nav-link{
         color: #ff7e0c;
     } */
