@@ -12,6 +12,7 @@ import LugarInfo from "../views/LugarInfo";
 import AgregarActividades from "../views/AgregarActividades";
 import MisLugares from "../views/MisLugares";
 import LugarUpdate  from "../views/LugarUpdate";
+import ConfigUser from "../views/ConfigUser";
 
 Vue.use(VueRouter);
 
@@ -78,6 +79,11 @@ const routes = [
     path: '/MisLugares/:id',
     name: 'LugarUpdate',
     component: LugarUpdate
+  },
+  {
+    path: '/ConfigUser',
+    name: 'ConfigUser',
+    component: ConfigUser
   }
 ];
 

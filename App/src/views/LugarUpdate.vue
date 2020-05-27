@@ -1,41 +1,111 @@
 <template>
-    <div class="container">
-        <h3 class="mb-5 mt-5">Actualizar tu actividad: </h3>
-        <!-- Formulario registro lugares -->
-        <form
-            @submit="checkForm"
-        >
-            <!-- lista errores -->
-            <p v-if="errors.length">
-                <b>Please correct the following error(s):</b>
-                <ul>
-                    <li v-for="(error,id) in errors" :key="id">{{ error }}</li>
-                </ul>
-            </p>
-            <!-- Input titulo -->
-            <div class="form-group row">
-                <label for="titulo" class="col-sm-2 col-form-label">Titulo:</label>
-                <div class="col-sm-10">
-                <input type="text" class="form-control" id="titulo" v-model="titulo">
-                </div>
+    <div class="LugarUpdate container-fluid px-5 pt-5">
+
+        <div class="row">
+            <div class="col">
+                <!-- Formulario registro lugares -->
+                <form
+                    @submit="checkForm"
+                    class="cont-form"
+                >
+                    <div class="row pt-5">
+                        <div class="col-1"></div>
+                        <div class="col">
+                            <h3 class="titulo mb-5">Añade una actividad</h3>
+                            <!-- lista errores -->
+                            <p v-if="errors.length">
+                                <b>Please correct the following error(s):</b>
+                                <ul>
+                                    <li v-for="(error,id) in errors" :key="id">{{ error }}</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col">
+                            <!-- Input titulo -->
+                            <div class="form-group row">
+                                <label for="titulo">Titulo:</label>
+                                <input type="text" class="form-control" id="titulo" v-model="titulo">
+                            </div>
+                        </div>
+                        <div class="col-1"></div>
+                        
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-5">
+                            <!-- Input dirección -->
+                            <div class="form-group row">
+                                <label for="direccion">Direccion:</label>
+                                <input type="text" class="form-control" id="direccion" v-model="direccion">
+                            </div>
+                            <!-- Input Latitud -->
+                            <div class="form-group row">
+                                <label for="latitud">Latitud:</label>
+                                <input type="text" class="form-control" id="latitud" v-model="latitud">
+                            </div>
+                            <!-- Input Longitud -->
+                            <div class="form-group row">
+                                <label for="longitud">Longitud:</label>
+                                <input type="text" class="form-control" id="longitud" v-model="longitud">
+                            </div>
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-6">
+                            <!-- Input descripción -->
+                            <div class="form-group row">
+                                <label for="descripcion">Descripcion:</label>
+                                <textarea class="form-control" id="descripcion" placeholder="Required example textarea" v-model="descripcion"></textarea>
+                                <div class="invalid-feedback">
+                                    Please enter a message in the textarea.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-5 d-flex align-items-center ">
+                            <!-- Input imagen -->
+                            <div class="form-group row">
+                                <div class="col">
+                                    <label for="imagen" class="label-imagen">
+                                        Subir imagen:  
+                                        <img src="@/assets/img/input_image.svg" alt="Sube tu imagen"> 
+                                    </label>
+                                    <input type="file" accept="image/*" @change="uploadImage($event)" class="imagen">
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Button submit -->
+                    <div class="form-group row pb-3">
+                        <div class="col-4"></div>
+                        <div class="col-4 d-flex justify-content-center">
+                            <button v-on:click.prevent="post" class="btn btn-primary">Sign in</button>
+                        </div>
+                        <div class="col-4"></div>
+                    </div>
+                    
+                </form>
             </div>
-            <!-- Input dirección -->
-            <div class="form-group row">
-                <label for="direccion" class="col-sm-2 col-form-label">Direccion:</label>
-                <div class="col-sm-10">
-                <input type="text" class="form-control" id="direccion" v-model="direccion">
-                </div>
-            </div>
-            <!-- Input coordenadas -->
-            <div class="mb-3">
-                <div class="mb-3">
+            <!-- Mapa para seleccionar las cordenadas -->
+            <div id="col-map" class="col-5">
+                <div class="row">
                     <l-map
                         ref="myMap"
                         @ready="doSomethingOnReady()"
                         @click="clickCordenadas()"
                         :zoom="zoom"
                         :center="center"
-                        style="height: 500px; width: 100%"
+                        style="height: 350px; width: 100%"
                     >
                         <l-tile-layer
                             :url="url"
@@ -44,40 +114,11 @@
                         <l-marker :lat-lng="[latitud,longitud]" />
                     </l-map>
                 </div>
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label for="latitud">Latitud</label>
-                        <input type="text" class="form-control" id="latitud" v-model="latitud">
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="longitud">Longitud</label>
-                        <input type="text" class="form-control" id="longitud" v-model="longitud">
-                    </div>
-                </div>
-                
             </div>
-            <!-- Input descripción -->
-            <div class="mb-3">
-                <label for="descripcion">Descripcion:</label>
-                <textarea class="form-control" id="descripcion" placeholder="Required example textarea" v-model="descripcion"></textarea>
-                <div class="invalid-feedback">
-                    Please enter a message in the textarea.
-                </div>
-            </div>
-            <!-- Input imagen -->
-            <div class="form-group row">
-                <label for="imagen">Image: </label>
-                <input type="file"  class="form-control-file" accept="image/*" @change="uploadImage($event)" id="imagen">
-            </div>
-            <!-- Button submit -->
-            <div class="form-group row">
-                <div class="col-sm-10">
-                <button v-on:click.prevent="post" class="btn btn-primary">Sign in</button>
-                </div>
-            </div>
-            
-        </form>
+        </div>
+        
     </div>
+
 </template>
 
 <script>
@@ -218,9 +259,50 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
-@import "~leaflet/dist/leaflet.css";
-@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+    @import "~leaflet/dist/leaflet.css";
+    @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
 
+    .imagen{
+        display: none;
+    }
+    .label-imagen img{
+        width: auto;
+        height: 5em;
+    }
+    .LugarUpdate{
+        background-image: url("https://images.pexels.com/photos/3827841/pexels-photo-3827841.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        opacity: 1.0;
+        height: 68em;
+
+    }
+    #descripcion{
+        height: 10em;
+        width: 100%;
+    }
+    .LugarUpdate label{
+        color: white;
+    }
+    .cont-form{
+        background-color: rgba(0, 0, 0, 0.521);
+        border-radius: 20px;
+    }
+    #col-map{
+        padding-top:10em ;
+    }
+    #col-map .row{
+        padding: 1em;
+        background-color: rgba(0, 0, 0, 0.521);
+        border-radius: 20px;
+    }
+    .titulo{
+        color:white;
+    }
+    input{
+        color:black;
+    }
 </style>

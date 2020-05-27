@@ -112,7 +112,7 @@
         methods:{
             configurarTuUsuario:function(){
                 //Redirige al inicio.
-                this.$router.push("/Configuracion");
+                this.$router.push("/ConfigUser");
             }
         }
     }

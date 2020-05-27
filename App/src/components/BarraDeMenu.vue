@@ -90,7 +90,7 @@
                                         <i class="far fa-id-card"></i>
                                         Tu perfil
                                     </router-link>
-                                    <router-link class="dropdown-item"  to="/Configuracion">
+                                    <router-link class="dropdown-item"  to="/ConfigUser">
                                         <i class="fas fa-cog"></i>
                                         Configuración
                                     </router-link>
