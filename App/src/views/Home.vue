@@ -66,12 +66,12 @@
               :descripcion="lugares[2].descripcion"
               :imagen="lugares[2].imagen"
           ></CartaLugar>
-          <CartaLugar
+          <!-- <CartaLugar
               :titulo="lugares[3].titulo"
               :subtitulo="lugares[3].direccion"
               :descripcion="lugares[3].descripcion"
               :imagen="lugares[3].imagen"
-          ></CartaLugar>
+          ></CartaLugar> -->
         </slick>
       </div>
       
@@ -104,15 +104,14 @@ export default {
               infinite: true,
               speed: 300,
               centerMode: true,
-              variableWidth: true
-              /* autoplay: true,
-              autoplaySpeed: 2000, */
+              variableWidth: true,
+              autoplay: true,
+              autoplaySpeed: 2000,
 
               // Any other options that can be got from plugin documentation
           },
       };
   },
-  
   mounted () {
     axios.get('http://localhost:3000/api/')
     .then(response =>{
