@@ -46,6 +46,10 @@
                         <p class="mb-1">
                             {{lugar.descripcion}}
                         </p>
+                        <button type="button" class="btn btn-outline-primary mt-3">
+                            <i class="fas fa-thumbs-up"></i>
+                            <span class="ml-2 badge badge-light">{{lugar.valoracion}}</span>
+                        </button>
                     </div>
                 </div>
                 <!-- Pagination -->
