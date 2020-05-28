@@ -139,6 +139,7 @@
             logOut: function(){
                 this.$cookies.remove("token");
                 this.sesionInit = this.$cookies.get("token");
+                this.$router.push("/");
             }
         }
     }

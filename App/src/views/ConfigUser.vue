@@ -59,7 +59,7 @@
                     <div v-show="modifPassword" class="form-group row">
                         <label for="inputPassword" class="col-sm-2 col-form-label">Password: </label>
                         <div class="col-sm-10">
-                        <input type="password" class="form-control" id="inputPassword" v-model="user.password">
+                        <input type="password" class="form-control" id="inputPassword" v-model="password">
                         </div>
                     </div>
                     
@@ -143,7 +143,7 @@ export default {
                 this.errors.push("User name requerido");
             }else if (!this.user.email) {
                 this.errors.push("Email requerido");
-            }else if (!this.user.password && this.modifPassword){
+            }else if (!this.password && this.modifPassword){
                 this.errors.push("Password requeridas.");
             }else if (!this.newPassword && this.modifPassword){
                 this.errors.push("Nuevo password requerida");
@@ -161,18 +161,18 @@ export default {
             if(this.checkForm()){
 
                 let body = new FormData();
-                body.append('userName', this.userName);
-                body.append('email', this.email);
+                body.append('userName', this.user.userName);
+                body.append('email', this.user.email);
                 body.append('modifPassword', this.modifPassword);
                 body.append('password', this.password);
                 body.append('newPassword', this.newPassword);
                 body.append('confirmNewPassword',this.confirmNewPassword);
-                body.append('imagen', this.imagenPerfil);
+                body.append('imagen', this.user.imagenPerfil);
                 
                 console.log(body);
 
 
-                axios.post('http://localhost:3000/api/',body,{
+                axios.put('http://localhost:3000/api/sesion/me',body,{
                     headers: {
                         'accept': 'application/json',
                         'Accept-Language': 'en-US,en;q=0.8',

@@ -1,57 +1,79 @@
 <template>
-  <div class="container-fluid">
-      <!-- Imagen lugar -->
+  <div class="LugarInfo container-fluid">
       <div class="row mb-5">
+          <div class="col-1"></div>
           <div class="col p-0">
               <div class="contenedor">
-                  <img :src="datosLugar.imagen" class="imagen" alt="Imagen del lugar">
+                  <!-- <img :src="datosLugar.imagen" class="imagenLugar" alt="Imagen del lugar"> -->
                   <div class="textoFlotante">
-                      <h2>{{datosLugar.titulo}}</h2>
+                      <!-- Titulo Lugar -->
+                      <h2 class="text-light m-0">{{datosLugar.titulo}}</h2>
                   </div>                  
               </div>
-              
-          </div>    
-      </div>
-      <!-- Titulo -->
-      <!-- <div class="row mb-3">
-          <div class="col d-flex justify-content-center">
-              
           </div>
-      </div> -->
+          <div class="col-1"></div>    
+      </div>
       <!-- Informacion complementaria -->
-      <div class="row" id="informacion">
+      <div class="row pt-5" id="informacion">
+          <div class="col-1"></div>
           <div class="col-5">
-            <!-- Campo direccion -->
-            <div>
-                <h5>Direccion:</h5>
-                <p>{{datosLugar.direccion}}</p>
-            </div>
-            <!-- Campo descripcion -->
-            <div>
-                <h5>Descripcion:</h5>
-                <p>{{datosLugar.descripcion}}</p>
-            </div>
-            <!-- Campo valoracion -->
-            <div>
-                <button v-show="!like" type="button" class="btn btn-primary" @click="meGusta()">
-                    <i class="fas fa-thumbs-up"></i>
-                    <span class="ml-2 badge badge-light">{{datosLugar.valoracion}}</span>
-                </button>
-                <button v-show="like" type="button" class="btn btn-primary" @click="noMeGusta()">
-                    <i class="fas fa-thumbs-down"></i>
-                    <span class="ml-2 badge badge-light">{{datosLugar.valoracion}}</span>
-                </button>
-            </div>
+              <div class="cont-informacion">
+                    <!-- Campo direccion -->
+                    <div>
+                        <h5>Direccion:</h5>
+                        <p>{{datosLugar.direccion}}</p>
+                    </div>
+                    <!-- Campo descripcion -->
+                    <div>
+                        <h5>Descripcion:</h5>
+                        <p>{{datosLugar.descripcion}}</p>
+                    </div>
+                    <!-- Campo valoracion -->
+                    <div>
+                        <button v-show="!like" type="button" class="btn btn-primary" @click="meGusta()">
+                            <i class="fas fa-thumbs-up"></i>
+                            <span class="ml-2 badge badge-light">{{datosLugar.valoracion}}</span>
+                        </button>
+                        <button v-show="like" type="button" class="btn btn-primary" @click="noMeGusta()">
+                            <i class="fas fa-thumbs-down"></i>
+                            <span class="ml-2 badge badge-light">{{datosLugar.valoracion}}</span>
+                        </button>
+                    </div>
+              </div>
+                
             
           </div>
           <div class="col">
-              <!-- Mapa direccion -->
-              <l-map style="height: 350px" :zoom="zoom" :center="center">
-                <l-tile-layer :url="url"></l-tile-layer>
-                <l-marker :lat-lng="markerLatLng" ></l-marker>
-              </l-map>
+              <div class="row">
+                  <div class="col">
+                      <!-- Mapa direccion -->
+                    <l-map style="height: 350px" :zoom="zoom" :center="center">
+                        <l-tile-layer :url="url"></l-tile-layer>
+                        <l-marker :lat-lng="markerLatLng" ></l-marker>
+                    </l-map>
+                  </div>
+              </div>
+              
+
           </div>
       </div>
+        <div class="row mt-5">
+            <div class="col-2"></div>         
+            <div class="col">
+                <div class="cont-imagen d-flex justify-content-center align-items-center">
+                    <!-- <div class="arrow-image">
+                        <img class="arrow" src="@/assets/img/arrow_left.svg" alt="Flecha izquierda ">
+                    </div> -->
+                    <!-- Imagen -->
+                    <img :src="datosLugar.imagen" class="imagenLugar" alt="Imagen del lugar">
+                    <!-- <div class="arrow-image">
+                        <img class="arrow" src="@/assets/img/arrow_right.svg" alt="Flecha derecha">
+                    </div> -->
+                    
+                </div>   
+            </div>
+            <div class="col-2"></div>
+        </div>
       <div class="row mb-5">
           <div class="col">
               
@@ -138,12 +160,19 @@
     }
 </script>
 
-<style>
-    .imagen{
+<style scoped>
+    .LugarInfo{
+        background-image: url("https://pikwizard.com/photos/geological-formation-mountain-landscape--0404786517ed44b7bfbd4de8d915341e-m.jpg");
+        background-repeat: no-repeat;
+        padding-top: 6em;
+        height: 70em;
+        background-size: cover;
+    }
+    .imagenLugar{
         height: 20em;
-        width: 100%;
-        border: 1px solid black;
+        width: 25em;
         border-radius: 5px;
+        opacity: 0.9;
     }
     #informacion{
         margin-left: 3em;
@@ -154,17 +183,63 @@
         position: relative;
         display: inline-block;
         text-align: center;
+        
+
     }
     .textoFlotante{
         position: absolute;
-        top: 95%;
+        top: 5%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background-color: white;
-        padding: 0.5em 25em 0.5em 25em;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        background-color: rgba(0, 0, 0, 0.329);
+        padding: 0.5em 10em 0.5em 10em;
+        /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+        border-radius: 6px 80px 6px 80px;
+        -moz-border-radius: 6px 80px 6px 80px;
+        -webkit-border-radius: 6px 80px 6px 80px;
+        /* border: 3px solid rgba(0, 0, 0, 0.123); */
+        -webkit-box-shadow: 2px 9px 35px 1px rgba(0,0,0,0.75);
+        -moz-box-shadow: 2px 9px 35px 1px rgba(0,0,0,0.75);
+        box-shadow: 2px 9px 35px 1px rgba(0,0,0,0.75);
+    }
+    .cont-informacion{
+        padding: 1em;
+        background-color: rgba(0, 0, 0, 0.329);
+        -webkit-box-shadow: 2px 9px 35px 1px rgba(0,0,0,0.75);
+        -moz-box-shadow: 2px 9px 35px 1px rgba(0,0,0,0.75);
+        box-shadow: 2px 9px 35px 1px rgba(0,0,0,0.75);
+        
+    }
+    .cont-informacion h5,p{
+        color:white;
+    }
+    .cont-informacion h5{
+        font-weight: bold;
     }
     .textoFlotante h2{
         white-space: nowrap;
+    }
+    .cont-imagen{
+        padding: 1em;
+        background-color: rgba(255, 255, 255, 0.603);
+
+        -webkit-box-shadow: -1px 4px 24px 5px rgba(255, 255, 255, 0.603);
+        -moz-box-shadow: -1px 4px 24px 5px rgba(255, 255, 255, 0.603);
+        box-shadow: -1px 4px 24px 5px rgba(255, 255, 255, 0.603);
+
+        border-radius: 13px 13px 13px 13px;
+        -moz-border-radius: 13px 13px 13px 13px;
+        -webkit-border-radius: 13px 13px 13px 13px;
+        border: 0px solid rgba(255, 255, 255, 0.603);
+    }
+    .arrow-image{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .arrow{
+        height: 3em;
+        width: 3em;
     }
 </style>
