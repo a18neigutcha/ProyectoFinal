@@ -59,7 +59,7 @@ class LugaresController {
 
    static async crearLugar(req,res){
 
-    const pathImg = 'http://localhost:3000/img/'+req.file.filename;
+    const pathImg = 'http://barcelonadesconocida.tk:3000/img/'+req.file.filename;
     console.log(pathImg);
     const{titulo,direccion,descripcion,latitud,longitud,userId} = req.body;
     console.log(req.userId);
@@ -92,7 +92,7 @@ class LugaresController {
    static async actualizarLugar(req,res){
         let pathImg = "";
         if(req.file){
-             pathImg= 'http://localhost:3000/img/'+req.file.filename;
+             pathImg= 'http://barcelonadesconocida.tk:3000/img/'+req.file.filename;
         }else{
              pathImg = req.body.imagen;
             

@@ -97,7 +97,7 @@ export default {
     },
     mounted(){
         // Petición de los lugares recomendados
-        axios.get('http://localhost:3000/api/')
+        axios.get('http://barcelonadesconocida.tk:3000/api/')
         .then((response) =>{
             this.lugares=response.data;
             console.log(response.data);

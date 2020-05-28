@@ -123,7 +123,7 @@ export default {
     },
     mounted(){
         // Petición de los datos del usuario.
-        axios.get('http://localhost:3000/api/sesion/me',{
+        axios.get('http://barcelonadesconocida.tk:3000/api/sesion/me',{
             headers: {
             'x-access-token': this.$cookies.get('token'),
             }
@@ -172,7 +172,7 @@ export default {
                 console.log(body);
 
 
-                axios.put('http://localhost:3000/api/sesion/me',body,{
+                axios.put('http://barcelonadesconocida.tk:3000/api/sesion/me',body,{
                     headers: {
                         'accept': 'application/json',
                         'Accept-Language': 'en-US,en;q=0.8',

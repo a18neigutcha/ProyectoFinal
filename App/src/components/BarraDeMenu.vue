@@ -52,7 +52,7 @@
                         <ul class="navbar-nav ">
                             <!-- Item Api -->
                             <li class="nav-item mx-3">
-                                <a class="nav-link" href="http://localhost:3000">
+                                <a class="nav-link" href="http://barcelonadesconocida.tk:3000">
                                     <i class="fas fa-book"></i>
                                     Api
                                 </a>

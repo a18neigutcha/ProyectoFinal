@@ -47,7 +47,7 @@ export default {
     },
     mounted(){
         // Petición de los lugares subidos por el usuario
-        axios.get('http://localhost:3000/api/user/lugares',{
+        axios.get('http://barcelonadesconocida.tk:3000/api/user/lugares',{
             headers: {
                 'x-access-token': this.$cookies.get('token'),
             }
@@ -63,7 +63,7 @@ export default {
     methods:{
         eliminarLugar:function(id){
             alert("Lugar eliminado");
-            axios.delete('http://localhost:3000/api/'+id,{
+            axios.delete('http://barcelonadesconocida.tk:3000/api/'+id,{
                 headers: {
                     'x-access-token': this.$cookies.get('token'),
                 }

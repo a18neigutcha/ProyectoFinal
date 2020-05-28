@@ -141,7 +141,7 @@
                 this.actualizarDatos();
             },
             actualizarDatos:function(){
-                axios.put('http://localhost:3000/api/valoracion/'+this.datosLugar.id,{
+                axios.put('http://barcelonadesconocida.tk:3000/api/valoracion/'+this.datosLugar.id,{
                     valoracion:this.datosLugar.valoracion
                 },{
                     headers: {
