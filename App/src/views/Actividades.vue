@@ -117,7 +117,7 @@ export default {
         background-position: center;
         background-size: cover;
         opacity: 1.0;
-        height: 68em;
+        height: 80em;
     }
     #cont-list{
         background-color: rgba(0, 0, 0, 0.521);

@@ -106,13 +106,6 @@
                 </div>
             </div>            
         </div>
-        <!-- Barra de subMenu -->
-        <!-- <div class="row">
-            <div class="col">
-                <SubMenu :sesionInit="$cookies.get('token')"/>
-            </div>
-            
-        </div> -->
     </div>
 
     
@@ -123,8 +116,6 @@
 
 <script>
 
-    /* import SubMenu from "./SubMenu.vue"; */
-
     export default {
         name: 'BarraDeMenu',
         props: {
@@ -133,7 +124,6 @@
 
         },
         components: {
-            /* SubMenu, */
         },
         methods: {
             logOut: function(){

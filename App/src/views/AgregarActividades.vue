@@ -79,7 +79,7 @@
                                         Subir imagen:  
                                         <img src="@/assets/img/input_image.svg" alt="Sube tu imagen"> 
                                     </label>
-                                    <input type="file" accept="image/*" @change="uploadImage($event)" class="imagen">
+                                    <input type="file" accept="image/*" @change="uploadImage($event)" id="imagen" class="imagen">
                                 </div> 
                             </div>
                         </div>
@@ -233,7 +233,7 @@ export default {
         },
         uploadImage(event){
             this.imagen = event.target.files[0];
-            //console.log(this.imagen);
+            console.log(this.imagen);
         },
         clickCordenadas(){
             this.map.on('click',(e)=>{

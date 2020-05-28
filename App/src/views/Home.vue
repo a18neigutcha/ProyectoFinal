@@ -1,5 +1,5 @@
 <template>
-  <div class="Home">
+  <div class="Home container-fluid">
     <div class="row align-items-center">
       <div class="container-fluid">
 
@@ -36,11 +36,45 @@
                 </div>              
               </div>
             </div>
-            <CarruselLugares/>
+            <!-- <CarruselLugares/> -->
           </div>
    
       </div>
 
+    </div>
+    <div class="row">
+      <div class="col">
+        <slick
+          ref="slick"
+          :options="slickOptions"
+        >
+          <CartaLugar
+              :titulo="lugares[0].titulo"
+              :subtitulo="lugares[0].direccion"
+              :descripcion="lugares[0].descripcion"
+              :imagen="lugares[0].imagen"
+          ></CartaLugar>
+          <CartaLugar
+              :titulo="lugares[1].titulo"
+              :subtitulo="lugares[1].direccion"
+              :descripcion="lugares[1].descripcion"
+              :imagen="lugares[1].imagen"
+          ></CartaLugar>
+          <CartaLugar
+              :titulo="lugares[2].titulo"
+              :subtitulo="lugares[2].direccion"
+              :descripcion="lugares[2].descripcion"
+              :imagen="lugares[2].imagen"
+          ></CartaLugar>
+          <!-- <CartaLugar
+              :titulo="lugares[3].titulo"
+              :subtitulo="lugares[3].direccion"
+              :descripcion="lugares[3].descripcion"
+              :imagen="lugares[3].imagen"
+          ></CartaLugar> -->
+        </slick>
+      </div>
+      
     </div>
 
   </div>
@@ -48,22 +82,76 @@
 </template>
 
 <script>
-import CarruselLugares from '../components/CarruselLugares.vue';
+import axios from 'axios';
+import Slick from 'vue-slick';
+import CartaLugar from '../components/CartaLugar'
+import '../../node_modules/slick-carousel/slick/slick.css';
+import '../../node_modules/slick-carousel/slick/slick-theme.css';
 
 export default {
   name: "Home",
   components: {
-    CarruselLugares
+    /* CarruselLugares */
+    Slick,
+    CartaLugar
+  },
+  data() {
+      return {
+          lugares:[],
+          slickOptions: {
+              dots: true,
+              slidesToShow: 1,
+              infinite: true,
+              speed: 300,
+              centerMode: true,
+              variableWidth: true,
+              autoplay: true,
+              autoplaySpeed: 2000,
+
+              // Any other options that can be got from plugin documentation
+          },
+      };
+  },
+  mounted () {
+    axios.get('http://localhost:3000/api/')
+    .then(response =>{
+        this.lugares=response.data;
+        console.log(response.data);
+    })
   },
   methods: {
+    next() {
+        this.$refs.slick.next();
+    },
+
+    prev() {
+        this.$refs.slick.prev();
+    },
+
+    reInit() {
+        // Helpful if you have to deal with v-for to update dynamic lists
+        this.$nextTick(() => {
+            this.$refs.slick.reSlick();
+        });
+    },
+
   }
 };
 </script>
 
+<style>
+  .slick-slide {
+    width: 50em;
+  }
+</style>
+
 <style scoped>
+
+  /* @import '../../node_modules/slick-carousel/slick/slick.css'; */
   .imagenPortada{
     height: 30em;
   }
+  
   body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-family: 'Overpass', sans-serif; letter-spacing: 0px; font-size: 17px; color: #8d8f90; font-weight: 400; line-height: 32px; background-color: #edefef; }
   h1, h2, h3, h4, h5, h6 { color: #25292a; margin: 0px 0px 10px 0px; font-family: 'Overpass', sans-serif; font-weight: 700; letter-spacing: -1px; line-height: 1; }
   h1 { font-size: 34px; }

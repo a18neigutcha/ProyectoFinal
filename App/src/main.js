@@ -17,8 +17,8 @@ import 'leaflet/dist/leaflet.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 import '@fortawesome/fontawesome-free/js/all.js';
 
-
-
+import '../node_modules/slick-carousel/slick/slick.css';
+import '../node_modules/slick-carousel/slick/slick-theme.css';
 
 import L from 'leaflet';
 delete L.Icon.Default.prototype._getIconUrl;
