@@ -1,93 +1,56 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
 <template>
-   
-<div class="carousel slide " data-ride="carousel">
-    <!-- <carousel :datos="datos" :controls="false"></carousel> -->
-    <div class="row">
-        <div class="carousel-inner">
-            <div class="card-deck">
-                <CartaLugar
-                    v-for="(lugar,id) in datos" :key="id"
-                    :titulo="lugar.titulo"
-                    :subtitulo="lugar.direccion"
-                    :descripcion="lugar.descripcion"
-                    :imagen="lugar.imagen"
-                ></CartaLugar>   
-            </div>
-        </div>                  
-        <!--   
-            <a class="left carousel-control" href="#carouselABC" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-            <a class="right carousel-control" href="#carouselABC" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a> 
-        -->
-    </div>  
-</div>
-<!-- container-fluid margin-0 -->
+  <div class="row">
+    <div class="col-sm">
+      <carousel :data="data"></carousel>
+    </div>
+    <div class="col-sm mt-3 mt-sm-0">
+      <carousel :data="data" direction="right"></carousel>
+    </div>
+    <div class="col-sm mt-3 mt-sm-0">
+      <carousel :data="data" direction="up"></carousel>
+    </div>
+    <div class="col-sm mt-3 mt-sm-0">
+      <carousel :data="data" direction="down"></carousel>
+    </div>
+  </div>
 </template>
 
 <script>
-import CartaLugar from './CartaLugar';
-import axios from 'axios';
-
-export default {
-  name: 'CarruselLugares',
-  components:{
-      CartaLugar
-  },
-  data:function() {
+import Vue from 'vue';
+import VueCarousel from '@chenfengyuan/vue-carousel';
+Vue.use(VueCarousel);
+  export default {
+    data() {
       return {
-          datos:[]
-      }
-      
-  },
-  mounted () {
-    axios.get('http://localhost:3000/api/')
-    .then(response =>{
-        this.datos.push(response.data[0]);
-        this.datos.push(response.data[1]);
-        this.datos.push(response.data[2]);
-    })
-/*   },
-  function(){
-  // setup your carousels as you normally would using JS
-  // or via data attributes according to the documentation
-  // https://getbootstrap.com/javascript/#carousel
-  $('#carousel123').carousel({ interval: 2000 });
-  $('#carouselABC').carousel({ interval: 3600 });
+        data: [
+          {
+            content: this.content,
+          },
+          {
+            content: this.content,
+          },
+          {
+            content: this.content,
+          },
+        ],
+      };
     },
 
-function(){
-  $('.carousel-showmanymoveone .item').each(function(){
-    var itemToClone = $(this);
-
-    for (var i=1;i<4;i++) {
-      itemToClone = itemToClone.next();
-
-      // wrap around if   at end of item collection
-      if (!itemToClone.length) {
-        itemToClone = $(this).siblings(':first');
-      }
-
-      // grab item, clone, add marker class, add to collection
-      itemToClone.children(':first-child').clone()
-        .addClass("cloneditem-"+(i))
-        .appendTo($(this));
-    }
-  }); */
-}
-}
+    methods: {
+      content(createElement, data, vm) {
+        return createElement('div', {
+          class: 'example-slide',
+        }, [`Slide ${vm.$parent.direction}`]);
+      },
+    },
+  };
 </script>
 
+
 <style scoped>
-  .card-deck {
-    align-items: center;
-    background-color: rgb(17, 17, 17);
-    color: rgb(10, 10, 10);
-    display: flex;
-    font-size: 1.5rem;
-    justify-content: center;
-    min-height: 10rem;
-    min-width: 10rem;
-    margin: 0;
-  }
+
 /* .carousel-showmanymoveone{
   .carousel-control
   { 
