@@ -42,7 +42,7 @@
             <form>
                 <div class="form-group row">
                     <label for="exampleFormControlInput1">Email</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="email@ejemplo.com">
                 </div>
                 <div class="form-group row">
                     <label for="exampleFormControlTextarea1">¿Cual es su incidencia?</label>
@@ -75,21 +75,60 @@ export default {
 
     #Help{
         padding-top: 6em;
-    }
-    #info-grupo{
-        height: 20em;
+        align-content: center;
+        text-align: center;
+        background-repeat: no-repeat;
+        position: relative;
     }
 
+    #Help::before {
+        content: "";
+        opacity: 0.8;
+        position: absolute;
+        background-size: cover;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background-image: url('http://getwallpapers.com/wallpaper/full/2/6/6/524405.jpg');
+        filter: grayscale(40%) blur(0.2px);
+    }
+    #info-grupo{
+        height: 18em;
+    }
+    
+
     #Recursos{
-        height: 20em;
-        background: #141E30;  /* fallback for old browsers */
-        background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        height: 8em;
+        background: rgb(97, 54, 54);  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, rgb(97, 54, 54), rgb(97, 54, 54));  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, rgba(214, 89, 50, 0.568), rgba(192, 29, 29, 0.541)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
     }
     #Incidencias{
         height: 20em;
+        margin-bottom: 5rem; 
+        color:black;
+        font-family: 'Numans';
+        padding: 2em;
     }
+
+    #Incidencias:hover{
+        height: 20em;
+        margin-bottom: 5rem; 
+        color:black;
+        font-family: 'Numans';
+        background: linear-gradient(to right, rgba(214, 89, 50, 0.568), rgba(192, 29, 29, 0.541));
+        padding: 2em;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border: 2px rgba( 214, 89, 50, 0.568);
+        border-radius: 12px;
+    }
+    h3,form{
+        color:black;
+        font-family: 'Numans';
+        align-content: center;
+        font-size: larger;
+    }
+
     .cont-persona{
         margin-bottom: 5em;
     }
@@ -100,6 +139,12 @@ export default {
         border: 10px solid #d4d4d4;
         height: 11em;
         width: 100%;
+    }
+
+    .btn-primary{
+        margin-top: 2em;
+        background-color:rgba( 214, 89, 50, 0.568);
+        border-color:rgba( 214, 89, 50, 0.568);
     }
 
 </style>

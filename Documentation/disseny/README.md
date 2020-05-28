@@ -8,6 +8,7 @@ Blanco, negro, tonos cálidos en contraste con los tonos fríos en cambio de ven
 
 Links, enlaces e iconos:
   - #ff7e0c orange
+  - rgb(97, 54, 54) darken red with little gradient to black-grey or solid
 
 ## Fuentes
 
