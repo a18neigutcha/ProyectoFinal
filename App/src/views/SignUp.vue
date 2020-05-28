@@ -1,70 +1,78 @@
 <template>
-    <!-- <div id="creationForm">
-        <validator name="validator">
-            <form id="SignUp">
-                <h1>Registro de Usuario</h1>
-                <input type="text" name="username" v-model="input.userName" placeholder="Nombre Usuario" />
-                <input type="email" name="email" v-validate:email="{required: true, minlength: 8}" v-model="input.email" placeholder="Escribe tu correo electrónico" />
-                <input type="password" name="password" v-model="input.password" placeholder="Contraseña" />
-                <input type="password" name="confirmaPassword" v-model="input.confirmaPassword" placeholder="Confirma Contraseña" />
-                <button type="button" v-on:click="CreateUser()">Regístrate</button>
-            </form> 
-        </validator>
-    </div> -->
-    <div
-        id="SignUp"
-    >
 
-        <p v-if="errors.length">
-            <b>Please correct the following error(s):</b>
-            <ul>
-            <li v-for="(error,id) in errors" :key="id">{{ error }}</li>
-            </ul>
-        </p>
+        <div class="fondo">
+        <div id="SignUp" class="container">
+            <div class="d-flex justify-content-center h-100">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Registro de Usuario</h3>
+                        
+                    </div>
+                                            <div class="d-flex justify-content-center links">
+                            ¿Ya tienes cuenta?<router-link to="/SignIn">Inicia Sesión</router-link>
+                        </div>
+                        <div class="card-footer">
+                            <p v-if="errors.length">
+                            <b>Corrige estos errore(s):</b>
+                                <ul>
+                                <li v-for="(error,id) in errors" :key="id">{{ error }}</li>
+                                </ul>
+                            </p>    
+                    </div>
 
-        <p>
-            <label for="userName">User name: </label>
-            <input
-                id="userName"
-                v-model="userName"
-                type="text"
-                name="userName"
-            >
-        </p>
 
-        <p>
-            <label for="email">Email: </label>
-            <input
-                id="email"
-                v-model="email"
-                type="email"
-                name="email"
-            >
-        </p>
+                    <div class="card-body">
+ 
+                        <form>       
+                            <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                </div>
+                                <input id="userName" type="text" name="username" class="form-control"  v-model="userName" placeholder="Usuario">
+                            </div>
+                            <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-mail"></i></span>
+                                </div>
+                                <input type="email" name="email" class="form-control" input id="email" v-model="email" placeholder="Email">
+                                
+                            </div>
+                            <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                </div>
+                                <input type="password" class="form-control" v-model="password" placeholder="Contraseña">
+                    
+                            </div>
+                            <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                </div>
+                                <input type="password" class="form-control" v-model="confirmaPassword" placeholder="Confirma contraseña">
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                                <label class="form-check-label" for="invalidCheck">
+                                    Estás de acuerdo con términos y condiciones
+                                </label>
+                                <div class="invalid-feedback">
+                                    Debes aceptar los términos y condiciones antes de aceptar.
+                                </div>
+                                                            <div class="form-group">
+                                <button type="button" class="btn float-right login_btn" @click="createUser()">Registro</button>
+                            </div>                                        
 
-        <p>
-            <label for="password">Password: </label>
-            <input
-                id="password"
-                v-model="password"
-                name="password"
-            >
-        </p>
+                            </div>
 
-        <p>
-            <label for="confirmaPassword">Confirma tu password: </label>
-            <input
-                id="confirmaPassword"
-                v-model="confirmaPassword"
-                name="confirmaPassword"
-            >
-        </p>
+                        </form>
+                    </div>
 
-        <p>
-            <button @click="createUser()">Registrarse</button>
-        </p>
-
+                    
+                </div>
+            </div>
+        </div>
     </div>
+
 </template>
 
 <script>
@@ -149,10 +157,89 @@
 }
 
 </script>
-<style>
-    .formulario {
+<style scoped>
+/*     .formulario {
          border: none;
          box-shadow: 0 5px 20px 0 rgba(0,0,0,.1);
          width: 100%;
-    }
+    } */
+
+    @import url('https://fonts.googleapis.com/css?family=Numans');
+
+.fondo{
+background-image: url('http://getwallpapers.com/wallpaper/full/e/8/5/694108-download-free-owl-city-wallpaper-1920x1200.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+height: 700px;
+font-family: 'Numans', sans-serif;
+}
+
+.container{
+height: 80%;
+align-content: center;
+}
+
+.card{
+height: 530px;
+margin-top: auto;
+margin-bottom: auto;
+width: 400px;
+background-color: rgba(0,0,0,0.5) !important;
+}
+
+.card-footer{
+    margin-top: auto;
+margin-bottom: auto;
+}
+
+p{
+    color: white;
+}
+
+.form-check{
+color: white;
+
+}
+
+.card-header h3{
+color: white;
+}
+
+.social_icon{
+position: absolute;
+right: 20px;
+top: -45px;
+}
+
+.input-group-prepend span{
+width: 50px;
+background-color: #25f9c9 ;
+color: black;
+border:0 !important;
+}
+
+input:focus{
+outline: 0 0 0 0  !important;
+box-shadow: 0 0 0 0 !important;
+
+}
+
+.login_btn{
+color: black;
+background-color: #25f9c9;
+width: 120px;
+}
+
+.login_btn:hover{
+color: black;
+background-color: white;
+}
+
+.links{
+color: white;
+}
+
+.links a{
+margin-left: 4px;
+}
 </style>

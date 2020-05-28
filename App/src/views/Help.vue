@@ -1,0 +1,150 @@
+<template>
+  <div id="Help" class="container-fluid">
+      <!-- https://www.flaticon.es/resultados?word=javascript -->
+      <div class="row mb-5">
+          <div class="col-2"></div>
+          <div id="info-grupo" class="col">
+            <h3>Nuestro equipo</h3>
+            <div class="row pt-5 mb-5">
+                <div class="col"></div>
+                <div class="col">
+                    <div class="cont-persona">
+                        <img src="@/assets/img/user_default.svg" alt="Imagen de miembro del equipo">
+                            <h6 class="mt-2 text-center">Neil Gutierrez Chacon</h6>
+                            <p class="text-center text-muted">Desarrollador BackEnd</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="cont-persona">
+                        <img src="@/assets/img/user_default.svg" alt="Imagen de miembro del equipo">
+                        <h6 class="mt-2 text-center">Alejandro Estrada</h6>
+                        <p class="text-center text-muted">Diseñador web</p>
+                    </div>
+                </div>
+                <div class="col"></div>
+            </div>
+              
+          </div>
+          <div class="col-2"></div>
+      </div>
+      <div class="row pt-5">
+          <div id="Recursos" class="col">
+
+          </div>
+      </div>
+      <div class="row pt-5">
+          <div class="col-3"></div>
+          <div id="Incidencias" class="col">
+            <div class="row">
+                <h3>Incidencias</h3>
+            </div>
+            
+            <form>
+                <div class="form-group row">
+                    <label for="exampleFormControlInput1">Email</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="email@ejemplo.com">
+                </div>
+                <div class="form-group row">
+                    <label for="exampleFormControlTextarea1">¿Cual es su incidencia?</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <!-- Button submit -->
+                <div class="form-group row pb-3">
+                    <div class="col-4"></div>
+                    <div class="col-4 d-flex justify-content-center">
+                        <button v-on:click.prevent="post" class="btn btn-primary">Sign in</button>
+                    </div>
+                    <div class="col-4"></div>
+                </div>
+            </form>
+          </div>
+          <div class="col-3"></div>
+      </div>
+  </div>
+</template>
+
+<script>
+export default {
+    name:"Help",
+
+
+}
+</script>
+
+<style scoped>
+
+    #Help{
+        padding-top: 6em;
+        align-content: center;
+        text-align: center;
+        background-repeat: no-repeat;
+        position: relative;
+    }
+
+    #Help::before {
+        content: "";
+        opacity: 0.8;
+        position: absolute;
+        background-size: cover;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background-image: url('http://getwallpapers.com/wallpaper/full/2/6/6/524405.jpg');
+        filter: grayscale(40%) blur(0.2px);
+    }
+    #info-grupo{
+        height: 18em;
+    }
+    
+
+    #Recursos{
+        height: 8em;
+        background: rgb(97, 54, 54);  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, rgb(97, 54, 54), rgb(97, 54, 54));  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, rgba(214, 89, 50, 0.568), rgba(192, 29, 29, 0.541)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    }
+    #Incidencias{
+        height: 20em;
+        margin-bottom: 5rem; 
+        color:black;
+        font-family: 'Numans';
+        padding: 2em;
+    }
+
+    #Incidencias:hover{
+        height: 20em;
+        margin-bottom: 5rem; 
+        color:black;
+        font-family: 'Numans';
+        background: linear-gradient(to right, rgba(214, 89, 50, 0.568), rgba(192, 29, 29, 0.541));
+        padding: 2em;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border: 2px rgba( 214, 89, 50, 0.568);
+        border-radius: 12px;
+    }
+    h3,form{
+        color:black;
+        font-family: 'Numans';
+        align-content: center;
+        font-size: larger;
+    }
+
+    .cont-persona{
+        margin-bottom: 5em;
+    }
+    .cont-persona img{
+        border-radius: 200px 200px 200px 200px;
+        -moz-border-radius: 200px 200px 200px 200px;
+        -webkit-border-radius: 200px 200px 200px 200px;
+        border: 10px solid #d4d4d4;
+        height: 11em;
+        width: 100%;
+    }
+
+    .btn-primary{
+        margin-top: 2em;
+        background-color:rgba( 214, 89, 50, 0.568);
+        border-color:rgba( 214, 89, 50, 0.568);
+    }
+
+</style>

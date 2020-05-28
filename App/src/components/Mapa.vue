@@ -6,23 +6,26 @@
       :lat-lng="[lugar.latitud,lugar.longitud]" 
     >
       <l-tooltip :options="{ permanent: true, interactive: true }">
-        <div 
+        <!-- Opcion de mostrar los datos con modal -->
+        <!-- <div 
           data-toggle="modal" 
           :data-target="'#staticBackdrop'+lugar.id" 
         >
-          {{lugar.nombre}}
-        </div>
+          {{lugar.titulo}}
+        </div> -->
+        <!-- Opcion de mostrar los datos en sus respectiva pagina -->
+        <router-link :to="'/LugarInfo/'+lugar.id">{{lugar.titulo}}</router-link>
       </l-tooltip>
 
     </l-marker>
     <!-- Modal -->
-    <div
+    <!-- <div
       v-for="(lugar,id) in datos" :key="id"
       class="modal fade" :id="'staticBackdrop'+lugar.id" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="staticBackdropLabel">{{lugar.nombre}}</h5>
+            <h5 class="modal-title" id="staticBackdropLabel">{{lugar.titulo}}</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -38,7 +41,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </l-map>
   
 

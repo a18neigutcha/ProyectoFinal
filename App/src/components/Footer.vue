@@ -43,10 +43,12 @@
                             <div class="f_widget social-widget pl_70 wow fadeInLeft" data-wow-delay="0.8s" style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInLeft;">
                                 <h3 class="f-title f_600 t_color f_size_18">Síguenos en nuestras redes sociales</h3>
                                 <div class="f_social_icon">
-                                    <a href="#" class="fab fa-facebook"></a>
+                                    <a href="https://www.facebook.com/" class="fab fa-facebook"  target="_blank"></a>
                                     <a href="#" class="fab fa-twitter"></a>
+                                    <a href="https://www.instagram.com/" class="fab fa-instagram" target="_blank"></a>
                                     <a href="#" class="fab fa-linkedin"></a>
                                     <a href="#" class="fab fa-pinterest"></a>
+                                    <a href="https://www.youtube.com/" class="fab fa-youtube"></a>
                                 </div>
                             </div>
                         </div>
@@ -109,7 +111,7 @@ export default {
     }
     .btn_get_two:hover {
         background: transparent;
-        color: #5e2ced;
+        color: rgb(97, 54, 54);
     }
     .btn_get:hover {
         color: #fff;
@@ -178,7 +180,7 @@ export default {
     .btn_get_two {
         -webkit-box-shadow: none;
         box-shadow: none;
-        background: #5e2ced;
+        background: rgb(97, 54, 54);
         border-color: #5e2ced;
         color: #fff;
     }
@@ -198,7 +200,7 @@ export default {
     }
     .new_footer_top .f-title {
         margin-bottom: 30px;
-        color: #263b5e;
+        color: rgb(97, 54, 54) ;
     }
     .f_600 {
         font-weight: 600;

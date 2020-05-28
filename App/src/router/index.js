@@ -9,6 +9,11 @@ import UserPage from "../views/UserPage.vue";
 import Admin from "../views/Admin.vue"
 import Actividades from "../views/Actividades";
 import LugarInfo from "../views/LugarInfo";
+import AgregarActividades from "../views/AgregarActividades";
+import MisLugares from "../views/MisLugares";
+import LugarUpdate  from "../views/LugarUpdate";
+import ConfigUser from "../views/ConfigUser";
+import Help from "../views/Help";
 
 Vue.use(VueRouter);
 
@@ -63,6 +68,27 @@ const routes = [
     path: '/LugarInfo/:id',
     name: 'LugarInfo',
     component: LugarInfo
+  },{
+    path: '/AgregarActividades',
+    name: 'AgregarActividades',
+    component: AgregarActividades
+  },{
+    path: '/MisLugares',
+    name: 'MisLugares',
+    component: MisLugares
+  },{
+    path: '/MisLugares/:id',
+    name: 'LugarUpdate',
+    component: LugarUpdate
+  },
+  {
+    path: '/ConfigUser',
+    name: 'ConfigUser',
+    component: ConfigUser
+  },{
+    path: '/Help',
+    name: 'Help',
+    component: Help
   }
 ];
 

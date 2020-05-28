@@ -14,5 +14,6 @@ const verifyToken = require('../verifyToken');
 router.post('/signUp',UserController.signUp);
 router.post('/signIn',UserController.signIn);
 router.get('/sesion/me',verifyToken,UserController.me);
+router.put('/sesion/me',verifyToken,UserController.updateUser);
 
 module.exports = router;
