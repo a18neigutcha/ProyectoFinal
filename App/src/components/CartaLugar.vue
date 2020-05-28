@@ -1,12 +1,12 @@
 <template>
-    <div class="card text-center p-0 border-0 rounded-0 m-0">
-        <div class="card-body pt-0 pl-0 pr-0">
-            <img :src="imagen" class="card-img-top" alt="imagen del lugar oculto">
-            <h5 class="card-title mt-4">{{titulo}}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">{{subtitulo}}</h6>
-            <p class="card-text">{{descripcion}}</p>
-           <!--  <a href="#" class="btn btn-primary">Card link</a> -->
+    <div class="cartaLugar text-center">
+        <img :src="imagen" alt="imagen del lugar oculto">
+        <div class="cont-info">
+            <h1>{{titulo}}</h1>
+            <h4>{{subtitulo}}</h4>
+            <p>{{descripcion}}</p>
         </div>
+        <!--  <a href="#" class="btn btn-primary">Card link</a> -->
     </div>
 </template>
 
@@ -25,12 +25,23 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-    img {
+    .cont-info{
+        position: absolute;
+        top: 40%;
         width: 100%;
-        height: 80%    ;
-        padding: 0px;
+        color: white;
     }
-    .card-img-top{
+    .cont-info h1,h4,p{
+        
+        color: white;
+    }
+
+    .cartaLugar{
+        width: 30em;
+        position: relative;
+    }
+    .cartaLugar img{
         width: 100%;
+        height: 30em;
     }
 </style>

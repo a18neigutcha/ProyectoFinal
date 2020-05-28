@@ -2,18 +2,18 @@
 
 <template>
   <div class="row">
-    <div class="col-sm">
+    <!-- <div class="col-sm">
       <carousel :data="data"></carousel>
-    </div>
+    </div> -->
     <div class="col-sm mt-3 mt-sm-0">
       <carousel :data="data" direction="right"></carousel>
     </div>
-    <div class="col-sm mt-3 mt-sm-0">
+    <!-- <div class="col-sm mt-3 mt-sm-0">
       <carousel :data="data" direction="up"></carousel>
     </div>
     <div class="col-sm mt-3 mt-sm-0">
       <carousel :data="data" direction="down"></carousel>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -37,7 +37,6 @@ Vue.use(VueCarousel);
         ],
       };
     },
-
     methods: {
       content(createElement, data, vm) {
         return createElement('div', {
