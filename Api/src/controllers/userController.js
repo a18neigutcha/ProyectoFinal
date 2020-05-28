@@ -41,12 +41,13 @@ class UserController{
                 console.log(result[0]);
 
                 // Create a Token
-                const token = jwt.sign({ id: result[0] }, config.secret, {
+                const token = jwt.sign({ id: result[0].id}, config.secret, {
                     expiresIn: 60 * 60 * 24 // expires in 24 hours
                 });
 
                 res.json({ auth: true, token });
             });
+
 
             
         } catch (e) {
@@ -74,7 +75,7 @@ class UserController{
             }
             if(result.length>0){
 
-
+                console.log(result);
                 const validPassword = await User.comparePassword(result[0].password,req.body.password);
                 console.log("password valido: ",validPassword);
                 if (!validPassword) {
@@ -84,7 +85,7 @@ class UserController{
                         
                     });
                 }
-                const token = jwt.sign({id:result.id}, config.secret, {
+                const token = jwt.sign({id:result[0].id}, config.secret, {
                     expiresIn: 60 * 60 * 24
                 });
 
@@ -122,7 +123,7 @@ class UserController{
     static async me(req,res){
 
 
-        await mysqlConnection.query('SELECT * FROM USUARIO WHERE ?',[req.userId],(err,result,fields)=>{
+        await mysqlConnection.query('SELECT * FROM USUARIO WHERE id=?',[req.userId],(err,result,fields)=>{
             if(err){
                 console.log(err);
                 res.status(500);
@@ -138,6 +139,89 @@ class UserController{
             
         });
 
+    }
+
+
+    static async updateUser(req,res){
+        try{
+            console.log(req.body);
+
+            const {userName,email,modifPassword} = req.body
+            if(modifPassword=='false'){
+                await mysqlConnection.query(
+                    'UPDATE USUARIO set userName=?,email=? WHERE id = ?',
+                    [
+                        userName,
+                        email,
+                        req.userId
+                    ],
+                    (err,result,fields)=>{
+
+                        if(err){
+                            console.log(err);
+                            res.status(500).json({text:"No se pudieron actualizar los datos"});
+                        }else{
+                            console.log(result);
+                            res.status(200).json({text:"Datos actualizados"});
+                        }
+                });
+            }else{
+                const {password} = req.body;
+                
+                await mysqlConnection.query('SELECT password FROM USUARIO WHERE id=?',[req.userId],async (err, result, fields)=>{
+                    if (err){
+                        console.log(err);
+                        res.status(500).json({text:"Error interno del servidor"});
+                    }
+                    if(result.length>0){
+        
+                        console.log(result);
+                        const validPassword = await User.comparePassword(result[0].password,password);
+                        console.log("password valido: ",validPassword);
+                        if (!validPassword) {
+                            res.status(401).json({
+                                auth: false,
+                                text:"password incorrecto"
+                            });
+                        }else{
+                            let { newPassword} =req.body;
+                            newPassword = await User.encryptPassword(newPassword);
+                            console.log("Password encryptado: "+ newPassword);
+                            await mysqlConnection.query(
+                                'UPDATE USUARIO set userName=?,email=?,password=? WHERE id = ?',
+                                [
+                                    userName,
+                                    email,
+                                    newPassword,
+                                    req.userId
+                                ],
+                                (err,result,fields)=>{
+            
+                                    if(err){
+                                        console.log(err);
+                                        res.status(500).json({text:"No se pudieron actualizar los datos"});
+                                    }else{
+                                        console.log(result);
+                                        res.status(200).json({text:"Datos actualizados"});
+                                    }
+                            });
+                        }
+
+                        
+                    }else{
+                        res.status(404).json({
+                            auth:false,
+                            text:"Usuario no identificado."
+                        });
+                    }
+                });
+
+            }
+            
+        }catch(e){
+            res.status(500).json({text:"No se pudieron actualizar los datos"});
+        }
+        
     }
     
 }

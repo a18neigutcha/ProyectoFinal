@@ -3,6 +3,10 @@ const app = express();
 const path = require('path');
 const morgan = require('morgan');
 const cors = require('cors');
+const multer = require ('multer');
+
+/* C */
+//require('./databaseMongo');
 
 /**
  * @file index.js
@@ -39,9 +43,31 @@ app.use(morgan(":method :url :status"));
  */
 app.use(cors());
 
+
+/**
+ * Guarde las imagenes
+ */
+
+const storage = multer.diskStorage({
+    destination: path.join(__dirname,'public/img/'),
+    filename: (req,file,cb)=>{
+        cb(null,file.originalname);
+    }
+});
+
+app.use(multer({
+    storage,
+    dest: path.join(__dirname,'public/img/')
+}).single('imagen'));
+
+
 //Routes
 
-app.use('/',express.static(__dirname+'/docs'));
+const pathDocs = path.join(__dirname,'public/docs');
+const pathImg = path.join(__dirname,'public/img');
+
+app.use('/',express.static(pathDocs));
+app.use('/img',express.static(pathImg));
 app.use('/api',require('./routes/lugaresRoutes'));
 app.use('/api',require('./routes/userRoutes'));
 
