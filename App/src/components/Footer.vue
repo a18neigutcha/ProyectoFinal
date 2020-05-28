@@ -111,7 +111,7 @@ export default {
     }
     .btn_get_two:hover {
         background: transparent;
-        color: #5e2ced;
+        color: rgb(97, 54, 54);
     }
     .btn_get:hover {
         color: #fff;
@@ -180,7 +180,7 @@ export default {
     .btn_get_two {
         -webkit-box-shadow: none;
         box-shadow: none;
-        background: #5e2ced;
+        background: rgb(97, 54, 54);
         border-color: #5e2ced;
         color: #fff;
     }
@@ -200,7 +200,7 @@ export default {
     }
     .new_footer_top .f-title {
         margin-bottom: 30px;
-        color: #263b5e;
+        color: rgb(97, 54, 54) ;
     }
     .f_600 {
         font-weight: 600;
