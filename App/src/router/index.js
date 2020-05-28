@@ -13,6 +13,7 @@ import AgregarActividades from "../views/AgregarActividades";
 import MisLugares from "../views/MisLugares";
 import LugarUpdate  from "../views/LugarUpdate";
 import ConfigUser from "../views/ConfigUser";
+import Help from "../views/Help";
 
 Vue.use(VueRouter);
 
@@ -84,6 +85,10 @@ const routes = [
     path: '/ConfigUser',
     name: 'ConfigUser',
     component: ConfigUser
+  },{
+    path: '/Help',
+    name: 'Help',
+    component: Help
   }
 ];
 

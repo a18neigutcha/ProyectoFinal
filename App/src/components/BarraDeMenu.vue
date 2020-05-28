@@ -59,7 +59,7 @@
                             </li>
                             <!-- Item Help -->
                             <li class="nav-item mx-3">
-                                <router-link class="nav-link" to="/Ayuda">
+                                <router-link class="nav-link" to="/Help">
                                     <i class="fas fa-users-cog"></i>
                                     Help
                                 </router-link>
