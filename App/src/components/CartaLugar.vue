@@ -4,8 +4,9 @@
         <div class="cont-info">
             <h1>{{titulo}}</h1>
             <h4>{{subtitulo}}</h4>
-            <p>{{descripcion}}</p>
+            
         </div>
+        <p>{{descripcion}}</p>
         <!--  <a href="#" class="btn btn-primary">Card link</a> -->
     </div>
 </template>
@@ -33,14 +34,16 @@ export default {
         color: white;
         
     }
-    .cont-info h4{
+    .cartaLugar p{
         position: absolute;
-        top:20%;
+        top:3em;
+        left: 35%;
+        color: white;
 
     }
     .cont-info h1,h4{
         
-        -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-family: 'Overpass', sans-serif; letter-spacing: 5px; font-size: 20px; color: white; font-weight: 700;
+        -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-family: 'Overpass', sans-serif; letter-spacing: 5px; font-size: 30px; color: white; font-weight: 900;
     }
     .p{
         top: 200%;
