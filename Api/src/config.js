@@ -9,9 +9,9 @@ module.exports = {
 
     secret: 'mysecretkey',
     databaseAcces:{
-        host: 'mysql',
+        host: 'localhost',
         user: 'root',
-        password: 'password',
+        password: '1234',
         database: 'RE_FIND',
         insecureAuth : true
     }
