@@ -121,7 +121,7 @@
             };
         },
         mounted () {
-            axios.get('http://barcelonadesconocida.tk:3000/api/'+this.$route.params.id,)
+            axios.get('http://localhost:3000/api/'+this.$route.params.id,)
             .then(response =>{
                 this.datosLugar=response.data;
                 console.log(response.data);
@@ -141,7 +141,7 @@
                 this.actualizarDatos();
             },
             actualizarDatos:function(){
-                axios.put('http://barcelonadesconocida.tk:3000/api/valoracion/'+this.datosLugar.id,{
+                axios.put('http://localhost:3000/api/valoracion/'+this.datosLugar.id,{
                     valoracion:this.datosLugar.valoracion
                 },{
                     headers: {

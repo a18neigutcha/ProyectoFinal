@@ -39,33 +39,16 @@
             <!-- <CarruselLugares/> -->
             <div class="row carousel">
               <div class="col">
-                  <slick v-show="lugares.lenght>=2" ref="slick" :options="slickOptions" >
+                  <slick v-show="lugares.length>0" ref="slick" :options="slickOptions" >
                     <CartaLugar
-                        :titulo="lugares[0].titulo"
-                        :subtitulo="lugares[0].direccion"
-                        :descripcion="lugares[0].descripcion"
-                        :imagen="lugares[0].imagen"
-                    ></CartaLugar>
-                    <CartaLugar
-                        :titulo="lugares[1].titulo"
-                        :subtitulo="lugares[1].direccion"
-                        :descripcion="lugares[1].descripcion"
-                        :imagen="lugares[1].imagen"
-                    ></CartaLugar>
-                    <CartaLugar
-                        :titulo="lugares[2].titulo"
-                        :subtitulo="lugares[2].direccion"
-                        :descripcion="lugares[2].descripcion"
-                        :imagen="lugares[2].imagen"
-                    ></CartaLugar>
-                    <!-- <CartaLugar
-                        :titulo="lugares[3].titulo"
-                        :subtitulo="lugares[3].direccion"
-                        :descripcion="lugares[3].descripcion"
-                        :imagen="lugares[3].imagen"
-                    ></CartaLugar> -->
+                      v-for="(lugar,id) in lugares" :key="id"
+                      :titulo="lugar.titulo"
+                      :subtitulo="lugar.direccion"
+                      :descripcion="lugar.descripcion"
+                      :imagen="lugar.imagen"
+                    ></CartaLugar>   
                   </slick>
-                  <div v-show="lugares.lenght<2">
+                  <div v-show="lugares.length==0">
                     <div class="text-center">
                       <div class="spinner-border" role="status">
                         <span class="sr-only">Loading...</span>
@@ -117,40 +100,41 @@ export default {
       };
   },
   mounted () {
-    axios.get('http://barcelonadesconocida.tk:3000/api/')
+    axios.get('http://localhost:3000/api/')
     .then(response =>{
         this.lugares=response.data;
         console.log(response.data);
     })
   },
+  beforeUpdate() {
+      if (this.$refs.slick) {
+          this.$refs.slick.destroy();
+      }
+  },
+  updated() {
+    
+    this.$nextTick(function () {
+        if (this.$refs.slick) {
+            this.$refs.slick.create(this.slickOptions);
+        }
+    });
+  },
   methods: {
-    lugaresMasVistos: function(){
-      axios.get('http://barcelonadesconocida.tk:3000/api/')
+    /* lugaresMasVistos: function(){
+      axios.get('http://localhost:3000/api/')
       .then(response =>{
           this.lugares=response.data;
           this.$refs.slick.reSlick();
           console.log(response.data);
       })
-    },
+    }, */
     next() {
         this.$refs.slick.next();
     },
-
     prev() {
         this.$refs.slick.prev();
     },
-    beforeUpdate() {
-        if (this.$refs.slick) {
-            this.$refs.slick.destroy();
-        }
-    },
-    updated() {
-        this.$nextTick(function () {
-            if (this.$refs.slick) {
-                this.$refs.slick.create(this.slickOptions);
-            }
-        });
-    },
+    
     reInit() {
         // Helpful if you have to deal with v-for to update dynamic lists
         this.$nextTick(() => {
@@ -160,14 +144,15 @@ export default {
     },
 
   },
-  watch: {
+  /* watch: {
       profileData() {
           this.lugaresMasVistos();
       },
-      lugares() {
+      lugares:function() {
+          console.log("te veo!");
           this.reInit();
       }
-  }
+  } */
 };
 </script>
 

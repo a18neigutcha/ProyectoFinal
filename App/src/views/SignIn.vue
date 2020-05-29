@@ -72,7 +72,7 @@ export default {
           if(this.email==""){
               alert("El usuario no está registrado");
           }else{
-              axios.post('http://barcelonadesconocida.tk:3000/api/signIn',{
+              axios.post('http://localhost:3000/api/signIn',{
                     email: this.input.email,
                     password: this.input.password
                 })

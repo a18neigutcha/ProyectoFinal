@@ -161,7 +161,7 @@ export default {
         }
     },
     mounted () {
-        axios.get('http://barcelonadesconocida.tk:3000/api/'+this.$route.params.id,)
+        axios.get('http://localhost:3000/api/'+this.$route.params.id,)
         .then(response =>{
             this.titulo=response.data.titulo;
             this.direccion=response.data.direccion;
@@ -205,7 +205,7 @@ export default {
                 console.log(body);
 
 
-                axios.put('http://barcelonadesconocida.tk:3000/api/'+this.$route.params.id,body,{
+                axios.put('http://localhost:3000/api/'+this.$route.params.id,body,{
                     headers: {
                         'accept': 'application/json',
                         'Accept-Language': 'en-US,en;q=0.8',

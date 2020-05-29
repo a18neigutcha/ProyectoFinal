@@ -82,7 +82,7 @@
         },
         mounted(){
             // Petición de los datos del usuario.
-            axios.get('http://barcelonadesconocida.tk:3000/api/sesion/me',{
+            axios.get('http://localhost:3000/api/sesion/me',{
                 headers: {
                 'x-access-token': this.$cookies.get('token'),
                 }
@@ -96,7 +96,7 @@
 
 
             // Petición de los lugares subidos por el usuario
-            axios.get('http://barcelonadesconocida.tk:3000/api/user/lugares',{
+            axios.get('http://localhost:3000/api/user/lugares',{
                 headers: {
                     'x-access-token': this.$cookies.get('token'),
                 }

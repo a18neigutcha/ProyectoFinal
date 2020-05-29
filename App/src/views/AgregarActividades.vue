@@ -195,7 +195,7 @@ export default {
                 console.log(body);
 
 
-                axios.post('http://barcelonadesconocida.tk:3000/api/',body,{
+                axios.post('http://localhost:3000/api/',body,{
                     headers: {
                         'accept': 'application/json',
                         'Accept-Language': 'en-US,en;q=0.8',

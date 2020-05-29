@@ -146,10 +146,10 @@
     #navbarSupportedContent{
         position: relative;
     }
-    #subMenu{
+    /* #subMenu{
         position: absolute;
         right: 5%;
-    }
+    } */
     /* #item-user div.open{
         position: absolute;
         z-index: 2;
