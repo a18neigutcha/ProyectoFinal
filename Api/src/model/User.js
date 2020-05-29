@@ -2,20 +2,6 @@ const bcrypt = require('bcryptjs');
 
 class User{
 
-    // /**
-    //  * @constructor User
-    //  * @param {string} userName Nomber del usuario. 
-    //  * @param {string} email Email del usuario
-    //  * @param {string} password Password encryptado.
-    //  *  
-    //  */
-
-    // constructor(userName,email,password) {
-    //     this.userName = userName;
-    //     this.email = email;
-    //     this.password = password;
-    // }
-
     /**
      * @method encryptPassword
      * @param {string} password 
