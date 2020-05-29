@@ -14,6 +14,7 @@
                             <p class="text-center text-muted">Desarrollador BackEnd</p>
                     </div>
                 </div>
+
                 <div class="col">
                     <div class="cont-persona">
                         <img src="@/assets/img/user_default.svg" alt="Imagen de miembro del equipo">
