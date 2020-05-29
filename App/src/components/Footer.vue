@@ -43,12 +43,12 @@
                             <div class="f_widget social-widget pl_70 wow fadeInLeft" data-wow-delay="0.8s" style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInLeft;">
                                 <h3 class="f-title f_600 t_color f_size_18">Síguenos en nuestras redes sociales</h3>
                                 <div class="f_social_icon">
-                                    <a href="https://www.facebook.com/" class="fab fa-facebook"  target="_blank"></a>
+                                    <a href="https://www.facebook.com/"  target="_blank"><i class="fab fa-facebook"></i></a>
                                     <a href="#" class="fab fa-twitter"></a>
-                                    <a href="https://www.instagram.com/" class="fab fa-instagram" target="_blank"></a>
+                                    <a href="https://www.instagram.com/"  target="_blank"><i class="fab fa-instagram"></i></a>
                                     <a href="#" class="fab fa-linkedin"></a>
                                     <a href="#" class="fab fa-pinterest"></a>
-                                    <a href="https://www.youtube.com/" class="fab fa-youtube"></a>
+                                    <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -142,7 +142,7 @@ export default {
     .f_widget.about-widget .f_list {
         margin-bottom: 0px;
     }
-    .new_footer_top .f_social_icon a {
+    .new_footer_top .f_social_icon a i {
         width: 44px;
         height: 44px;
         line-height: 43px;
@@ -150,7 +150,7 @@ export default {
         border: 1px solid #e2e2eb;
         font-size: 24px;
     }
-    .f_social_icon a {
+    .f_social_icon a i {
         width: 46px;
         height: 46px;
         border-radius: 50%;
