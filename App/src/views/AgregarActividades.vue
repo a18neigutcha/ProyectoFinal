@@ -121,7 +121,6 @@
 </template>
 
 <script>
-// import L from 'leaflet';
 import { latLng } from "leaflet";
 import { LMap, LTileLayer, LMarker } from "vue2-leaflet";
 import axios from "axios";

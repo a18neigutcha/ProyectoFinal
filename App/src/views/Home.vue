@@ -62,8 +62,6 @@
       </div>
 
     </div>
-  
-  {{API}}
   </div>
   
 </template>
@@ -95,7 +93,6 @@ export default {
               autoplay: true,
               autoplaySpeed: 2000,
 
-              // Any other options that can be got from plugin documentation
           },
       };
   },
@@ -136,15 +133,6 @@ export default {
     },
 
   },
-  /* watch: {
-      profileData() {
-          this.lugaresMasVistos();
-      },
-      lugares:function() {
-          console.log("te veo!");
-          this.reInit();
-      }
-  } */
 };
 </script>
 
@@ -156,11 +144,6 @@ export default {
 </style>
 
 <style scoped>
-
-  /* @import '../../node_modules/slick-carousel/slick/slick.css'; */
-  /* #home{
-    background-color: black;
-  } */
   .imagenPortada{
     height: 30em;
     }

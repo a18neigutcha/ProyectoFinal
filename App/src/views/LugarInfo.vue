@@ -4,7 +4,6 @@
           <div class="col-1"></div>
           <div class="col p-0">
               <div class="contenedor">
-                  <!-- <img :src="datosLugar.imagen" class="imagenLugar" alt="Imagen del lugar"> -->
                   <div class="textoFlotante">
                       <!-- Titulo Lugar -->
                       <h2 class="text-light m-0">{{datosLugar.titulo}}</h2>
@@ -61,14 +60,8 @@
             <div class="col-2"></div>         
             <div class="col">
                 <div class="cont-imagen d-flex justify-content-center align-items-center">
-                    <!-- <div class="arrow-image">
-                        <img class="arrow" src="@/assets/img/arrow_left.svg" alt="Flecha izquierda ">
-                    </div> -->
                     <!-- Imagen -->
                     <img :src="datosLugar.imagen" class="imagenLugar" alt="Imagen del lugar">
-                    <!-- <div class="arrow-image">
-                        <img class="arrow" src="@/assets/img/arrow_right.svg" alt="Flecha derecha">
-                    </div> -->
                     
                 </div>   
             </div>
@@ -80,14 +73,6 @@
           </div>
       </div>
 
-
-      <!-- Historias/Noticias -->
-      <!-- <div class="row">
-          <div>
-              <h5>Noticia titulo</h5>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et consectetur ratione ullam nostrum ducimus quos voluptatibus fuga porro! Voluptatibus quasi quidem magni, culpa autem aperiam voluptatem velit fugiat quo fugit!</p>
-          </div>
-      </div> -->
 
   </div>
 </template>
@@ -193,11 +178,9 @@
         transform: translate(-50%, -50%);
         background-color: rgba(0, 0, 0, 0.329);
         padding: 0.5em 10em 0.5em 10em;
-        /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
         border-radius: 6px 80px 6px 80px;
         -moz-border-radius: 6px 80px 6px 80px;
         -webkit-border-radius: 6px 80px 6px 80px;
-        /* border: 3px solid rgba(0, 0, 0, 0.123); */
         -webkit-box-shadow: 2px 9px 35px 1px rgba(0,0,0,0.75);
         -moz-box-shadow: 2px 9px 35px 1px rgba(0,0,0,0.75);
         box-shadow: 2px 9px 35px 1px rgba(0,0,0,0.75);

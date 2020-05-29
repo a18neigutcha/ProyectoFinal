@@ -100,12 +100,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-/*     #secure {
-        background-color: #FFFFFF;
-        border: 1px solid #CCCCCC;
-        padding: 20px;
-        margin-top: 10px;
-} */
 
 @import url('https://fonts.googleapis.com/css?family=Numans');
 

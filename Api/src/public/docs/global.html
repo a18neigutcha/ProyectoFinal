@@ -94,6 +94,72 @@
     
 
     
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="storage"><span class="type-signature">(constant) </span>storage<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Guarde las imagenes
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line51">line 51</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
 
     
         <h3 class="subsection-title">Methods</h3>
@@ -228,7 +294,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="controllers_lugaresController.js.html">controllers/lugaresController.js</a>, <a href="controllers_lugaresController.js.html#line71">line 71</a>
+        <a href="controllers_lugaresController.js.html">controllers/lugaresController.js</a>, <a href="controllers_lugaresController.js.html#line85">line 85</a>
     </li></ul></dd>
     
 
@@ -264,7 +330,7 @@
     
 
     
-    <h4 class="name" id="comparePassword"><span class="type-signature"></span>comparePassword<span class="signature">(password)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    <h4 class="name" id="comparePassword"><span class="type-signature"></span>comparePassword<span class="signature">(password, passwordComp)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
     
 
     
@@ -324,6 +390,29 @@
         </tr>
 
     
+
+        <tr>
+            
+                <td class="name"><code>passwordComp</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
     </tbody>
 </table>
 
@@ -361,7 +450,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="model_User.js.html">model/User.js</a>, <a href="model_User.js.html#line32">line 32</a>
+        <a href="model_User.js.html">model/User.js</a>, <a href="model_User.js.html#line30">line 30</a>
     </li></ul></dd>
     
 
@@ -543,7 +632,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="controllers_lugaresController.js.html">controllers/lugaresController.js</a>, <a href="controllers_lugaresController.js.html#line55">line 55</a>
+        <a href="controllers_lugaresController.js.html">controllers/lugaresController.js</a>, <a href="controllers_lugaresController.js.html#line53">line 53</a>
     </li></ul></dd>
     
 
@@ -703,7 +792,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="controllers_lugaresController.js.html">controllers/lugaresController.js</a>, <a href="controllers_lugaresController.js.html#line88">line 88</a>
+        <a href="controllers_lugaresController.js.html">controllers/lugaresController.js</a>, <a href="controllers_lugaresController.js.html#line145">line 145</a>
     </li></ul></dd>
     
 
@@ -836,7 +925,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="model_User.js.html">model/User.js</a>, <a href="model_User.js.html#line21">line 21</a>
+        <a href="model_User.js.html">model/User.js</a>, <a href="model_User.js.html#line19">line 19</a>
     </li></ul></dd>
     
 
@@ -1031,6 +1120,162 @@
     
 
     
+    <h4 class="name" id="listaPorUsuario"><span class="type-signature"></span>listaPorUsuario<span class="signature">(req, res)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>req</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">int</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">id del usuario.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>res</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Json</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Lista de lugares del usuario.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_lugaresController.js.html">controllers/lugaresController.js</a>, <a href="controllers_lugaresController.js.html#line158">line 158</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
     <h4 class="name" id="logOut"><span class="type-signature"></span>logOut<span class="signature">(req, res)</span><span class="type-signature"></span></h4>
     
 
@@ -1155,7 +1400,167 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="controllers_userController.js.html">controllers/userController.js</a>, <a href="controllers_userController.js.html#line108">line 108</a>
+        <a href="controllers_userController.js.html">controllers/userController.js</a>, <a href="controllers_userController.js.html#line104">line 104</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="me"><span class="type-signature"></span>me<span class="signature">(req, res)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Autentifica el login de un usuario y nos retorna sus datos.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>req</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>res</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_userController.js.html">controllers/userController.js</a>, <a href="controllers_userController.js.html#line117">line 117</a>
     </li></ul></dd>
     
 
@@ -1315,7 +1720,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="controllers_userController.js.html">controllers/userController.js</a>, <a href="controllers_userController.js.html#line57">line 57</a>
+        <a href="controllers_userController.js.html">controllers/userController.js</a>, <a href="controllers_userController.js.html#line61">line 61</a>
     </li></ul></dd>
     
 
@@ -1635,7 +2040,163 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="controllers_lugaresController.js.html">controllers/lugaresController.js</a>, <a href="controllers_lugaresController.js.html#line35">line 35</a>
+        <a href="controllers_lugaresController.js.html">controllers/lugaresController.js</a>, <a href="controllers_lugaresController.js.html#line33">line 33</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="valoraLugar"><span class="type-signature"></span>valoraLugar<span class="signature">(req, res)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>req</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>res</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_lugaresController.js.html">controllers/lugaresController.js</a>, <a href="controllers_lugaresController.js.html#line125">line 125</a>
     </li></ul></dd>
     
 
@@ -1864,13 +2425,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">BarcelonaEscondidaDoc</a></h2><h3>Modules</h3><ul><li><a href="module-LugaresRoutes.html">LugaresRoutes</a></li><li><a href="module-UserRoutes.html">UserRoutes</a></li></ul><h3>Classes</h3><ul><li><a href="LugaresController.html">LugaresController</a></li><li><a href="User.html">User</a></li><li><a href="UserController.html">UserController</a></li></ul><h3>Global</h3><ul><li><a href="global.html#actualizarLugar">actualizarLugar</a></li><li><a href="global.html#comparePassword">comparePassword</a></li><li><a href="global.html#crearLugar">crearLugar</a></li><li><a href="global.html#eliminarLugar">eliminarLugar</a></li><li><a href="global.html#encryptPassword">encryptPassword</a></li><li><a href="global.html#listaLugares">listaLugares</a></li><li><a href="global.html#logOut">logOut</a></li><li><a href="global.html#signIn">signIn</a></li><li><a href="global.html#signUp">signUp</a></li><li><a href="global.html#unLugar">unLugar</a></li><li><a href="global.html#verifyToken">verifyToken</a></li></ul>
+    <h2><a href="index.html">BarcelonaEscondidaDoc</a></h2><h3>Modules</h3><ul><li><a href="module-LugaresRoutes.html">LugaresRoutes</a></li><li><a href="module-UserRoutes.html">UserRoutes</a></li></ul><h3>Classes</h3><ul><li><a href="LugaresController.html">LugaresController</a></li><li><a href="UserController.html">UserController</a></li></ul><h3>Global</h3><ul><li><a href="global.html#actualizarLugar">actualizarLugar</a></li><li><a href="global.html#comparePassword">comparePassword</a></li><li><a href="global.html#crearLugar">crearLugar</a></li><li><a href="global.html#eliminarLugar">eliminarLugar</a></li><li><a href="global.html#encryptPassword">encryptPassword</a></li><li><a href="global.html#listaLugares">listaLugares</a></li><li><a href="global.html#listaPorUsuario">listaPorUsuario</a></li><li><a href="global.html#logOut">logOut</a></li><li><a href="global.html#me">me</a></li><li><a href="global.html#signIn">signIn</a></li><li><a href="global.html#signUp">signUp</a></li><li><a href="global.html#storage">storage</a></li><li><a href="global.html#unLugar">unLugar</a></li><li><a href="global.html#valoraLugar">valoraLugar</a></li><li><a href="global.html#verifyToken">verifyToken</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Tue May 19 2020 17:54:06 GMT+0200 (hora de verano de Europa central)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Sat May 30 2020 00:34:42 GMT+0200 (hora de verano de Europa central)
 </footer>
 
 <script> prettyPrint(); </script>

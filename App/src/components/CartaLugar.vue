@@ -7,7 +7,6 @@
             
         </div>
         <p>{{descripcion}}</p>
-        <!--  <a href="#" class="btn btn-primary">Card link</a> -->
     </div>
 </template>
 

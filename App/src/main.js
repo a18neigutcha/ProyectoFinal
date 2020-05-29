@@ -40,7 +40,8 @@ Vue.mixin({
   data: function() {
     return {
       get API() {
-        return "http://localhost:3000/";
+        return "http://barcelonadesconocida.tk:3000/";
+        /* return "http://localhost:3000/"; */
       }
     }
   }

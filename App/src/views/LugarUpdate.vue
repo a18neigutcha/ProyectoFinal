@@ -122,7 +122,6 @@
 </template>
 
 <script>
-// import L from 'leaflet';
 import { latLng } from "leaflet";
 import { LMap, LTileLayer, LMarker } from "vue2-leaflet";
 import axios from "axios";
@@ -243,7 +242,6 @@ export default {
         },
         uploadImage(event){
             this.imagen = event.target.files[0];
-            //console.log(this.imagen);
         },
         clickCordenadas(){
             this.map.on('click',(e)=>{

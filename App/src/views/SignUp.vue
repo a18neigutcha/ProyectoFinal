@@ -158,11 +158,6 @@
 
 </script>
 <style scoped>
-/*     .formulario {
-         border: none;
-         box-shadow: 0 5px 20px 0 rgba(0,0,0,.1);
-         width: 100%;
-    } */
 
     @import url('https://fonts.googleapis.com/css?family=Numans');
 

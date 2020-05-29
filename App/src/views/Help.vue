@@ -1,6 +1,5 @@
 <template>
   <div id="Help" class="container-fluid">
-      <!-- https://www.flaticon.es/resultados?word=javascript -->
       <div class="row mb-5">
           <div class="col-2"></div>
           <div id="info-grupo" class="col">

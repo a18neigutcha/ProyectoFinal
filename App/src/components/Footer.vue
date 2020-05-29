@@ -277,6 +277,5 @@ export default {
     }
     }
 
-    /*************footer End*****************/
 
 </style>
