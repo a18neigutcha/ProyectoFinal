@@ -1,17 +1,17 @@
 <template>
-  <div class="Home container-fluid">
+  <div class="Home">
     <div class="row align-items-center">
       <div class="container-fluid">
 
         <div class="row">
           <div class="col">
             <div class="card text-center bg-dark text-white b-0 rounded-0">
-              <img src="http://getwallpapers.com/wallpaper/full/f/d/b/430292.jpg" class="card-img imagenPortada" alt="imagen de fondo de portada.">  
+              <img src="http://getwallpapers.com/wallpaper/full/5/8/1/425305.jpg" class="card-img imagenPortada" alt="imagen de fondo de portada.">  
               <div class="card-img-overlay d-flex justify-content-center align-items-center">
                 <div>
                     <h5 class="card-title">¿Que sera lo proximo que haras?</h5>
                     <p class="card-text">Encuentra tu proxima gran experiencia lo mas cerca de ti</p>
-                    <router-link class="btn btn-primary" to="/SignIn">
+                    <router-link id="efecto" class="btn from-right" to="/SignIn">
                         Empezar
                         <i class="fas fa-arrow-right"></i>
                     </router-link> 
@@ -23,13 +23,13 @@
         </div>
         <div class="card-section">
           <div class="container">
-            <div class="card-block bg-white mb30">
+            <div class="card-block mb30">
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <!-- section-title -->
                         <div class="section-title mb-0">
-                            <h2>Lugares destacados</h2>
-                            <p>Los últimos lugares que os recomendamos, las mejores actualizaciones de nuestros usuarios y equipo. </p>
+                            <h2>Destacados: Los lugares mejor valorados</h2>
+                            <p>Localizaciones que os recomendamos, las mejores actualizaciones de nuestros usuarios y equipo. </p>
                         </div>
                         <!-- /.section-title -->
                     </div>
@@ -37,45 +37,42 @@
               </div>
             </div>
             <!-- <CarruselLugares/> -->
-          </div>
+            <div class="row carousel">
+              <div class="col">
+                  <slick ref="slick" :options="slickOptions" >
+                    <CartaLugar
+                        :titulo="lugares[0].titulo"
+                        :subtitulo="lugares[0].direccion"
+                        :descripcion="lugares[0].descripcion"
+                        :imagen="lugares[0].imagen"
+                    ></CartaLugar>
+                    <CartaLugar
+                        :titulo="lugares[1].titulo"
+                        :subtitulo="lugares[1].direccion"
+                        :descripcion="lugares[1].descripcion"
+                        :imagen="lugares[1].imagen"
+                    ></CartaLugar>
+                    <CartaLugar
+                        :titulo="lugares[2].titulo"
+                        :subtitulo="lugares[2].direccion"
+                        :descripcion="lugares[2].descripcion"
+                        :imagen="lugares[2].imagen"
+                    ></CartaLugar>
+                    <!-- <CartaLugar
+                        :titulo="lugares[3].titulo"
+                        :subtitulo="lugares[3].direccion"
+                        :descripcion="lugares[3].descripcion"
+                        :imagen="lugares[3].imagen"
+                    ></CartaLugar> -->
+                  </slick>
+                </div>
+              </div>
+            </div>
    
       </div>
 
     </div>
-    <div class="row">
-      <div class="col">
-        <slick
-          ref="slick"
-          :options="slickOptions"
-        >
-          <CartaLugar
-              :titulo="lugares[0].titulo"
-              :subtitulo="lugares[0].direccion"
-              :descripcion="lugares[0].descripcion"
-              :imagen="lugares[0].imagen"
-          ></CartaLugar>
-          <CartaLugar
-              :titulo="lugares[1].titulo"
-              :subtitulo="lugares[1].direccion"
-              :descripcion="lugares[1].descripcion"
-              :imagen="lugares[1].imagen"
-          ></CartaLugar>
-          <CartaLugar
-              :titulo="lugares[2].titulo"
-              :subtitulo="lugares[2].direccion"
-              :descripcion="lugares[2].descripcion"
-              :imagen="lugares[2].imagen"
-          ></CartaLugar>
-          <!-- <CartaLugar
-              :titulo="lugares[3].titulo"
-              :subtitulo="lugares[3].direccion"
-              :descripcion="lugares[3].descripcion"
-              :imagen="lugares[3].imagen"
-          ></CartaLugar> -->
-        </slick>
-      </div>
-      
-    </div>
+  
 
   </div>
   
@@ -141,6 +138,7 @@ export default {
 
 <style>
   .slick-slide {
+    padding-left:0.4em;
     width: 50em;
   }
 </style>
@@ -148,6 +146,9 @@ export default {
 <style scoped>
 
   /* @import '../../node_modules/slick-carousel/slick/slick.css'; */
+  /* #home{
+    background-color: black;
+  } */
   .imagenPortada{
     height: 30em;
     }

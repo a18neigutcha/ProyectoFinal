@@ -4,7 +4,7 @@
       <div class="row mb-5">
           <div class="col-2"></div>
           <div id="info-grupo" class="col">
-            <h3>Nuestro equipo</h3>
+            <h2>El equipo</h2>
             <div class="row pt-5 mb-5">
                 <div class="col"></div>
                 <div class="col">
@@ -28,9 +28,14 @@
           <div class="col-2"></div>
       </div>
       <div class="row pt-5">
-          <div id="Recursos" class="col">
-
-          </div>
+            <div id="Recursos" class="col mx-auto">
+                <img src="@/assets/img/js.svg" alt="js">
+                <img src="@/assets/img/html5.svg" alt="html5">
+                <img src="@/assets/img/css.svg" alt="css">
+                <img src="@/assets/img/vue.svg" alt="vue">
+                <img src="@/assets/img/mysql.svg" alt="mysql">
+                <img src="@/assets/img/docker.svg" alt="dockers">
+            </div>
       </div>
       <div class="row pt-5">
           <div class="col-3"></div>
@@ -52,7 +57,7 @@
                 <div class="form-group row pb-3">
                     <div class="col-4"></div>
                     <div class="col-4 d-flex justify-content-center">
-                        <button v-on:click.prevent="post" class="btn btn-primary">Sign in</button>
+                        <button v-on:click.prevent="post" class="btn btn-primary">Envia</button>
                     </div>
                     <div class="col-4"></div>
                 </div>
@@ -101,7 +106,36 @@ export default {
         background: rgb(97, 54, 54);  /* fallback for old browsers */
         background: -webkit-linear-gradient(to right, rgb(97, 54, 54), rgb(97, 54, 54));  /* Chrome 10-25, Safari 5.1-6 */
         background: linear-gradient(to right, rgba(214, 89, 50, 0.568), rgba(192, 29, 29, 0.541)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+    #Recursos img{
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        font-size: 14px;
+        line-height: 45px;
+        display: inline-block;
+        background: #ebeef5;
+        text-align: center;
+        -webkit-transition: all 0.2s linear;
+        -o-transition: all 0.2s linear;
+        transition: all 0.2s linear;
+        margin: 2em;
+    }
+    .logos{
+       width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        font-size: 14px;
+        line-height: 45px;
+        display: inline-block;
+        background: #ebeef5;
+        text-align: center;
+        -webkit-transition: all 0.2s linear;
+        -o-transition: all 0.2s linear;
+        transition: all 0.2s linear;
     }
     #Incidencias{
         height: 20em;
@@ -123,7 +157,7 @@ export default {
         border-radius: 12px;
     }
     h3,form{
-        color:black;
+        color:white;
         font-family: 'Numans';
         align-content: center;
         font-size: larger;

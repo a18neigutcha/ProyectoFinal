@@ -160,8 +160,7 @@ border:0 !important;
 
 input:focus{
 outline: 0 0 0 0  !important;
-box-shadow: 0 0 0 0 !important;
-
+box-shadow: 0 0 10px rgba(81, 203, 238, 1)!important; 
 }
 
 .remember{
