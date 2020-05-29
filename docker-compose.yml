@@ -37,10 +37,10 @@ services:
       - ./Database:/docker-entrypoint-initdb.d
     restart: always
   
-  dbmongo:
-    image: mongo
-    container_name: mongodb
-    restart: always
+  # dbmongo:
+  #   image: mongo
+  #   container_name: mongodb
+  #   restart: always
   
   app:
     image: ngch43/vue_app:despliegue
