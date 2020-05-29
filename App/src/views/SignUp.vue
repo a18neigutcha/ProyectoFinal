@@ -96,7 +96,7 @@
             
             if(this.checkForm()){
                 console.log(this.checkForm());
-                axios.post('http://localhost:3000/api/signUp',{
+                axios.post(this.API+'api/signUp',{
                     userName:this.userName,
                     email: this.email,
                     password: this.password

@@ -34,6 +34,19 @@ Vue.component('l-map', LMap);
 Vue.component('l-tile-layer', LTileLayer);
 Vue.component('l-marker', LMarker);
 
+
+// This is a global mixin, it is applied to every vue instance
+Vue.mixin({
+  data: function() {
+    return {
+      get API() {
+        return "http://localhost:3000/";
+      }
+    }
+  }
+})
+
+
 Vue.config.productionTip = false;
 
 new Vue({

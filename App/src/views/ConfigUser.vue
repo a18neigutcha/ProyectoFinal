@@ -172,7 +172,7 @@ export default {
                 console.log(body);
 
 
-                axios.put('http://localhost:3000/api/sesion/me',body,{
+                axios.put(this.API+'api/sesion/me',body,{
                     headers: {
                         'accept': 'application/json',
                         'Accept-Language': 'en-US,en;q=0.8',

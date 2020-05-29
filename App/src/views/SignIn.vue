@@ -72,7 +72,7 @@ export default {
           if(this.email==""){
               alert("El usuario no está registrado");
           }else{
-              axios.post('http://localhost:3000/api/signIn',{
+              axios.post(this.API+'api/signIn',{
                     email: this.input.email,
                     password: this.input.password
                 })

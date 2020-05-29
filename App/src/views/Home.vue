@@ -63,7 +63,7 @@
 
     </div>
   
-
+  {{API}}
   </div>
   
 </template>
@@ -100,7 +100,7 @@ export default {
       };
   },
   mounted () {
-    axios.get('http://localhost:3000/api/')
+    axios.get(this.API+'api/')
     .then(response =>{
         this.lugares=response.data;
         console.log(response.data);
@@ -120,14 +120,6 @@ export default {
     });
   },
   methods: {
-    /* lugaresMasVistos: function(){
-      axios.get('http://localhost:3000/api/')
-      .then(response =>{
-          this.lugares=response.data;
-          this.$refs.slick.reSlick();
-          console.log(response.data);
-      })
-    }, */
     next() {
         this.$refs.slick.next();
     },

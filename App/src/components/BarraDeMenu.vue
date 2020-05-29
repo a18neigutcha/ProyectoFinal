@@ -4,16 +4,18 @@
         <!-- Barra de la cabecera -->
         <nav class="navbar navbar-expand-md">
             <!-- Logo de la pagina web -->
-            
-            <router-link class="navbar-brand" to="/">
-                <img src="@/assets/logo2.png" class="logoImg" alt="Logo de Barcelona desconocida">
-            </router-link>
+            <div class="mx-auto order-0">
+                <router-link class="navbar-brand mx-auto" to="/">
+                    <img src="@/assets/logo2.png" class="logoImg" alt="Logo de Barcelona desconocida">
+                </router-link>
+            </div>
+    
             <!-- Button despliega menu en pagina redimensionada -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="#navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
                 <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-5 pr-5">
+            <div class="navbar-collapse collapse w-85 order-1 order-md-0 dual-collapse2">
+                <ul class="navbar-nav mr-auto">
                     <!-- Item Inicio -->
                     <li class="nav-item">
                         <router-link class="nav-link" to="/">
@@ -43,30 +45,32 @@
                     </li>
 
                 </ul>
-                <ul id="subMenu" class="navbar-nav">
+            </div>
+            <div class="navbar-collapse collapse w-85 order-3 dual-collapse2">
+                <ul class="navbar-nav ml-auto">
                     <!-- Item Api -->
                     <li class="nav-item">
-                        <a class="nav-link" href="http://localhost:3000">
-                            <i class="fas fa-book"></i>
+                        <a class="nav-link" :href="API">
+                            <i class="fas fa-book"></i> 
                             Api
                         </a>
                     </li>
                     <!-- Item Help -->
-                    <li class="subItem nav-item mx-3">
+                    <li class="nav-item">
                         <router-link class="nav-link" to="/Help">
                             <i class="fas fa-users-cog"></i>
                             Help
                         </router-link>
                     </li>
                     <!-- Item Registrarte -->
-                    <li v-show="!sesionInit" class="subItem nav-item mx-3">
+                    <li v-show="!sesionInit" class="nav-item">
                         <router-link class="nav-link" to="/SignUp">
                             <i class="fas fa-walking"></i>
                             Registrate
                         </router-link>
                     </li>
                     <!-- Item LogIn (Se muestra si el no hay una session iniciada) -->
-                    <li v-show="!sesionInit" class="subItem nav-item mx-3">
+                    <li v-show="!sesionInit" class="nav-item">
                         <router-link class="nav-link" to="/SignIn">
                             <i v- class="fas fa-sign-in-alt"></i>
                             Inicia sesión
@@ -74,7 +78,7 @@
                         </router-link>
                     </li>
                     <!-- Item User (Solo se muestra si el usuario inicio sesión) -->
-                    <li v-show="sesionInit" class="subItem nav-item mx-3 dropdown">
+                    <li v-show="sesionInit" class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                             <i v- class="fas fa-user"></i>
                         </a>
