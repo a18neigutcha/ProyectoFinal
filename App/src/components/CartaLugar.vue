@@ -27,21 +27,36 @@ export default {
 
     .cont-info{
         position: absolute;
-        top: 40%;
+        top: 50%;
+        bottom: 70%;
         width: 100%;
         color: white;
-    }
-    .cont-info h1,h4,p{
         
-        color: white;
+    }
+    .cont-info h4{
+        position: absolute;
+        top:20%;
+
+    }
+    .cont-info h1,h4{
+        
+        -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-family: 'Overpass', sans-serif; letter-spacing: 5px; font-size: 20px; color: white; font-weight: 700;
+    }
+    .p{
+        top: 200%;
     }
 
     .cartaLugar{
         width: 30em;
         position: relative;
+        
     }
     .cartaLugar img{
         width: 100%;
         height: 30em;
+        object-fit: cover;
+        filter: blur(0px) saturate(2);
+
+        
     }
 </style>

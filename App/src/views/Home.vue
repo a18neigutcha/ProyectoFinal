@@ -1,17 +1,17 @@
 <template>
-  <div class="Home container-fluid">
+  <div class="Home">
     <div class="row align-items-center">
       <div class="container-fluid">
 
         <div class="row">
           <div class="col">
             <div class="card text-center bg-dark text-white b-0 rounded-0">
-              <img src="http://getwallpapers.com/wallpaper/full/f/d/b/430292.jpg" class="card-img imagenPortada" alt="imagen de fondo de portada.">  
+              <img src="http://getwallpapers.com/wallpaper/full/5/8/1/425305.jpg" class="card-img imagenPortada" alt="imagen de fondo de portada.">  
               <div class="card-img-overlay d-flex justify-content-center align-items-center">
                 <div>
                     <h5 class="card-title">¿Que sera lo proximo que haras?</h5>
                     <p class="card-text">Encuentra tu proxima gran experiencia lo mas cerca de ti</p>
-                    <router-link class="btn btn-primary" to="/SignIn">
+                    <router-link id="efecto" class="btn from-right" to="/SignIn">
                         Empezar
                         <i class="fas fa-arrow-right"></i>
                     </router-link> 
@@ -23,13 +23,13 @@
         </div>
         <div class="card-section">
           <div class="container">
-            <div class="card-block bg-white mb30">
+            <div class="card-block mb30">
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <!-- section-title -->
                         <div class="section-title mb-0">
-                            <h2>Lugares destacados</h2>
-                            <p>Los últimos lugares que os recomendamos, las mejores actualizaciones de nuestros usuarios y equipo. </p>
+                            <h2>Destacados: Los lugares mejor valorados</h2>
+                            <p>Localizaciones que os recomendamos, las mejores actualizaciones de nuestros usuarios y equipo. </p>
                         </div>
                         <!-- /.section-title -->
                     </div>
@@ -37,45 +37,42 @@
               </div>
             </div>
             <!-- <CarruselLugares/> -->
-          </div>
+            <div class="row carousel">
+              <div class="col">
+                  <slick ref="slick" :options="slickOptions" >
+                    <CartaLugar
+                        :titulo="lugares[0].titulo"
+                        :subtitulo="lugares[0].direccion"
+                        :descripcion="lugares[0].descripcion"
+                        :imagen="lugares[0].imagen"
+                    ></CartaLugar>
+                    <CartaLugar
+                        :titulo="lugares[1].titulo"
+                        :subtitulo="lugares[1].direccion"
+                        :descripcion="lugares[1].descripcion"
+                        :imagen="lugares[1].imagen"
+                    ></CartaLugar>
+                    <CartaLugar
+                        :titulo="lugares[2].titulo"
+                        :subtitulo="lugares[2].direccion"
+                        :descripcion="lugares[2].descripcion"
+                        :imagen="lugares[2].imagen"
+                    ></CartaLugar>
+                    <!-- <CartaLugar
+                        :titulo="lugares[3].titulo"
+                        :subtitulo="lugares[3].direccion"
+                        :descripcion="lugares[3].descripcion"
+                        :imagen="lugares[3].imagen"
+                    ></CartaLugar> -->
+                  </slick>
+                </div>
+              </div>
+            </div>
    
       </div>
 
     </div>
-    <div class="row">
-      <div class="col">
-        <slick
-          ref="slick"
-          :options="slickOptions"
-        >
-          <CartaLugar
-              :titulo="lugares[0].titulo"
-              :subtitulo="lugares[0].direccion"
-              :descripcion="lugares[0].descripcion"
-              :imagen="lugares[0].imagen"
-          ></CartaLugar>
-          <CartaLugar
-              :titulo="lugares[1].titulo"
-              :subtitulo="lugares[1].direccion"
-              :descripcion="lugares[1].descripcion"
-              :imagen="lugares[1].imagen"
-          ></CartaLugar>
-          <CartaLugar
-              :titulo="lugares[2].titulo"
-              :subtitulo="lugares[2].direccion"
-              :descripcion="lugares[2].descripcion"
-              :imagen="lugares[2].imagen"
-          ></CartaLugar>
-          <!-- <CartaLugar
-              :titulo="lugares[3].titulo"
-              :subtitulo="lugares[3].direccion"
-              :descripcion="lugares[3].descripcion"
-              :imagen="lugares[3].imagen"
-          ></CartaLugar> -->
-        </slick>
-      </div>
-      
-    </div>
+  
 
   </div>
   
@@ -141,6 +138,7 @@ export default {
 
 <style>
   .slick-slide {
+    padding-left:0.4em;
     width: 50em;
   }
 </style>
@@ -148,35 +146,147 @@ export default {
 <style scoped>
 
   /* @import '../../node_modules/slick-carousel/slick/slick.css'; */
+  /* #home{
+    background-color: black;
+  } */
   .imagenPortada{
     height: 30em;
+    filter: blur(0px) saturate(2);
+    overflow: hidden;
+    position: relative;
+    opacity: 0.6;
+    line-height: 32px;
+    object-fit: cover;
   }
   
-  body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-family: 'Overpass', sans-serif; letter-spacing: 0px; font-size: 17px; color: #8d8f90; font-weight: 400; line-height: 32px; background-color: #edefef; }
-  h1, h2, h3, h4, h5, h6 { color: #25292a; margin: 0px 0px 10px 0px; font-family: 'Overpass', sans-serif; font-weight: 700; letter-spacing: -1px; line-height: 1; }
+  body:last-child { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-family: 'Overpass', sans-serif; letter-spacing: 0px; font-size: 17px; color: #8d8f90; font-weight: 400; line-height: 32px; background-color: rgba(163, 42, 157, 0.973); text-align: center;  }
+  h1, h2, h3, h4, h5, h6 { color: rgba(255, 255, 255, 0.973);; margin: 0px 0px 10px 0px; font-family: 'Overpass', sans-serif; font-weight: 700; letter-spacing: -1px; line-height: 1; }
   h1 { font-size: 34px; }
-  h2 { font-size: 28px; line-height: 38px; }
+  h2 { font-size: 28px; line-height: 38px; }  
   h3 { font-size: 22px; line-height: 32px; }
   h4 { font-size: 20px; }
-  h5 { font-size: 17px; }
-  h6 { font-size: 12px; }
-  p { margin: 0 0 20px; line-height: 1.7; }
+  p { margin: 0 0 20px; line-height: 1.7; color:rgba(243, 230, 242, 0.973); }
   p:last-child { margin: 0px; }
   a { text-decoration: none; color: #8d8f90; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; transition: all 0.3s; }
   a:focus, a:hover { text-decoration: none; color: #f85759; }
+  .card-section {background-color: rgba(22, 2, 22, 0.788); position: relative; bottom: 60px; }
+  .card-block {/* background-color:rgba(163, 42, 157, 0.568); */ padding: 80px; padding-bottom: 20px; }
+  .section-title { margin-bottom: 0px; text-align: center; margin:auto;}
 
+  /* .btn-primary{border-color: none; background-color:rgba(53, 219, 241, 0.767); text-decoration: none; font-weight: 500; color:rgb(255, 251, 251); -webkit-transition: all 0.3s; -moz-transition: all 0.3s; transition: all 0.3s; } */
 
+.carousel{
+    margin-top: 2em;
+    padding-top: 0em;
+    line-height: 20;
+    position: relative;
+    overflow: hidden;
+  } 
+/* .fantasia{
+    margin-left: 1em;
+    margin-right: 1em;
+} */
+/* 
+.btn-primary:hover .overlay {
+  bottom: 0;
+  height: 100%;
+}
 
-/*   .page-header { background: url(https://easetemplate.com/free-website-templates/hike/images/pageheader.jpg)no-repeat; position: relative; background-size: cover; }
-  .page-caption { padding-top: 170px; padding-bottom: 174px; } */
-  .page-title { font-size: 46px; line-height: 1; color: #fff; font-weight: 600; text-align: center; }
+.overlay {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background-color: #008CBA;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: .5s ease;
+} */
 
-  .card-section { position: relative; bottom: 60px; }
-  .card-block { padding: 80px; padding-bottom: 20px; }
-  .section-title { margin-bottom: 0px; }
+/* ~~~~~~~ INIT. BTN ~~~~~~~ */
 
-/*   .carousel{
-    padding: 0;
-    margin: 0;
-  } */
+#efecto.btn {		
+	position: relative;	
+	padding: 1.4rem 4.2rem;
+	padding-right: 3.1rem;
+	font-size: 1.4rem;
+	color: var(--inv);
+	letter-spacing: 1.1rem;
+	text-transform: uppercase;
+	transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);	
+	cursor: pointer;
+	user-select: none;
+}
+
+#efecto.btn:before, .btn:after {
+	content: '';
+	position: absolute;	
+	transition: inherit;
+	z-index: -1;
+}
+
+#efecto.btn:hover {
+	color: var(--def);
+	transition-delay: .5s;
+}
+
+#efecto.btn:hover:before {
+	transition-delay: 0s;
+}
+
+#efecto.btn:hover:after {
+	background: var(--inv);
+	transition-delay: .35s;
+}
+
+/* From Right */
+
+#efecto.from-right:before, 
+#efecto.from-right:after {
+	top: 0;
+	width: 0;
+	height: 100%;
+}
+
+#efecto.from-right:before {
+	left: 0;
+	border: 1px solid var(--inv);
+	border-left: 0;
+	border-right: 0;	
+}
+
+#efecto.from-right:after {
+	right: 0;
+}
+
+#efecto.from-right:hover:before,
+#efecto.from-right:hover:after {
+	width: 100%;
+}
+
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+body {
+	--def: #96B7C4; 	
+	--inv: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 100vh;
+	width: 100%;
+	background-image: linear-gradient(-25deg, #616161 0%, #96B7C4 100%);
+}
+
+html {
+	font-size: 12px;
+	font-family: 'Playfair Display', serif;
+}
+
+div {margin-bottom: 3rem;}
+div:last-child {margin-bottom: 0;}
+
 </style>
