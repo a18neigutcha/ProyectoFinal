@@ -39,7 +39,7 @@
             <!-- <CarruselLugares/> -->
             <div class="row carousel">
               <div class="col">
-                  <slick ref="slick" :options="slickOptions" >
+                  <slick v-show="lugares.lenght>=2" ref="slick" :options="slickOptions" >
                     <CartaLugar
                         :titulo="lugares[0].titulo"
                         :subtitulo="lugares[0].direccion"
@@ -65,6 +65,13 @@
                         :imagen="lugares[3].imagen"
                     ></CartaLugar> -->
                   </slick>
+                  <div v-show="lugares.lenght<2">
+                    <div class="text-center">
+                      <div class="spinner-border" role="status">
+                        <span class="sr-only">Loading...</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -117,6 +124,14 @@ export default {
     })
   },
   methods: {
+    lugaresMasVistos: function(){
+      axios.get('http://barcelonadesconocida.tk:3000/api/')
+      .then(response =>{
+          this.lugares=response.data;
+          this.$refs.slick.reSlick();
+          console.log(response.data);
+      })
+    },
     next() {
         this.$refs.slick.next();
     },
@@ -124,14 +139,34 @@ export default {
     prev() {
         this.$refs.slick.prev();
     },
-
+    beforeUpdate() {
+        if (this.$refs.slick) {
+            this.$refs.slick.destroy();
+        }
+    },
+    updated() {
+        this.$nextTick(function () {
+            if (this.$refs.slick) {
+                this.$refs.slick.create(this.slickOptions);
+            }
+        });
+    },
     reInit() {
         // Helpful if you have to deal with v-for to update dynamic lists
         this.$nextTick(() => {
             this.$refs.slick.reSlick();
         });
+
     },
 
+  },
+  watch: {
+      profileData() {
+          this.lugaresMasVistos();
+      },
+      lugares() {
+          this.reInit();
+      }
   }
 };
 </script>
