@@ -5,7 +5,7 @@
                 <h2>Mis Lugares</h2>
             </div>
         </div>
-        <div class="list-group">
+        <div ref="listActividades" class="list-group">
             <h4 v-if="lugares.length==0">"No tienes lugares registrados."</h4>
             <div
                 v-else
@@ -62,15 +62,25 @@ export default {
     },
     methods:{
         eliminarLugar:function(id){
-            alert("Lugar eliminado");
             axios.delete(this.API+'api/'+id,{
                 headers: {
                     'x-access-token': this.$cookies.get('token'),
                 }
             })
             .then((response) =>{
-                this.lugares=response.data;
                 console.log(response.data);
+                // Petición de los lugares subidos por el usuario
+                axios.get(this.API+'api/user/lugares',{
+                    headers: {
+                        'x-access-token': this.$cookies.get('token'),
+                    }
+                })
+                .then((response) =>{
+                    this.lugares=response.data;
+                    console.log(response.data);
+                },(error) => {
+                    console.log(error.response.data);
+                });
             },(error) => {
                 console.log(error.response.data);
             });

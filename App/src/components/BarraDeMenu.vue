@@ -46,7 +46,7 @@
 
                 </ul>
             </div>
-            <div class="navbar-collapse collapse w-85 order-3 dual-collapse2">
+            <div id="navbarSupportedContent" class="navbar-collapse collapse w-85 order-3 dual-collapse2">
                 <ul class="navbar-nav ml-auto">
                     <!-- Item Api -->
                     <li class="nav-item">
@@ -78,7 +78,7 @@
                         </router-link>
                     </li>
                     <!-- Item User (Solo se muestra si el usuario inicio sesión) -->
-                    <li v-show="sesionInit" class="nav-item dropdown">
+                    <li id="itemUser" v-show="sesionInit" class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                             <i v- class="fas fa-user"></i>
                         </a>
@@ -147,8 +147,9 @@
     a.nav-link{
         color: white;
     }
-    #navbarSupportedContent{
+    #itemUser{
         position: relative;
+        z-index:1020;
     }
     /* #subMenu{
         position: absolute;

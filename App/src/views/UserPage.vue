@@ -1,10 +1,9 @@
 <template>
   <div id="UserPage" class="container-fluid">
 
-      <div class="row">
-          <div class="col-2"></div>
-          <div class="col">
-            <div id="info-user" class="d-flex justify-content-start align-items-center">
+      <div class="row d-flex justify-content-center ">
+          <div class="col-5">
+            <div id="info-user" class="d-flex flex-sm-wrap justify-content-center align-items-center">
                 <img v-if="user.fotoPerfil" :src="user.fotoPerfil" class="iconUser" alt="Imagen del usuario.">
                 <img v-else src="@/assets/img/user_default.svg" class="iconUser" alt="Imagen del usuario.">
                 <div class="mx-4" >
@@ -17,7 +16,6 @@
                 
             </div>
           </div>
-          <div class="col-4"></div>
       </div>
        
 
@@ -36,11 +34,26 @@
                     <div class="tab-pane fade show active" id="nav-mis-lugares" role="tabpanel" aria-labelledby="nav-home-tab">
                         <MisLugares/>
                     </div>
-                    <div class="tab-pane fade" id="nav-mis-historias" role="tabpanel" aria-labelledby="nav-profile-tab">
-                        <p>"La funcionalidad de historias no esta disponible"</p>
+                    <div class="tab-pane fade p-auto" id="nav-mis-historias" role="tabpanel" aria-labelledby="nav-profile-tab">
+                            <div class="container">
+                                <div class="row pt-5">
+                                    <div class="col d-flex justify-content-center align-items-center flex-column">
+                                        <img src="@/assets/img/trabajo.svg" alt="Imagen de trabajador">
+                                        <p>"Lo sentimos esta funcionalidad esta en desarrollo."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
                     </div>
                     <div class="tab-pane fade" id="nav-favoritos" role="tabpanel" aria-labelledby="nav-contact-tab">
-                        <p>"La opcion de favoritos no esta disponible"</p>
+                            <div class="container">
+                                <div class="row pt-5">
+                                    <div class="col d-flex justify-content-center align-items-center flex-column">
+                                        <img src="@/assets/img/trabajo.svg" alt="Imagen de trabajador">
+                                        <p>"Lo sentimos esta funcionalidad esta en desarrollo."</p>
+                                    </div>
+                                </div>
+                            </div>
                     </div>
                 </div>
 
@@ -152,4 +165,12 @@
         height: 40em;
         border-style: inset;
     }
+    #nav-mis-historias img{
+        height: 15em;
+        width: 15em;
+    }
+    #nav-favoritos img{
+        height: 15em;
+        width: 15em;
+    }  
 </style>

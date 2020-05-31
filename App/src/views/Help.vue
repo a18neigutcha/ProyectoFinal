@@ -103,18 +103,18 @@ export default {
     
 
     #Recursos{
-        height: 8em;
         background: rgb(97, 54, 54);  /* fallback for old browsers */
         background: -webkit-linear-gradient(to right, rgb(97, 54, 54), rgb(97, 54, 54));  /* Chrome 10-25, Safari 5.1-6 */
         background: linear-gradient(to right, rgba(214, 89, 50, 0.568), rgba(192, 29, 29, 0.541)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         display: flex;
+        flex-wrap: wrap;
         align-content: center;
         justify-content: center;
     }
     #Recursos img{
         width: 70px;
         height: 70px;
-        border-radius: 50%;
+        /* border-radius: 50%;
         font-size: 14px;
         line-height: 45px;
         display: inline-block;
@@ -122,10 +122,10 @@ export default {
         text-align: center;
         -webkit-transition: all 0.2s linear;
         -o-transition: all 0.2s linear;
-        transition: all 0.2s linear;
+        transition: all 0.2s linear; */
         margin: 2em;
     }
-    .logos{
+    /* .logos{
        width: 46px;
         height: 46px;
         border-radius: 50%;
@@ -137,7 +137,7 @@ export default {
         -webkit-transition: all 0.2s linear;
         -o-transition: all 0.2s linear;
         transition: all 0.2s linear;
-    }
+    } */
     #Incidencias{
         height: 20em;
         margin-bottom: 5rem; 
@@ -181,5 +181,55 @@ export default {
         background-color:rgba( 214, 89, 50, 0.568);
         border-color:rgba( 214, 89, 50, 0.568);
     }
+
+    @media (min-width: 200px) { 
+        .cont-persona img{
+            height: 4em;
+        }
+    }
+
+    /* // Small devices (landscape phones, 576px and up) */
+    @media (min-width: 576px) { 
+        .cont-persona img{
+            height: 5em;
+        }
+    }
+
+    /* // Small devices (landscape phones, 576px and up) */
+    @media (min-width: 681px) { 
+        .cont-persona img{
+            height: 6em;
+        }
+    }
+
+    /* // Medium devices (tablets, 768px and up) */
+    @media (min-width: 768px) { 
+        .cont-persona img{
+            height: 7em;
+        }
+    }
+
+    @media (min-width: 878px) { 
+        .cont-persona img{
+            height: 8em;
+        }
+    }
+
+    /* // Large devices (desktops, 992px and up) */
+    @media (min-width: 992px) { 
+        .cont-persona img{
+            height: 9em;
+        }
+     }
+
+    /* // Extra large devices (large desktops, 1200px and up) */
+    @media (min-width: 1200px) { 
+        .cont-persona img{
+            height: 11em;
+        }
+     }
+
+     
+
 
 </style>
