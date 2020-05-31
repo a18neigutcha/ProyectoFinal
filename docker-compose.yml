@@ -50,8 +50,8 @@ services:
         - api
     ports:
         - 80:80
-        - 443:443
-    volumes: 
-      - ./App/certificados:/etc/nginx/certificados
+    #     - 443:443
+    # volumes: 
+    #   - ./App/certificados:/etc/nginx/certificados
     
 
