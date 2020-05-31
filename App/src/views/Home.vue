@@ -9,8 +9,8 @@
               <img src="http://getwallpapers.com/wallpaper/full/5/8/1/425305.jpg" class="card-img imagenPortada" alt="imagen de fondo de portada.">  
               <div class="card-img-overlay d-flex justify-content-center align-items-center">
                 <div>
-                    <h5 class="card-title">¿Que sera lo proximo que haras?</h5>
-                    <p class="card-text">Encuentra tu proxima gran experiencia lo mas cerca de ti</p>
+                    <h5 class="card-title">¿Que será lo próximo que haras?</h5>
+                    <p class="card-text">Acércate a experiencias únicas en distintos puntos de tu ciudad</p>
                     <BotonRight/> 
                 </div>    
               </div>
@@ -25,8 +25,8 @@
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <!-- section-title -->
                         <div class="section-title mb-0">
-                            <h2>Destacados: Los lugares mejor valorados</h2>
-                            <p>Localizaciones que os recomendamos, las mejores actualizaciones de nuestros usuarios y equipo. </p>
+                            <h2>Destacados</h2>
+                            <p>Las localizaciones mejor valoradas, actualizadas en tiempo real nuestros usuarios y equipo. </p>
                         </div>
                         <!-- /.section-title -->
                     </div>
@@ -172,16 +172,10 @@ export default {
      */
     body:last-child { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-family: 'Overpass', sans-serif; letter-spacing: 0px; font-size: 17px; color: #8d8f90; font-weight: 400; line-height: 32px; background-color: rgba(163, 42, 157, 0.973); text-align: center;  }
     h1, h2, h3, h4, h5, h6 { color: rgba(255, 255, 255, 0.973);; margin: 0px 0px 10px 0px; font-family: 'Overpass', sans-serif; font-weight: 700; letter-spacing: -1px; line-height: 1; }
-  
-    h1 { font-size: 34px; }
-    /* h2 { font-size: 28px; line-height: 38px; } */
-    h2 { font-size: 28px; line-height: 38px; } 
-    h3 { font-size: 22px; line-height: 32px; }
-    h4 { font-size: 20px; }
-    /* h5 { font-size: 17px; }
-    h6 { font-size: 12px; }
-    p { margin: 0 0 20px; line-height: 1.7; } */
-    p { margin: 0 0 20px; line-height: 1.7; color:rgba(243, 230, 242, 0.973); }
+
+    h2 { font-size: 28px; line-height: 38px; letter-spacing: 0.8em; } 
+    h5 { font-size: 40px; }
+    p { margin: 0 0 20px; line-height: 1.7; color:rgba(243, 230, 242, 0.973); font-style: oblique;}
     p:last-child { margin: 0px; }
     a { text-decoration: none; color: #8d8f90; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; transition: all 0.3s; }
     a:focus, a:hover { text-decoration: none; color: #f85759; }
@@ -198,16 +192,9 @@ export default {
       overflow: hidden;
     } 
     
-
-    /* .page-header { background: url(https://easetemplate.com/free-website-templates/hike/images/pageheader.jpg)no-repeat; position: relative; background-size: cover; }
-    .page-caption { padding-top: 170px; padding-bottom: 174px; }
-    .page-title { font-size: 46px; line-height: 1; color: #fff; font-weight: 600; text-align: center; }
-
-    .card-section { position: relative; bottom: 60px; }
-    .card-block { padding: 80px; }
-    .section-title { margin-bottom: 60px; } */
-
-    /* ~~~~~~~ INIT. BTN ~~~~~~~ */
+    .card-text{
+      font-size: 20px;
+    }
     .btn {		
       position: relative;	
       padding: 1.4rem 4.2rem;
@@ -241,7 +228,6 @@ export default {
       background: var(--inv);
       transition-delay: .35s;
     }
-    /* From Right */
     /* From Right */
 
     .from-right:before, 
