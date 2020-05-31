@@ -156,9 +156,7 @@ export default {
 <style scoped>
 
   /* @import '../../node_modules/slick-carousel/slick/slick.css'; */
-  /* #home{
-    background-color: black;
-  } */
+
   .imagenPortada{
     height: 30em;
     filter: blur(0px) saturate(2);
@@ -185,7 +183,6 @@ export default {
     p { margin: 0 0 20px; line-height: 1.7; } */
     p { margin: 0 0 20px; line-height: 1.7; color:rgba(243, 230, 242, 0.973); }
     p:last-child { margin: 0px; }
-    ul, ol { }
     a { text-decoration: none; color: #8d8f90; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; transition: all 0.3s; }
     a:focus, a:hover { text-decoration: none; color: #f85759; }
 
