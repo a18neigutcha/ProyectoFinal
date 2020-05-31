@@ -34,19 +34,29 @@ class UserController{
 
             
             //Save with mysql
-            await mysqlConnection.query('INSERT INTO USUARIO (userName,email,password) VALUES (?,?,?)',[req.body.userName,req.body.email,req.body.password]);
+            await mysqlConnection.query('INSERT INTO USUARIO (userName,email,password) VALUES (?,?,?)',[req.body.userName,req.body.email,req.body.password],async(err, result, fields)=>{
 
-            await mysqlConnection.query('SELECT id FROM USUARIO WHERE email = ? ',[req.body.email],(err, result, fields)=>{
+                if (err){
+                    console.log(err);
+                    res.status(500).json({text:"No se pudo registrar el usuario."});
+                }else{
+                    await mysqlConnection.query('SELECT id FROM USUARIO WHERE email = ? ',[req.body.email],(err, result, fields)=>{
 
-                console.log(result[0]);
+                        console.log(result[0]);
+        
+                        // Create a Token
+                        const token = jwt.sign({ id: result[0].id}, config.secret, {
+                            expiresIn: 60 * 60 * 24 // expires in 24 hours
+                        });
+        
+                        res.json({ auth: true, token });
+                    });
+                }
 
-                // Create a Token
-                const token = jwt.sign({ id: result[0].id}, config.secret, {
-                    expiresIn: 60 * 60 * 24 // expires in 24 hours
-                });
-
-                res.json({ auth: true, token });
+                
             });
+
+            
 
 
             

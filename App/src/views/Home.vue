@@ -3,8 +3,8 @@
     <div class="row align-items-center">
       <div class="container-fluid">
 
-        <div class="row">
-          <div class="col">
+        <div class="row m-0">
+          <div class="col p-0">
             <div class="card text-center bg-dark text-white b-0 rounded-0">
               <img src="http://getwallpapers.com/wallpaper/full/5/8/1/425305.jpg" class="card-img imagenPortada" alt="imagen de fondo de portada.">  
               <div class="card-img-overlay d-flex justify-content-center align-items-center">
@@ -18,13 +18,16 @@
             </div>
           </div>
         </div>
-        <audio>
-            <source src="@/assets/D5.wav" type="audio/wav" autoplay>
-        </audio>
-        <video id="intro" width="100%" height="20%" loop autoplay>
+        <div class="cont-video">
+          <video id="intro" width="100%" height="20%" loop autoplay>
             <source src="@/assets/Bridge.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-          </video> 
+            Your browser does not support the video tag.
+          </video>
+          <audio controls autoplay>
+              <source src="@/assets/D5.wav" type="audio/wav">
+          </audio>
+        </div>
+        
         <div class="card-section">
           <div class="container">
             <div class="card-block mb30">
@@ -276,12 +279,6 @@ export default {
     div {margin-bottom: 3rem;}
     div:last-child {margin-bottom: 0;}
 
-/*     .container_video{
-    width: 150%;
-    overflow:hidden;
-    display:block;
-    height: 360px;
-    } */
     #intro{
         object-fit: cover;
         height: 300px;
@@ -290,5 +287,15 @@ export default {
         filter: opacity(90%);
         overflow:hidden;
     } 
+    .cont-video{
+      position: relative;
+      width: 100%;
+    }
+    audio{
+      position: absolute;
+      top:1em;
+      right: 1em;
+      opacity: 0.5;
+    }
 
 </style>

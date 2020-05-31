@@ -1,4 +1,4 @@
-const mysqlConnection = require('../database');
+const mysqlConnection =require('../database');
 
 /**
  * 
@@ -25,6 +25,7 @@ class LugaresController {
                 res.json(result);
             }else{
                 console.log(err);
+                res.status(500).json({text:"No se puedo mostrar la lista de lugares"});
             }
         });
     }
@@ -42,6 +43,7 @@ class LugaresController {
         await mysqlConnection.query('SELECT * FROM LUGAR WHERE id=?',[id], function(err, result, fields) {
             if (err){
                 console.log(err);
+                res.status(500).json({text:"No pudo mostrar datos del lugar."})
             }else if(result.length>0){
                 res.json(result[0]);
             }else{
@@ -74,9 +76,18 @@ class LugaresController {
             longitud,
             pathImg,
             req.userId
-        ]);
+        ],(err, result, fields)=>{
 
-    res.json({text:'Lugar registrado'});
+            if(err){
+                res.status(500).json({ text:"No se puedo registrar el lugar"});
+            }else{
+                res.json({text:'Lugar registrado'});
+            }
+
+            
+        });
+
+    
 
    }
 
@@ -151,8 +162,16 @@ class LugaresController {
 
     static async eliminarLugar(req,res){
         const {id} = req.params;
-        await mysqlConnection.query('DELETE FROM LUGAR WHERE id=?',[id]);
-        res.json({text:'Lugar elimina.'});
+        await mysqlConnection.query('DELETE FROM LUGAR WHERE id=?',[id],(err,result,fields)=>{
+            if(err){
+                console.log(err);
+                res.status(500).json({text:"No se pudo borrar la actividad"});
+            }else{
+                console.log(result);
+                res.json({text:'Lugar elimina.'});
+            }
+        });
+        
     }
 
     /**
@@ -167,6 +186,7 @@ class LugaresController {
             
             if(err){
                 console.log(err);
+                res.status(500).json({text:"No se puedo mostrar los lugares del usuario"});
             }else{
                 console.log(result);
                 res.status(200).json(result);
