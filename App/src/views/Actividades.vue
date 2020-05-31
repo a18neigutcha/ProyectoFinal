@@ -134,11 +134,11 @@ export default {
         font-weight: 900;
         border-color: #25f9c9;
     }
-/*     .btn:hover{
+    .btn:hover{
         background-color:#25f9c775;
         font-weight: 900;
         border-color: #25f9c78e;
-    } */
+    }
     .direction{
         color : #ff7e0c;
     } 

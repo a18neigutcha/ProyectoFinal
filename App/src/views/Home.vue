@@ -169,6 +169,39 @@ export default {
     .card-section {background-color: rgba(22, 2, 22, 0.788); position: relative; bottom: 60px; }
     .card-block {/* background-color:rgba(163, 42, 157, 0.568); */ padding: 80px; padding-bottom: 20px; }
     .section-title { margin-bottom: 0px; text-align: center; margin:auto;}
+    .section-title h2{
+      font-size: 0.8em;
+    }
+
+    /* // Small devices (landscape phones, 576px and up) */
+    @media (min-width: 332px) { 
+        .section-title h2{
+          
+          font-size: 1em;
+        }
+     }
+
+    /* // Small devices (landscape phones, 576px and up) */
+    @media (min-width: 576px) { 
+        .section-title h2{
+          font-size: 1.7em;
+        }
+     }
+
+    /* // Medium devices (tablets, 768px and up) */
+    @media (min-width: 768px) { 
+        .section-title h2{
+          font-size: 2em;
+        }
+     }
+
+    /* // Large devices (desktops, 992px and up) */
+    @media (min-width: 992px) { 
+        .section-title h2{
+          font-size: 2.5em;
+        }
+     }
+
 
     .carousel{
       margin-top: 2em;
