@@ -83,7 +83,7 @@ export default {
 
 
     .new_footer_top {
-        padding: 120px 0px 270px;
+        padding: 20px 0px 270px;
         position: relative;
         overflow-x: hidden;
     }

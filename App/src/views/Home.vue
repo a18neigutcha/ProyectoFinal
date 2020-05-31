@@ -163,10 +163,8 @@ export default {
     object-fit: cover;
 
   }
-    /* body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-family: 'Overpass', sans-serif; letter-spacing: 0px; font-size: 17px; color: #8d8f90; font-weight: 400; line-height: 32px; background-color: #edefef; }
-    h1, h2, h3, h4, h5, h6 { color: #25292a; margin: 0px 0px 10px 0px; font-family: 'Overpass', sans-serif; font-weight: 700; letter-spacing: -1px; line-height: 1; }
-     */
-    body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-family: 'Overpass', sans-serif; letter-spacing: 0px; font-size: 17px; color: #8d8f90; font-weight: 400; line-height: 32px; background-color: rgba(163, 42, 157, 0.973); text-align: center;  }
+ 
+    body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-family: 'Overpass', sans-serif; letter-spacing: 0px; font-size: 17px; color: #8d8f90; font-weight: 400; line-height: 32px; background-color: rgba(17, 0, 16, 0.336); text-align: center;  }
     h1, h2, h3, h4, h5, h6 { color: rgba(255, 255, 255, 0.973);; margin: 0px 0px 10px 0px; font-family: 'Overpass', sans-serif; font-weight: 700; letter-spacing: -1px; line-height: 1; }
 
     h2 { font-size: 28px; line-height: 38px; letter-spacing: 0.8em; } 
@@ -176,7 +174,7 @@ export default {
     a { text-decoration: none; color: #8d8f90; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; transition: all 0.3s; }
     a:focus, a:hover { text-decoration: none; color: #f85759; }
 
-    .card-section {background-color: rgba(22, 2, 22, 0.788); position: relative; bottom: 60px; }
+    .card-section {background-color: rgba(17, 1, 16, 0.856); position: relative; bottom: 90px; }
     .card-block {/* background-color:rgba(163, 42, 157, 0.568); */ padding: 80px; padding-bottom: 20px; }
     .section-title { margin-bottom: 0px; text-align: center; margin:auto;}
     .section-title h2{
