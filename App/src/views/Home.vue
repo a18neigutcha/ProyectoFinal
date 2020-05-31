@@ -3,8 +3,8 @@
     <div class="row align-items-center">
       <div class="container-fluid">
 
-        <div class="row">
-          <div class="col">
+        <div class="row m-0">
+          <div class="col p-0">
             <div class="card text-center bg-dark text-white b-0 rounded-0">
               <img src="http://getwallpapers.com/wallpaper/full/5/8/1/425305.jpg" class="card-img imagenPortada" alt="imagen de fondo de portada.">  
               <div class="card-img-overlay d-flex justify-content-center align-items-center">
@@ -18,6 +18,16 @@
             </div>
           </div>
         </div>
+        <div class="cont-video">
+          <video id="intro" width="100%" height="20%" loop autoplay>
+            <source src="@/assets/Bridge.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <audio controls autoplay>
+              <source src="@/assets/D5.wav" type="audio/wav">
+          </audio>
+        </div>
+        
         <div class="card-section">
           <div class="container">
             <div class="card-block mb30">
@@ -156,7 +166,7 @@ export default {
     /* body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-family: 'Overpass', sans-serif; letter-spacing: 0px; font-size: 17px; color: #8d8f90; font-weight: 400; line-height: 32px; background-color: #edefef; }
     h1, h2, h3, h4, h5, h6 { color: #25292a; margin: 0px 0px 10px 0px; font-family: 'Overpass', sans-serif; font-weight: 700; letter-spacing: -1px; line-height: 1; }
      */
-    body:last-child { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-family: 'Overpass', sans-serif; letter-spacing: 0px; font-size: 17px; color: #8d8f90; font-weight: 400; line-height: 32px; background-color: rgba(163, 42, 157, 0.973); text-align: center;  }
+    body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-family: 'Overpass', sans-serif; letter-spacing: 0px; font-size: 17px; color: #8d8f90; font-weight: 400; line-height: 32px; background-color: rgba(163, 42, 157, 0.973); text-align: center;  }
     h1, h2, h3, h4, h5, h6 { color: rgba(255, 255, 255, 0.973);; margin: 0px 0px 10px 0px; font-family: 'Overpass', sans-serif; font-weight: 700; letter-spacing: -1px; line-height: 1; }
 
     h2 { font-size: 28px; line-height: 38px; letter-spacing: 0.8em; } 
@@ -287,5 +297,24 @@ export default {
     }
     div {margin-bottom: 3rem;}
     div:last-child {margin-bottom: 0;}
+
+    #intro{
+        object-fit: cover;
+        height: 300px;
+        object-position: 90% 50%;
+        filter: saturate(8);
+        filter: opacity(90%);
+        overflow:hidden;
+    } 
+    .cont-video{
+      position: relative;
+      width: 100%;
+    }
+    audio{
+      position: absolute;
+      top:1em;
+      right: 1em;
+      opacity: 0.5;
+    }
 
 </style>
