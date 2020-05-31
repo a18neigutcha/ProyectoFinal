@@ -35,5 +35,9 @@ export default {
 </script>
 
 <style lang="scss">
+  header{
+    position: relative;
+    z-index: 10;
+  }
     
 </style>

@@ -123,7 +123,7 @@ export default {
     },
     mounted(){
         // Petición de los datos del usuario.
-        axios.get('http://localhost:3000/api/sesion/me',{
+        axios.get(this.API+'api/sesion/me',{
             headers: {
             'x-access-token': this.$cookies.get('token'),
             }

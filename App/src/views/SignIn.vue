@@ -13,6 +13,14 @@
                 </div>
                 <div class="card-body">
                     <form>
+                        <div class="row">
+                            <div class="col px-auto">
+                                <p v-show="!error.auth" class="text-white">
+                                ** {{error.text}}
+                                </p> 
+                            </div>
+                            
+                        </div>
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -59,6 +67,7 @@ export default {
     name: "SignIn",
     data() {
         return {
+            error:"",
             input: {
                 email: "",
                 password: ""
@@ -87,7 +96,8 @@ export default {
 
                 },(error) => {
                     console.log(error.response.data);
-                    alert("Credenciales erroneas");
+                    this.error=error.response.data;
+                    console.log(this.error);
                 });
             }
         }

@@ -1,7 +1,6 @@
 <template>
   <div class="LugarInfo container-fluid">
       <div class="row mb-5">
-          <div class="col-1"></div>
           <div class="col p-0">
               <div class="contenedor">
                   <div class="textoFlotante">
@@ -10,12 +9,10 @@
                   </div>                  
               </div>
           </div>
-          <div class="col-1"></div>    
       </div>
       <!-- Informacion complementaria -->
-      <div class="row pt-5" id="informacion">
-          <div class="col-1"></div>
-          <div class="col-5">
+      <div class="row pt-5 d-flex align-items-center" id="informacion">
+          <div class="col-sm-6 mb-3">
               <div class="cont-informacion">
                     <!-- Campo direccion -->
                     <div>
@@ -42,30 +39,22 @@
                 
             
           </div>
-          <div class="col">
-              <div class="row">
-                  <div class="col">
-                      <!-- Mapa direccion -->
-                    <l-map style="height: 350px" :zoom="zoom" :center="center">
-                        <l-tile-layer :url="url"></l-tile-layer>
-                        <l-marker :lat-lng="markerLatLng" ></l-marker>
-                    </l-map>
-                  </div>
-              </div>
-              
-
+          <div class="col-sm mb-3">
+                <!-- Mapa direccion -->
+                <l-map class="map" :zoom="zoom" :center="center">
+                    <l-tile-layer :url="url"></l-tile-layer>
+                    <l-marker :lat-lng="markerLatLng" ></l-marker>
+                </l-map>
           </div>
       </div>
-        <div class="row mt-5">
-            <div class="col-2"></div>         
-            <div class="col">
-                <div class="cont-imagen d-flex justify-content-center align-items-center">
+        <div class="row mt-5">       
+            <div class="col d-flex justify-content-center align-items-center">
+                <div class="cont-imagen ">
                     <!-- Imagen -->
                     <img :src="datosLugar.imagen" class="imagenLugar" alt="Imagen del lugar">
                     
                 </div>   
             </div>
-            <div class="col-2"></div>
         </div>
       <div class="row mb-5">
           <div class="col">
@@ -100,7 +89,7 @@
 
                 /* Datos mapa */
                 url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-                zoom: 13,
+                zoom: 15,
                 center: [47.313220, -1.319482],
                 markerLatLng: [47.313220, -1.319482]
             };
@@ -109,6 +98,8 @@
             axios.get(this.API+'api/'+this.$route.params.id,)
             .then(response =>{
                 this.datosLugar=response.data;
+                this.markerLatLng=[response.data.latitud,response.data.longitud];
+                this.center=[response.data.latitud,response.data.longitud]
                 console.log(response.data);
             })
 
@@ -177,7 +168,8 @@
         left: 50%;
         transform: translate(-50%, -50%);
         background-color: rgba(0, 0, 0, 0.329);
-        padding: 0.5em 10em 0.5em 10em;
+        padding: 0.5em 3em 0.5em 3em;
+        /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
         border-radius: 6px 80px 6px 80px;
         -moz-border-radius: 6px 80px 6px 80px;
         -webkit-border-radius: 6px 80px 6px 80px;
@@ -225,4 +217,32 @@
         height: 3em;
         width: 3em;
     }
+    .map{
+        width: 100%;
+        height: 20em;
+    }
+
+    /* // Small devices (landscape phones, 576px and up) */
+    @media (min-width: 576px) { 
+        .map{
+            height: 20em;
+        }
+     }
+
+    /* // Medium devices (tablets, 768px and up) */
+    @media (min-width: 768px) {
+        .map{
+            height: 25em;
+        }
+     }
+
+    /* // Large devices (desktops, 992px and up) */
+    @media (min-width: 992px) {
+        
+     }
+
+    /* // Extra large devices (large desktops, 1200px and up) */
+    @media (min-width: 1200px) {
+
+     }
 </style>
