@@ -151,7 +151,10 @@ export default {
             this.direccion=response.data.direccion;
             this.descripcion=response.data.descripcion;
             this.latitud=response.data.latitud;
+            this.longitud=response.data.longitud;
             this.imagen=response.data.imagen;
+            this.center=[this.latitud,this.longitud];
+
             console.log(response.data);
         })
 
