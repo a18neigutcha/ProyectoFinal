@@ -11,10 +11,14 @@
                 <div>
                     <h5 class="card-title">¿Que sera lo proximo que haras?</h5>
                     <p class="card-text">Encuentra tu proxima gran experiencia lo mas cerca de ti</p>
-                    <router-link id="efecto" class="btn from-right" to="/SignIn">
-                        Empezar
-                        <i class="fas fa-arrow-right"></i>
-                    </router-link> 
+                    <!-- <div id="efecto" class="btn from-right">
+                      <router-link  to="/SignIn">
+                          Empezar
+                          <i class="fas fa-arrow-right"></i>
+                      </router-link> 
+                    </div> -->
+                    <BotonRight/>
+                    
                 </div>    
               </div>
 
@@ -62,7 +66,9 @@
       </div>
 
     </div>
+    
   </div>
+  
   
 </template>
 
@@ -72,13 +78,14 @@ import Slick from 'vue-slick';
 import CartaLugar from '../components/CartaLugar'
 import '../../node_modules/slick-carousel/slick/slick.css';
 import '../../node_modules/slick-carousel/slick/slick-theme.css';
-
+import BotonRight from '../components/BotonRight';
 export default {
   name: "Home",
   components: {
     /* CarruselLugares */
     Slick,
-    CartaLugar
+    CartaLugar,
+    BotonRight
   },
   data() {
       return {
@@ -211,7 +218,7 @@ export default {
     .section-title { margin-bottom: 60px; } */
 
     /* ~~~~~~~ INIT. BTN ~~~~~~~ */
-    #efecto.btn {		
+    .btn {		
       position: relative;	
       padding: 1.4rem 4.2rem;
       padding-right: 3.1rem;
@@ -223,41 +230,50 @@ export default {
       cursor: pointer;
       user-select: none;
     }
-    #efecto.btn:before, .btn:after {
+
+    .btn:before, .btn:after {
       content: '';
       position: absolute;	
       transition: inherit;
       z-index: -1;
     }
-    #efecto.btn:hover {
+
+    .btn:hover {
       color: var(--def);
       transition-delay: .5s;
     }
-    #efecto.btn:hover:before {
+
+    .btn:hover:before {
       transition-delay: 0s;
     }
-    #efecto.btn:hover:after {
+
+    .btn:hover:after {
       background: var(--inv);
       transition-delay: .35s;
     }
     /* From Right */
-    #efecto.from-right:before, 
-    #efecto.from-right:after {
+    /* From Right */
+
+    .from-right:before, 
+    .from-right:after {
       top: 0;
       width: 0;
       height: 100%;
     }
-    #efecto.from-right:before {
+
+    .from-right:before {
       left: 0;
       border: 1px solid var(--inv);
       border-left: 0;
       border-right: 0;	
     }
-    #efecto.from-right:after {
+
+    .from-right:after {
       right: 0;
     }
-    #efecto.from-right:hover:before,
-    #efecto.from-right:hover:after {
+
+    .from-right:hover:before,
+    .from-right:hover:after {
       width: 100%;
     }
     *, *:before, *:after {
@@ -273,10 +289,6 @@ export default {
       height: 100vh;
       width: 100%;
       background-image: linear-gradient(-25deg, #616161 0%, #96B7C4 100%);
-    }
-    html {
-      font-size: 12px;
-      font-family: 'Playfair Display', serif;
     }
     div {margin-bottom: 3rem;}
     div:last-child {margin-bottom: 0;}

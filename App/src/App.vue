@@ -37,7 +37,8 @@ export default {
 <style lang="scss">
   header{
     position: relative;
-    z-index: 10;
+    /* width: 100%; */
+    z-index: 2;
   }
     
 </style>
