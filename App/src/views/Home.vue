@@ -1,6 +1,12 @@
 <template>
   <div class="Home">
     <div class="row align-items-center">
+    
+        <video id="intro" width="100%" height="10%" loop>
+            <source src="@/assets/Bridge.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+          </video> 
+
       <div class="container-fluid">
 
         <div class="row">
@@ -268,5 +274,16 @@ export default {
     }
     div {margin-bottom: 3rem;}
     div:last-child {margin-bottom: 0;}
+
+/*     .container_video{
+    width: 150%;
+    overflow:hidden;
+    display:block;
+    height: 360px;
+    } */
+    #intro{
+        object-fit: cover;
+        height: 400px;
+    } 
 
 </style>
