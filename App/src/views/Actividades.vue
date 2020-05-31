@@ -39,7 +39,7 @@
                     >
                         <div class="d-flex w-100 justify-content-between"> 
                             <h5 class="mb-1">
-                                <router-link :to="'/LugarInfo/'+lugar.id">{{lugar.titulo}}</router-link>
+                                <router-link class="direction" :to="'/LugarInfo/'+lugar.id">{{lugar.titulo}}</router-link>
                             </h5>
                             <small>{{lugar.direccion}}</small>
                         </div>
@@ -47,7 +47,7 @@
                             {{lugar.descripcion}}
                         </p>
                         <button type="button" class="btn btn-outline-primary mt-3">
-                            <i class="fas fa-thumbs-up"></i>
+                            <i class="fas fa-thumbs-up" style="color:#ff7e0c;"></i>
                             <span class="ml-2 badge badge-light">{{lugar.valoracion}}</span>
                         </button>
                     </div>
@@ -112,16 +112,35 @@ export default {
 
 <style scoped>
     .Actividades{
-        background-image: url("https://images.pexels.com/photos/3769146/pexels-photo-3769146.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+        background-image: url("http://getwallpapers.com/wallpaper/full/f/d/b/430292.jpg");
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
         opacity: 1.0;
         height: 80em;
+        font-family: 'Numans', sans-serif;
+        
     }
     #cont-list{
         background-color: rgba(0, 0, 0, 0.521);
         border-radius: 20px;
         padding: 1em;
+        background: linear-gradient(to right, rgba(214, 89, 50, 0.568), rgba(192, 29, 29, 0.541));
+        border-bottom: 1px black;
     }
+
+    .btn{
+        background-color:#25f9c9;
+        font-weight: 900;
+        border-color: #25f9c9;
+    }
+/*     .btn:hover{
+        background-color:#25f9c775;
+        font-weight: 900;
+        border-color: #25f9c78e;
+    } */
+    .direction{
+        color : #ff7e0c;
+    } 
+
 </style>
