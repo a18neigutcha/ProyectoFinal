@@ -1,6 +1,6 @@
 <template>
     <div id="ConfigUser" class="container-fluid">
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-2"></div>
             <div class="col">
                 <div id="info-user" class="d-flex justify-content-start align-items-center">
@@ -17,6 +17,20 @@
                 </div>
             </div>
             <div class="col-4"></div>
+        </div> -->
+        <div class="row d-flex  justify-content-center align-items-center">
+            <div id="info-user"  class="col-5 mb-3 d-flex flex-wrap justify-content-center align-items-center">
+                <img v-if="user.fotoPerfil" :src="user.fotoPerfil" class="iconUser" alt="Imagen del usuario.">
+                <img v-else src="@/assets/img/user_default.svg" class="iconUser" alt="Imagen del usuario.">
+                <div class="mx-4" >
+                    <h1 class="text-center">{{user.userName}}</h1>
+                    <p>{{user.email}}</p>
+                </div>
+                <div @click="configurarTuUsuario()" class="config">
+                    <i class="fas fa-cog"></i>
+                </div>
+                
+            </div>
         </div>
         <div class="row mt-5">
             <div class="col-2"></div>
@@ -82,7 +96,7 @@
                                 Subir imagen:  
                                 <img src="@/assets/img/input_image.svg" alt="Sube tu imagen"> 
                             </label>
-                            <input type="file" accept="image/*" @change="uploadImage($event)" class="imagen">
+                            <input type="file" accept="image/*" @change="uploadImage($event)" id="imagen" class="imagen">
                         </div> 
                     </div>
                     <!-- Button submit -->
@@ -207,13 +221,18 @@ export default {
 
     }
     .iconUser{
-        width: 9em;
+        width: 5em;
         height: auto;
     }
     #info-user{
         border:1px solid;
         background-color: rgba(255, 255, 255, 0.644);
         padding: 1em;
+    }
+    #info-user h1,p{
+        margin-top:1em;
+        font-size: 0.8em;
+        
     }
     .config{
         position: absolute;
@@ -229,5 +248,44 @@ export default {
     .config-form .titulo{
         color: black;
     }
+    .imagen{
+        display: none;
+    }
+    .label-imagen img{
+        height: 5em;
+        width: 5em;
+    }
+    /* // Small devices (landscape phones, 576px and up) */
+    @media (min-width: 576px) { 
+        /* #info-user{
+            margin-left: 3em;
+            margin-right: 3em;
+        } */
+        #info-user h1,p{
+            font-size: 1em;
+            
+        }
+    }
+
+    /* // Medium devices (tablets, 768px and up) */
+    @media (min-width: 768px) {
+        .iconUser{
+            width: 9em;
+            height: auto;
+        }
+    }
+
+    /* // Large devices (desktops, 992px and up) */
+    @media (min-width: 992px) {
+
+    }
+
+    /* // Extra large devices (large desktops, 1200px and up) */
+    @media (min-width: 1200px) {
+        #info-user h1,p{
+            font-size: 1.5em;
+            
+        }
+    } 
 
 </style>

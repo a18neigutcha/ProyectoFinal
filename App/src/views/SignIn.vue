@@ -16,7 +16,7 @@
                         <div class="row">
                             <div class="col px-auto">
                                 <p v-show="!error.auth" class="text-white">
-                                ** {{error.text}}
+                                    {{error.text}}
                                 </p> 
                             </div>
                             

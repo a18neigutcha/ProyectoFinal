@@ -2,9 +2,12 @@
   <div id="Help" class="container-fluid">
       <!-- https://www.flaticon.es/resultados?word=javascript -->
       <div class="row mb-5">
-          <div class="col-2"></div>
+          <div class="col">
+              <h2>El equipo</h2>
+          </div> 
+      </div>
+      <div class="row mb-5">
           <div id="info-grupo" class="col">
-            <h2>El equipo</h2>
             <div class="row pt-5 mb-5">
                 <div class="col"></div>
                 <div class="col">
@@ -26,7 +29,6 @@
             </div>
               
           </div>
-          <div class="col-2"></div>
       </div>
       <div class="row pt-5">
             <div id="Recursos" class="col mx-auto">
