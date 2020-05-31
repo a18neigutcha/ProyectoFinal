@@ -1,16 +1,24 @@
 <template>
     <div class="contenedor">
-        <button class="bot">
+        <button @click="clickButon" class="bot">
             <span class="bot-text">
-            <router-link class="link"  to="/SignIn">
                 Empezar
                 <i class="fas fa-arrow-right"></i>
-            </router-link> 
             </span>
         </button>
     </div>
     
 </template>
+<script>
+export default {
+    name:'BotonRight',
+    methods: {
+        clickButon: function(){
+            this.$router.push("/SignIn");
+        }
+    }
+}
+</script>
 
 <style scoped>
     .link{
@@ -48,7 +56,7 @@
         top: 0;
         left: 0;
     }
-    .bot .bot-text .link {
+    .bot .bot-text {
         color: white;
         /* mix-blend-mode: difference; */
         font-weight: 900;
