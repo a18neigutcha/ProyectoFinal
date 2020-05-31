@@ -6,29 +6,22 @@
               <h2>El equipo</h2>
           </div> 
       </div>
-      <div class="row mb-5">
-          <div id="info-grupo" class="col">
-            <div class="row pt-5 mb-5">
-                <div class="col"></div>
-                <div class="col">
-                    <div class="cont-persona">
-                        <img src="@/assets/img/user_default.svg" alt="Imagen de miembro del equipo">
-                            <h6 class="mt-2 text-center">Neil Gutierrez Chacon</h6>
-                            <p class="text-center text-muted">Desarrollador BackEnd</p>
-                    </div>
+      <div class="row mb-5 d-flex justify-content-center">
+            <div class="col-sm">
+                <div class="cont-persona">
+                    <img src="@/assets/img/user_default.svg" alt="Imagen de miembro del equipo">
+                        <h6 class="mt-2 text-center">Neil Gutierrez Chacon</h6>
+                        <p class="text-center text-muted">Desarrollador BackEnd</p>
                 </div>
-
-                <div class="col">
-                    <div class="cont-persona">
-                        <img src="@/assets/img/user_default.svg" alt="Imagen de miembro del equipo">
-                        <h6 class="mt-2 text-center">Alejandro Estrada</h6>
-                        <p class="text-center text-muted">Diseñador web</p>
-                    </div>
-                </div>
-                <div class="col"></div>
             </div>
-              
-          </div>
+
+            <div class="col-sm-5">
+                <div class="cont-persona">
+                    <img src="@/assets/img/user_default.svg" alt="Imagen de miembro del equipo">
+                    <h6 class="mt-2 text-center">Alejandro Estrada</h6>
+                    <p class="text-center text-muted">Diseñador web</p>
+                </div>
+            </div>
       </div>
       <div class="row pt-5">
             <div id="Recursos" class="col mx-auto">
@@ -174,8 +167,7 @@ export default {
         -moz-border-radius: 200px 200px 200px 200px;
         -webkit-border-radius: 200px 200px 200px 200px;
         border: 10px solid #d4d4d4;
-        height: 11em;
-        width: 100%;
+        height: 4em;
     }
 
     .btn-primary{
