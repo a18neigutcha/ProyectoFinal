@@ -1,21 +1,19 @@
 <template>
   <div id="UserPage" class="container-fluid">
 
-      <div class="row d-flex justify-content-center ">
-          <div class="col-5">
-            <div id="info-user" class="d-flex flex-sm-wrap justify-content-center align-items-center">
-                <img v-if="user.fotoPerfil" :src="user.fotoPerfil" class="iconUser" alt="Imagen del usuario.">
-                <img v-else src="@/assets/img/user_default.svg" class="iconUser" alt="Imagen del usuario.">
-                <div class="mx-4" >
-                    <h1 class="m-0">{{user.userName}}</h1>
-                    <p>{{user.email}}</p>
-                </div>
-                <div @click="configurarTuUsuario()" class="config">
-                    <i class="fas fa-cog"></i>
-                </div>
-                
+      <div class="row d-flex  justify-content-center align-items-center">
+        <div id="info-user"  class="col-5 mb-3 d-flex flex-wrap justify-content-center align-items-center">
+            <img v-if="user.fotoPerfil" :src="user.fotoPerfil" class="iconUser" alt="Imagen del usuario.">
+            <img v-else src="@/assets/img/user_default.svg" class="iconUser" alt="Imagen del usuario.">
+            <div class="mx-4" >
+                <h1 class="text-center">{{user.userName}}</h1>
+                <p>{{user.email}}</p>
             </div>
-          </div>
+            <div @click="configurarTuUsuario()" class="config">
+                <i class="fas fa-cog"></i>
+            </div>
+            
+        </div>
       </div>
        
 
@@ -137,18 +135,25 @@
 
     }
     .iconUser{
-        width: 9em;
+        width: 5em;
         height: auto;
     }
     #info-user{
         border:1px solid;
         background-color: rgba(255, 255, 255, 0.644);
         padding: 1em;
+        /* margin-left: 2em;
+        margin-right: 2em; */
+    }
+    #info-user h1,p{
+        margin-top:1em;
+        font-size: 0.6em;
+        
     }
     .config{
         position: absolute;
         top:1em;
-        right: 2em;
+        right: 1em;
 
     }
     .panel-user{
@@ -165,5 +170,38 @@
     #nav-favoritos img{
         height: 15em;
         width: 15em;
-    }  
+    } 
+
+    /* // Small devices (landscape phones, 576px and up) */
+    @media (min-width: 576px) { 
+        /* #info-user{
+            margin-left: 3em;
+            margin-right: 3em;
+        } */
+        #info-user h1,p{
+            font-size: 1em;
+            
+        }
+     }
+
+    /* // Medium devices (tablets, 768px and up) */
+    @media (min-width: 768px) {
+        .iconUser{
+            width: 9em;
+            height: auto;
+        }
+     }
+
+    /* // Large devices (desktops, 992px and up) */
+    @media (min-width: 992px) {
+
+     }
+
+    /* // Extra large devices (large desktops, 1200px and up) */
+    @media (min-width: 1200px) {
+        #info-user h1,p{
+            font-size: 1.5em;
+            
+        }
+     } 
 </style>

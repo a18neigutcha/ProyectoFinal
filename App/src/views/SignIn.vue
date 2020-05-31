@@ -6,9 +6,9 @@
                 <div class="card-header">
                     <h3>Inicio de Sesión</h3>
                     <div class="d-flex justify-content-end social_icon">
-                        <span><i class="fab fa-facebook-square"></i></span>
-                        <span><i class="fab fa-google-plus-square"></i></span>
-                        <span><i class="fab fa-twitter-square"></i></span>
+                        <a href="https://www.facebook.com/"  target="_blank"><span><i class="fab fa-facebook-square"></i></span></a>
+                        <a href="https://www.instagram.com/"  target="_blank"><span><i class="fab fa-instagram-square"></i></span></a>
+                        <a href="https://www.twitter.com/" target="_blank"><span><i class="fab fa-twitter-square"></i></span></a>
                     </div>
                 </div>
                 <div class="card-body">
@@ -16,7 +16,7 @@
                         <div class="row">
                             <div class="col px-auto">
                                 <p v-show="!error.auth" class="text-white">
-                                ** {{error.text}}
+                                    {{error.text}}
                                 </p> 
                             </div>
                             
@@ -137,7 +137,7 @@ background-color: rgba(0,0,0,0.5) !important;
 .social_icon span{
 font-size: 50px;
 margin-left: 10px;
-color: #ff7e0c;
+color: #ff7e0c !important;
 }
 
 .social_icon span:hover{

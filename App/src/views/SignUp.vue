@@ -32,7 +32,7 @@
                             </div>
                             <div class="input-group form-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fas fa-mail"></i></span>
+                                    <span class="input-group-text"><i class="fas fa-at"></i></span>
                                 </div>
                                 <input type="email" name="email" class="form-control" input id="email" v-model="email" placeholder="Email">
                                 
@@ -53,7 +53,7 @@
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
                                 <label class="form-check-label" for="invalidCheck">
-                                    Estás de acuerdo con términos y condiciones
+                                    Acepto los términos y condiciones
                                 </label>
                                 <div class="invalid-feedback">
                                     Debes aceptar los términos y condiciones antes de aceptar.
