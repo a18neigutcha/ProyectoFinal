@@ -36,9 +36,17 @@ export default {
 
 <style lang="scss">
   header{
+
+    /* position: absolute;
+    width: 100%; */
+
+
     position: relative;
-    /* width: 100%; */
     z-index: 2;
+
   }
+  /* main{
+    padding-top:9.1em;
+  } */
     
 </style>
