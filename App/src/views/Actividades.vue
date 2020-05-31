@@ -35,7 +35,7 @@
                     </h3>
                     <div
                         v-for="(lugar,id) in lugares" :key="id"
-                        class="list-group-item list-group-item-action" 
+                        class="list-group-item list-group-item-action border" 
                     >
                         <div class="d-flex w-100 justify-content-between"> 
                             <h5 class="mb-1">
