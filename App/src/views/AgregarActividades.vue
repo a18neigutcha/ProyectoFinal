@@ -34,11 +34,20 @@
                         <input type="text" class="form-control" id="direccion" v-model="direccion">
                     </div>
                 </div>
+                <div class="row my-5 d-flex justify-content-center ">
+                    <div class="col-3 ">
+                        <span class="text-white">
+                            <i class="fas fa-arrow-down"></i>
+                            Haz click en el mapa
+                            <i class="fas fa-arrow-down"></i>
+                        </span>
+                    </div>
+                </div>
 
                 <div class="form-row d-flex justify-content-center">
                     <div class="col-md-3 mb-3">
                         <!-- Input Latitud -->
-                        <label for="latitud">Latitud (clicka la posición en el mapa):</label>
+                        <label for="latitud">Latitud:</label>
                         <input type="text" class="form-control" id="latitud" v-model="latitud">
                     </div>
                     <div class="col-md-3 mb-3">
