@@ -44,10 +44,10 @@
                                 <h3 class="f-title f_600 t_color f_size_18">Síguenos en nuestras redes sociales</h3>
                                 <div class="f_social_icon">
                                     <a href="https://www.facebook.com/"  target="_blank"><i class="fab fa-facebook"></i></a>
-                                    <a href="#" class="fab fa-twitter"></a>
+                                    <a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
                                     <a href="https://www.instagram.com/"  target="_blank"><i class="fab fa-instagram"></i></a>
-                                    <a href="#" class="fab fa-linkedin"></a>
-                                    <a href="#" class="fab fa-pinterest"></a>
+                                    <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.pinterest.com/" target="_blank"><i class="fab fa-pinterest"></i></a>
                                     <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
                                 </div>
                             </div>
@@ -83,7 +83,7 @@ export default {
 
 
     .new_footer_top {
-        padding: 20px 0px 270px;
+        padding: 45px 0px 270px;
         position: relative;
         overflow-x: hidden;
     }

@@ -93,4 +93,12 @@ export default {
 
 <style scoped>
 
+    .container{
+            background-image: url('http://getwallpapers.com/wallpaper/full/e/8/5/694108-download-free-owl-city-wallpaper-1920x1200.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 700px;
+            font-family: 'Numans', sans-serif;
+    }
+
 </style>
