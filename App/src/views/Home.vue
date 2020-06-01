@@ -9,7 +9,7 @@
               <img src="http://getwallpapers.com/wallpaper/full/5/8/1/425305.jpg" class="card-img imagenPortada" alt="imagen de fondo de portada.">  
               <div class="card-img-overlay d-flex justify-content-center align-items-center">
                 <div>
-                    <h5 class="card-title">¿Que será lo próximo que haras?</h5>
+                    <h5 class="card-title">¿Que será lo próximo que harás?</h5>
                     <p class="card-text">Acércate a experiencias únicas en distintos puntos de tu ciudad</p>
                     <BotonRight/> 
                 </div>    
@@ -110,7 +110,10 @@ export default {
   mounted () {
     axios.get(this.API+'api/')
     .then(response =>{
-        this.lugares=response.data;
+      /* this.lugares=response.data; */
+        this.lugares.push(response.data[0]);
+        this.lugares.push(response.data[1]);
+        this.lugares.push(response.data[2]);
         console.log(response.data);
     })
   },
