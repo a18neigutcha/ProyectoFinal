@@ -114,87 +114,87 @@ export default {
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
 .fondo{
-background-image: url('http://getwallpapers.com/wallpaper/full/e/8/5/694108-download-free-owl-city-wallpaper-1920x1200.jpg');
-background-size: cover;
-background-repeat: no-repeat;
-height: 700px;
-font-family: 'Numans', sans-serif;
+    background-image: url('http://getwallpapers.com/wallpaper/full/e/8/5/694108-download-free-owl-city-wallpaper-1920x1200.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 700px;
+    font-family: 'Numans', sans-serif;
 }
 
 .container{
-height: 80%;
-align-content: center;
+    height: 80%;
+    align-content: center;
 }
 
 .card{
-height: 370px;
-margin-top: auto;
-margin-bottom: auto;
-width: 400px;
-background-color: rgba(0,0,0,0.5) !important;
+    height: 370px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 400px;
+    background-color: rgba(0,0,0,0.5) !important;
 }
 
 .social_icon span{
-font-size: 50px;
-margin-left: 10px;
-color: #ff7e0c !important;
+    font-size: 50px;
+    margin-left: 10px;
+    color: #ff7e0c !important;
 }
 
 .social_icon span:hover{
-color: white;
-cursor: pointer;
+    color: white;
+    cursor: pointer;
 }
 
 .card-header h3{
-color: white;
+    color: white;
 }
 
 .social_icon{
-position: absolute;
-right: 20px;
-top: -45px;
+    position: absolute;
+    right: 20px;
+    top: -45px;
 }
 
 .input-group-prepend span{
-width: 50px;
-background-color: #25f9c9;
-color: black;
-border:0 !important;
+    width: 50px;
+    background-color: #25f9c9;
+    color: black;
+    border:0 !important;
 }
 
 input:focus{
-outline: 0 0 0 0  !important;
-box-shadow: 0 0 10px rgba(81, 203, 238, 1)!important; 
+    outline: 0 0 0 0  !important;
+    box-shadow: 0 0 10px rgba(81, 203, 238, 1)!important; 
 }
 
 .remember{
-color: white;
+    color: white;
 }
 
 .remember input
 {
-width: 20px;
-height: 20px;
-margin-left: 15px;
-margin-right: 5px;
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
+    margin-right: 5px;
 }
 
-.login_btn{
-color: black;
-background-color: #25f9c9;
-width: 100px;
+    .login_btn{
+    color: black;
+    background-color: #25f9c9;
+    width: 100px;
 }
 
 .login_btn:hover{
-color: black;
-background-color: white;
+    color: black;
+    background-color: white;
 }
 
 .links{
-color: white;
+    color: white;
 }
 
 .links a{
-margin-left: 4px;
+    margin-left: 4px;
 }
 </style>

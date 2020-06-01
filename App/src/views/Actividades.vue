@@ -35,7 +35,8 @@
                     </h3>
                     <div
                         v-for="(lugar,id) in lugares" :key="id"
-                        class="list-group-item list-group-item-action border" 
+                        class="list-group-item list-group-item-action border"
+                        @click="detallesActividad(lugar.id)" 
                     >
                         <div class="d-flex w-100 justify-content-between"> 
                             <h5 class="mb-1">
@@ -53,7 +54,7 @@
                     </div>
                 </div>
                 <!-- Pagination -->
-                <nav class="mt-3" aria-label="Page navigation example">
+                <!-- <nav class="mt-3" aria-label="Page navigation example">
                     <ul class="pagination">
                         <li class="page-item">
                         <a class="page-link" href="#cont-list" aria-label="Previous">
@@ -69,7 +70,7 @@
                         </a>
                         </li>
                     </ul>
-                </nav>
+                </nav> -->
             </div>
             
             <div class="col-1"></div>
@@ -106,6 +107,11 @@ export default {
         });
 
     },
+    methods:{
+        detallesActividad:function(id){
+            this.$router.push("/LugarInfo/"+id);
+        }
+    }
 
 }
 </script>

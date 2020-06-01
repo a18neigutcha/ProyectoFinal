@@ -14,7 +14,12 @@ export default {
     name:'BotonRight',
     methods: {
         clickButon: function(){
-            this.$router.push("/SignIn");
+            if(this.$cookies.get("token")){
+                this.$router.push("/Actividades");
+            }else{
+                this.$router.push("/SignIn");
+            }
+            
         }
     }
 }
