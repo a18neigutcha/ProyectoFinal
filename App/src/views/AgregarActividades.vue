@@ -38,7 +38,7 @@
                 <div class="form-row d-flex justify-content-center">
                     <div class="col-md-3 mb-3">
                         <!-- Input Latitud -->
-                        <label for="latitud">Latitud:</label>
+                        <label for="latitud">Latitud (clicka la posición en el mapa):</label>
                         <input type="text" class="form-control" id="latitud" v-model="latitud">
                     </div>
                     <div class="col-md-3 mb-3">
@@ -83,7 +83,7 @@
                     </div>
                     <div class="col-md-3 mb-3 d-flex justify-content-center">
                         <label for="imagen" class="label-imagen">
-                            <p>Subir imagen: </p> 
+                            <p>Sube la imagen: </p> 
                             <img src="@/assets/img/input_image.svg" alt="Sube tu imagen"> 
                         </label>
                         <input type="file" accept="image/*" @change="uploadImage($event)" id="imagen" class="imagen">
@@ -94,7 +94,7 @@
                 <div class="form-group row pb-3">
                     <div class="col-4"></div>
                     <div class="col-4 d-flex justify-content-center">
-                        <button v-on:click.prevent="post" class="btn btn-primary">Sign in</button>
+                        <button v-on:click.prevent="post" class="btn btn-primary">Añade la actividad</button>
                     </div>
                     <div class="col-4"></div>
                 </div>
@@ -279,6 +279,11 @@ export default {
     }
     input{
         color:black;
+    }
+
+    .btn-primary{
+        background-color:rgba( 214, 89, 50, 0.568);
+        border-color:rgba( 214, 89, 50, 0.568);
     }
 
     /* // Small devices (landscape phones, 576px and up) */
