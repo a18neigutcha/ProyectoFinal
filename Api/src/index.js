@@ -5,8 +5,6 @@ const morgan = require('morgan');
 const cors = require('cors');
 const multer = require ('multer');
 
-/* C */
-//require('./databaseMongo');
 
 /**
  * @file index.js
@@ -45,7 +43,7 @@ app.use(cors());
 
 
 /**
- * Guarde las imagenes
+ * Establece la configuracion para guardar las imagenes con multer
  */
 
 const storage = multer.diskStorage({

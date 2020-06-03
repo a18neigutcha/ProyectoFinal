@@ -1,13 +1,20 @@
 const jwt = require('jsonwebtoken');
 const config = require('./config');
 
+
+/**
+ * @file verifyToken.js
+ *  
+ * @description En este fichero definimos el middlewere para la verificación de un token.
+ */ 
+
 /**
  * @function verifyToken
  * @description Nos autentifica el token segun los parametros secretos configurados.
  * 
- * @param {*} req 
- * @param {*} res 
- * @param {*} next 
+ * @param {*} req Requiere una cabecera "x-access-token" con el toke de autentificación
+ * @param {*} res Responde un mensaje de error si la autentificación falla.
+ * @param {*} next Funcion que se ejecutara después.
  */
 
 async function verifyToken(req, res, next) {

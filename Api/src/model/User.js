@@ -1,24 +1,28 @@
 const bcrypt = require('bcryptjs');
 
+
+/**
+ * @file User.js
+ * 
+ * @descriptio En estes fichero se definen funciones  que puede hacer un usuario no relacionadas con la base de datos.
+ * 
+ */
+
+
+/**
+ * @static User
+ * @descriptio En estes fichero se definen funciones  que puede hacer un usuario no relacionadas con la base de datos.
+ * 
+ */
+
+
 class User{
 
-    // /**
-    //  * @constructor User
-    //  * @param {string} userName Nomber del usuario. 
-    //  * @param {string} email Email del usuario
-    //  * @param {string} password Password encryptado.
-    //  *  
-    //  */
-
-    // constructor(userName,email,password) {
-    //     this.userName = userName;
-    //     this.email = email;
-    //     this.password = password;
-    // }
 
     /**
      * @method encryptPassword
-     * @param {string} password 
+     * @description Encrypta un password 10 veces(esta parte es variables dependiendo de la seguridad de necesites).
+     * @param {string} password Password sin encryptar. 
      * @returns {Promise} Retorna el password encryptado.
      */
 
@@ -29,8 +33,9 @@ class User{
 
     /**
      * @method comparePassword
-     * @param {string} password 
-     * @param {string} passwordComp
+     * @description Compara dos passwords un encryptado y otro sin encryptar y verifica si son iguales.
+     * @param {string} password Password encryptado a comparar.
+     * @param {string} passwordComp Password sin encryptar a comparar
      * @returns {boolean} Nos retorna true si los password coinciden y false caso contrario.
      */
 

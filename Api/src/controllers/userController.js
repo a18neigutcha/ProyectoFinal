@@ -7,6 +7,14 @@ const jwt = require('jsonwebtoken');
 const User = require ('../model/User');
 
 /**
+ * @file userController.js
+ * 
+ * @description Fichero donde se definen las funciones relacionadas con los usuarios.
+ * 
+ */
+
+
+/**
  * @static UserController
  * @description En esta clase se definen las funciones que reciben y responden
  * a las peticiones de la API relacionadas con los Usuarios.
@@ -19,7 +27,7 @@ class UserController{
      * @description Este metodo nos permite dar de alta a los usuarios
      * 
      * @param {Body} req Es una peticion tipo POST y recibe los parametros de {id,userName,email,password}
-     * @param {JsonWebKey} res Responde un Json con un token de autenticacion.
+     * @param {JsonWebKey} res Responde un Json con un token de autenticacion o un mensaje de error si no se puedo registrar al usuario.
      */
 
     static async signUp(req,res){
@@ -73,9 +81,11 @@ class UserController{
      * @description Este metodo nos permite autentificar un usuario que quiere iniciar session
      * 
      * @param {Body} req Peticion POST con los datos {email,password}
-     * @param {JsonWebKey} res Responde un Json con un token de autenticacion.
+     * @param {JsonWebKey} res Responde un Json con un token de autenticacion o un erro de autentificación inválida.
      */
 
+    
+    
     static async signIn(req, res){
 
         await mysqlConnection.query('SELECT * FROM USUARIO WHERE email=?',[req.body.email],async (err, result, fields)=>{
@@ -111,24 +121,24 @@ class UserController{
         });
     }
 
-    /**
-     * @method logOut
-     * 
-     * @description Esta funcion nos permite serrar session y a su vez aliminar nuestro token se session.
-     * 
-     * @param {*} req 
-     * @param {*} res 
-     */
+    // /**
+    //  * @method logOut
+    //  * 
+    //  * @description Esta funcion nos permite serrar session y a su vez aliminar nuestro token se session.
+    //  * 
+    //  * @param {*} req 
+    //  * @param {*} res 
+    //  */
 
-    static async logOut(req,res){
-        res.status(200).send({ auth: false, token: null });
-    }
+    // static async logOut(req,res){
+    //     res.status(200).send({ auth: false, token: null });
+    // }
 
     /**
      * @method me
-     * @description Autentifica el login de un usuario y nos retorna sus datos.
-     * @param {*} req
-     * @param {*} res
+     * @description Autentifica el login de un usuario y nos retorna sus datos. Este metodo requiere autentificación por medio de jsontoken.
+     * @param {int} req Requiere la id del usuario provista por la autentificación del usuario.
+     * @param {Json} res Los datos del usuario buscado.
      */
     static async me(req,res){
 
@@ -151,6 +161,12 @@ class UserController{
 
     }
 
+    /**
+     * @method updateUser
+     * @description Nos permite actualizar los datos del usuario. Requiere autenticicasion del usuario.
+     * @param {FormData,int} req Requiere la informacion del usuario actualizada en un formulario y la id provista por la autentificación.
+     * @param {Json} res Json con mensaje de confirmacion o uno de error.
+     */
 
     static async updateUser(req,res){
         try{
