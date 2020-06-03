@@ -1,8 +1,15 @@
 const mysqlConnection =require('../database');
 
 /**
+ * @file lugaresController.js
  * 
- * @static LugaresControlle
+ * @description Fichero donde se definen las funciones relacionadas con los lugares.
+ * 
+ */
+
+/**
+ * 
+ * @static LugaresController
  * @description En esta clase de definen las funciones que responden a las peticiones de la API
  * relacionandas con los Lugares.
  * 
@@ -35,7 +42,7 @@ class LugaresController {
      * @method unLugar
      * @description Datos de un lugar especifico, peticion GET.
      * @param {int} req la id del lugar solicitado 
-     * @param {*} res 
+     * @param {Json} res los datos del lugar buscado si existe o un mensaje de error si no existe o hubo algun problema 
      */
 
     static async unLugar(req,res){
@@ -55,8 +62,10 @@ class LugaresController {
     /**
      * @method crearLugar
      * @description Inserta un lugar a nuestra base de datos, peticion POST
-     * @param {Json} req Json con los datos del lugar.
-     * @param {Json} res Json con mensaje de confimación.  
+     * @param {FormData} req Form(Formulario) con los datos del lugar.
+     * @param {Json} res Json con mensaje de confimación o uno de error si algo falla.
+     * 
+     * Tomar en cuenta que las imagenes se guardaran en el servidor en la base de datos solo se guardar la url de la imagen accessible desde el servidor.
      */
 
    static async crearLugar(req,res){
@@ -96,8 +105,11 @@ class LugaresController {
     /**
      * @method actualizarLugar
      * @description Actualiza los datos de un lugar, peticion PUT
-     * @param {Json} req Json con los datos del lugar.
+     * @param {FormData} req Form(Formulario) con los datos del lugar.
      * @param {Json} res Json con mensaje de confirmación. 
+     * 
+     * La imagen previamente guardada no se elimina, se guarda la nueva imagen y se actualiza la url del lugar en la base de datos.
+     * 
      */
 
    static async actualizarLugar(req,res){
@@ -135,8 +147,11 @@ class LugaresController {
 
    /**
     * @method valoraLugar
-    * @param {*} req 
-    * @param {*} res 
+    * 
+    * @description Nos permite valorar un lugar, tomar en cuenta que debemos estar autenticados.
+    * 
+    * @param {Json,int} req Requiere un Json en el body con la valoracion nueva y en la url el id del lugar valorado.
+    * @param {Json} res Un mensaje de confirmacion o uno de error si algo falla.
     */
    static async valoraLugar(req,res){
         const {valoracion} = req.body;
@@ -156,7 +171,7 @@ class LugaresController {
    /**
     * @method eliminarLugar
     * @description Elimina un lugar.
-    * @param {int} req La id del lugar a aliminar. 
+    * @param {int} req La id del lugar a aliminar en la URL 
     * @param {Json} res Json con mensaje de confirmacion. 
     */
 
@@ -176,6 +191,7 @@ class LugaresController {
 
     /**
      * @method listaPorUsuario
+     * @description Nos lista los lugares de un usuario determinado, este methodo requiere autentificasion el cual nos muestra la id del usuario que esta solicitando la lista.
      * @param {int} req id del usuario.
      * @param {Json} res Lista de lugares del usuario. 
      */

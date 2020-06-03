@@ -43,7 +43,7 @@ app.use(cors());
 
 
 /**
- * Guarde las imagenes
+ * Establece la configuracion para guardar las imagenes con multer
  */
 
 const storage = multer.diskStorage({

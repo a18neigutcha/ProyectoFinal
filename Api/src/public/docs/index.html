@@ -49,6 +49,108 @@
 </code></pre>
 <h3>Compilar proyecto</h3>
 <pre class="prettyprint source"><code>npm run dev
+</code></pre>
+<h3>Generar documentación</h3>
+<pre class="prettyprint source"><code>npm run doc
+</code></pre>
+<h2>Dependencias</h2>
+<p>Hay que tomar en cuenta algunas dependencias para el funcionamiento de la aplicacion, las cuales se instalaran de forma automatica con el comando &quot;npm install&quot;</p>
+<ul>
+<li>express: Para crear el servidor.</li>
+<li>morgan: Para visualizar por consola las peticiones al servidor.</li>
+<li>multer: Para guardar las imagenes y decodificar los formularios.</li>
+<li>path: Para generar las rutas.</li>
+<li>cors: Para generar cabeceras con protocoles de seguridad en las cabeceras de respuesta.</li>
+<li>jsonToken: Para generar token de autentificación.</li>
+<li>bcryptjs: Para encriptar y verificar los passwords de los usuarios.</li>
+</ul>
+<h2>Rutas de la api</h2>
+<p>De forma generar la api responderara a la siguiente ruta por el puerto 3000.</p>
+<pre class="prettyprint source"><code>http://{host}:3000/api/{ruta}
+
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Método</th>
+<th>Ruta</th>
+<th>Descripción</th>
+<th>Requiere</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>/</td>
+<td>Lista de todos los lugares.</td>
+<td>-</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/:id</td>
+<td>Información de un lugar especifico.</td>
+<td>- Id del lugar.</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>/:id</td>
+<td>Elimina un lugar por su id.</td>
+<td>- Id del lugar.</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>/</td>
+<td>Crea un lugar, es necesario un formulario con los campos necesarios.</td>
+<td>- Token de verificación. - Formulario con los datos del lugar.</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/user/lugares</td>
+<td>Lista los lugares creados por un usuario.</td>
+<td>- Token de verificación.</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>/:id</td>
+<td>Actualiza datos de un lugar.</td>
+<td>- Token de verificación. - Formulario con los datos del lugar - Id del lugar.</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>/valoracion/:id</td>
+<td>Registra la valoración de un lugar.</td>
+<td>- Token de verificación. - Body con la nueva valoración. - Id del lugar.</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>/signUp</td>
+<td>Registra un nuevo usuario</td>
+<td>- Formulario con los datos del usuario.</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>/signIn</td>
+<td>Autentifica un usuario previamente creado.</td>
+<td>- Formulario con las credenciales del usuario.</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>/sesion/me</td>
+<td>Actualiza datos de un usuario.</td>
+<td>- Formulario con la nueva información del usuario.</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/sesion/me</td>
+<td>Responde con la informacin de un usuario autentificado.</td>
+<td>- Token de verificación.</td>
+</tr>
+</tbody>
+</table>
+<h3>Observaciones</h3>
+<pre class="prettyprint source"><code>Para las peticiones que requieran Token de verificación es necesario establecer
+una cabecera 'x-access-token' con el valor del token proporcionado por la API.
+
 </code></pre></article>
     </section>
 
@@ -109,6 +211,192 @@
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
         <a href="config.js.html">config.js</a>, <a href="config.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>controllers/lugaresController.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description">Fichero donde se definen las funciones relacionadas con los lugares.</div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_lugaresController.js.html">controllers/lugaresController.js</a>, <a href="controllers_lugaresController.js.html#line3">line 3</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>controllers/userController.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description">Fichero donde se definen las funciones relacionadas con los usuarios.</div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_userController.js.html">controllers/userController.js</a>, <a href="controllers_userController.js.html#line9">line 9</a>
     </li></ul></dd>
     
 
@@ -295,7 +583,383 @@ para lanzar el seridor Settings, Middlewares, Routes, Start Server.</div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
+<<<<<<< HEAD
         <a href="index.js.html">index.js</a>, <a href="index.js.html#line11">line 11</a>
+=======
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line9">line 9</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>model/User.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description">User.js</div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="model_User.js.html">model/User.js</a>, <a href="model_User.js.html#line4">line 4</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>routes/lugaresRoutes.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description">lugaresRoutes.js</div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="routes_lugaresRoutes.js.html">routes/lugaresRoutes.js</a>, <a href="routes_lugaresRoutes.js.html#line7">line 7</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>routes/userRoutes.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description">userRoutes.js</div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="routes_userRoutes.js.html">routes/userRoutes.js</a>, <a href="routes_userRoutes.js.html#line8">line 8</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>verifyToken.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description">En este fichero definimos el middlewere para la verificación de un token.</div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="verifyToken.js.html">verifyToken.js</a>, <a href="verifyToken.js.html#line5">line 5</a>
+>>>>>>> master
     </li></ul></dd>
     
 
@@ -340,13 +1004,21 @@ para lanzar el seridor Settings, Middlewares, Routes, Start Server.</div>
 </div>
 
 <nav>
+<<<<<<< HEAD
     <h2><a href="index.html">BarcelonaEscondidaDoc</a></h2><h3>Modules</h3><ul><li><a href="module-LugaresRoutes.html">LugaresRoutes</a></li><li><a href="module-UserRoutes.html">UserRoutes</a></li></ul><h3>Classes</h3><ul><li><a href="LugaresController.html">LugaresController</a></li><li><a href="UserController.html">UserController</a></li></ul><h3>Global</h3><ul><li><a href="global.html#actualizarLugar">actualizarLugar</a></li><li><a href="global.html#comparePassword">comparePassword</a></li><li><a href="global.html#crearLugar">crearLugar</a></li><li><a href="global.html#eliminarLugar">eliminarLugar</a></li><li><a href="global.html#encryptPassword">encryptPassword</a></li><li><a href="global.html#listaLugares">listaLugares</a></li><li><a href="global.html#listaPorUsuario">listaPorUsuario</a></li><li><a href="global.html#logOut">logOut</a></li><li><a href="global.html#me">me</a></li><li><a href="global.html#signIn">signIn</a></li><li><a href="global.html#signUp">signUp</a></li><li><a href="global.html#storage">storage</a></li><li><a href="global.html#unLugar">unLugar</a></li><li><a href="global.html#valoraLugar">valoraLugar</a></li><li><a href="global.html#verifyToken">verifyToken</a></li></ul>
+=======
+    <h2><a href="index.html">BarcelonaEscondidaDoc</a></h2><h3>Modules</h3><ul><li><a href="module-LugaresRoutes.html">LugaresRoutes</a></li><li><a href="module-UserRoutes.html">UserRoutes</a></li></ul><h3>Classes</h3><ul><li><a href="LugaresController.html">LugaresController</a></li><li><a href="User.html">User</a></li><li><a href="UserController.html">UserController</a></li></ul><h3>Global</h3><ul><li><a href="global.html#actualizarLugar">actualizarLugar</a></li><li><a href="global.html#comparePassword">comparePassword</a></li><li><a href="global.html#crearLugar">crearLugar</a></li><li><a href="global.html#eliminarLugar">eliminarLugar</a></li><li><a href="global.html#encryptPassword">encryptPassword</a></li><li><a href="global.html#listaLugares">listaLugares</a></li><li><a href="global.html#listaPorUsuario">listaPorUsuario</a></li><li><a href="global.html#me">me</a></li><li><a href="global.html#signIn">signIn</a></li><li><a href="global.html#signUp">signUp</a></li><li><a href="global.html#storage">storage</a></li><li><a href="global.html#unLugar">unLugar</a></li><li><a href="global.html#updateUser">updateUser</a></li><li><a href="global.html#valoraLugar">valoraLugar</a></li><li><a href="global.html#verifyToken">verifyToken</a></li></ul>
+>>>>>>> master
 </nav>
 
 <br class="clear">
 
 <footer>
+<<<<<<< HEAD
     Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Sat May 30 2020 00:34:42 GMT+0200 (hora de verano de Europa central)
+=======
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Jun 03 2020 20:17:40 GMT+0200 (hora de verano de Europa central)
+>>>>>>> master
 </footer>
 
 <script> prettyPrint(); </script>
