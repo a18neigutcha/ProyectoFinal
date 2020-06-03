@@ -46,9 +46,7 @@ Levantara tres contenedores:
 #### Contenedor mysql
 Nos despliega la base de datos y al momento de levantarlo ejecuta los scripts de creación de la base de datos.
 
-Es necesario tener instalado mysql en local.
-
-tomar en cuenta que se incluye un ficher datosDePrueba.sql que cargara la base de datos con datos de prueba para trabajar en desarrollo, este mismo no esta incluido en la rama de despliegue.
+Tomar en cuenta que se incluye un ficher datosDePrueba.sql que cargara la base de datos con datos de prueba para trabajar en desarrollo, este mismo no esta incluido en la rama de despliegue.
 
 Por defecto el contenedor esta configurado para establecer el:
 -   Usuario: root
