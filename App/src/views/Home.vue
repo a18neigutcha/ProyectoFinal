@@ -108,10 +108,17 @@ export default {
   mounted () {
     axios.get(this.API+'api/')
     .then(response =>{
-      /* this.lugares=response.data; */
-        this.lugares.push(response.data[0]);
-        this.lugares.push(response.data[1]);
-        this.lugares.push(response.data[2]);
+      // this.lugares=response.data;
+        if(response.data[0]){
+          this.lugares.push(response.data[0]);
+        }
+        if(response.data[1]){
+          this.lugares.push(response.data[1]);
+        }
+        if(response.data[2]){
+           this.lugares.push(response.data[2]);
+        }
+       
         console.log(response.data);
     })
   },
