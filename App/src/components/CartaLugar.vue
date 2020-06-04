@@ -6,7 +6,7 @@
             <h4>{{subtitulo}}</h4>
             
         </div>
-        <p>{{descripcion}}</p>
+        <!-- <p>{{descripcion}}</p> -->
     </div>
 </template>
 
