@@ -46,8 +46,23 @@ Levantara tres contenedores:
 #### Contenedor mysql
 Nos despliega la base de datos y al momento de levantarlo ejecuta los scripts de creación de la base de datos.
 
-Es necesario tener instalado mysql en local.
+El docker-compose.yml configura un volumen el cual enlaza el directorio **Database/** con el directorio **docker-entrypoint-initdb.d/** del contenedor el cual por defecto ejecuta todos los scripts dentro de este directorio.
 
+Tomar en cuenta que se incluye un ficher datosDePrueba.sql que cargara la base de datos con datos de prueba para trabajar en desarrollo, este mismo no esta incluido en la rama de despliegue.
+
+Por defecto el contenedor esta configurado para establecer el:
+-   Usuario: root
+-   Pwd: password
+
+Si require cambiar esto parametros necesita acceder a **docker-compose.yml** y modificar los parametros de configuración y también modificar el fichero **config.js** de la api con los parametros correspondientes.
+
+Para ver más información de la installación sin Docker [Ver.](https://github.com/a18neigutcha/ProyectoFinal/tree/master/Database)
+
+
+
+#### Contenedor api
+
+<<<<<<< HEAD
 tomar en cuenta que se incluye un ficher datosDePrueba.sql que cargara la base de datos con datos de prueba para trabajar en desarrollo, este mismo no esta incluido en la rama de despliegue.
 
 Para ver más información de la installación sin Docker [Ver.](https://github.com/a18neigutcha/ProyectoFinal/tree/master/Database)
@@ -56,6 +71,8 @@ Para ver más información de la installación sin Docker [Ver.](https://github.
 
 #### Contenedor api
 
+=======
+>>>>>>> master
 Levanta un servidor node creado con express que depende del contenedor "mysql".Es el encargado de comunicar la base de datos con la pagina web.
 
 Este nos montara un volumen que compartira con el directorio Api de este proyecto donde los cambios en el codigo de este directorio afectaran a la Api.
@@ -76,6 +93,7 @@ Si la conexion no se establecio reiniciar el contenedor api.
 ```
 Para ver más información de la installación sin Docker [Ver.](https://github.com/a18neigutcha/ProyectoFinal/tree/master/Api)
 
+<<<<<<< HEAD
 
 #### Contenedor app
 
@@ -98,9 +116,33 @@ npm run serve
 
 ```
 Para ver más información de la installación sin Docker [Ver.](https://github.com/a18neigutcha/ProyectoFinal/tree/master/App)
+=======
 
+#### Contenedor app
 
+##### En produccion.
 
+** Este contenedor esta pensado para trabajar solamente con en la parte de despliegue **
+
+Este contenedor cuenta con integracion continua en dockerHub por ello cada vez que se ejecuta un commit en la rama de despliegue de este repositorio github se genera una imagen con los cambios en el dockerHub.
+
+Este contenedor se crea consumiendo una imagen generada especifica para esta aplicasion.
+
+Imagen docker: [ngch43/vue_app](https://hub.docker.com/repository/docker/ngch43/vue_app).
+>>>>>>> master
+
+##### En desarrollo
+
+<<<<<<< HEAD
+
+=======
+Para trabajar en desarrollo se recomiendo trabajar con la aplicación vue cli directamente.
+
+```
+npm run serve
+```
+Para ver más información de la installación sin Docker [Ver.](https://github.com/a18neigutcha/ProyectoFinal/tree/master/App)
+>>>>>>> master
 
 
 
