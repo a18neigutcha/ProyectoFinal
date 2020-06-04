@@ -46,15 +46,15 @@ Levantara tres contenedores:
 #### Contenedor mysql
 Nos despliega la base de datos y al momento de levantarlo ejecuta los scripts de creación de la base de datos.
 
-Es necesario tener instalado mysql en local.
+El docker-compose.yml configura un volumen el cual enlaza el directorio **Database/** con el directorio **docker-entrypoint-initdb.d/** del contenedor el cual por defecto ejecuta todos los scripts dentro de este directorio.
 
-tomar en cuenta que se incluye un ficher datosDePrueba.sql que cargara la base de datos con datos de prueba para trabajar en desarrollo, este mismo no esta incluido en la rama de despliegue.
+Tomar en cuenta que se incluye un ficher datosDePrueba.sql que cargara la base de datos con datos de prueba para trabajar en desarrollo, este mismo no esta incluido en la rama de despliegue.
 
 Por defecto el contenedor esta configurado para establecer el:
 -   Usuario: root
 -   Pwd: password
 
-Si require cambiar esto parametros necesita acceder a **docker-compose.yml** y modificar los parametros de configuración y tambien modificar el fichero **config.js** de la api con los parametros correspondientes.
+Si require cambiar esto parametros necesita acceder a **docker-compose.yml** y modificar los parametros de configuración y también modificar el fichero **config.js** de la api con los parametros correspondientes.
 
 Para ver más información de la installación sin Docker [Ver.](https://github.com/a18neigutcha/ProyectoFinal/tree/master/Database)
 
