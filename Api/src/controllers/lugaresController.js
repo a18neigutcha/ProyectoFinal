@@ -88,6 +88,7 @@ class LugaresController {
         ],(err, result, fields)=>{
 
             if(err){
+                console.log(err);
                 res.status(500).json({ text:"No se puedo registrar el lugar"});
             }else{
                 res.json({text:'Lugar registrado'});
