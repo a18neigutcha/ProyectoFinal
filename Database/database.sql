@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS LUGAR(
 	  id INT(11) PRIMARY KEY AUTO_INCREMENT,
     titulo VARCHAR(45),
     direccion VARCHAR(45),
-    descripcion VARCHAR(225),
+    descripcion VARCHAR(2000),
     latitud VARCHAR (255),
     longitud VARCHAR (255),
     valoracion INT(11) DEFAULT 0,
